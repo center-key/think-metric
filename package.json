@@ -1,0 +1,50 @@
+{
+   "name": "think-metric",
+   "version": "1.0.0",
+   "description": "🇺🇸 Americans for Metrication",
+   "license": "CC0-1.0",
+   "type": "module",
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/center-key/think-metric.git"
+   },
+   "homepage": "https://think-metric.org",
+   "bugs": "https://github.com/center-key/think-metric/issues",
+   "docs": "https://github.com/center-key/think-metric#readme",
+   "author": "Center Key (https://centerkey.com)",
+   "keywords": [
+      "metric",
+      "metrication",
+      "units-of-measure"
+   ],
+   "runScriptsConfig": {
+      "clean": [
+         "rimraf docs"
+      ],
+      "build": [
+         "copy-file   src/cname.txt           docs/CNAME",
+         "copy-folder src/website/graphics    docs/graphics",
+         "lessc       src/website/style.less  docs/style.css",
+         "replacer    src/website --ext=.html docs"
+      ]
+   },
+   "scripts": {
+      "pretest": "run-scripts clean build",
+      "test": "html-validator docs '--ignore=Section lacks heading.'",
+      "preinteractive": "npm test",
+      "interactive": "browser-sync . --startPath docs/index.html --files docs"
+   },
+   "dependencies": {
+      "@fortawesome/fontawesome-free": "~6.5",
+      "browser-sync": "~3.0",
+      "copy-file-util": "~1.2",
+      "copy-folder-util": "~1.1",
+      "dna-engine": "~3.1",
+      "less": "~4.2",
+      "replacer-util": "~1.2",
+      "rimraf": "~5.0",
+      "run-scripts-util": "~1.2",
+      "w3c-html-validator": "~1.7",
+      "web-ignition": "~2.1"
+   }
+}

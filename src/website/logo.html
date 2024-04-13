@@ -1,0 +1,77 @@
+<!doctype html>
+<!-- - - - - - - - -->
+<!-- Think Metric  -->
+<!-- Logo          -->
+<!-- - - - - - - - -->
+<html lang=en>
+<head>
+   <meta charset=utf-8>
+   <meta name=viewport content="width=device-width, initial-scale=1">
+   <meta name=robots   content="index, follow">
+   <title>Logo 🇺🇸 Think Metric</title>
+   <link rel=icon       href={{webRoot}}/graphics/bookmark.png>
+   <link rel=preconnect href=https://fonts.googleapis.com>
+   <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+   <link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@{{pkg.dependencies.-fortawesome-fontawesome-free|version}}/css/all.min.css>
+   <link rel=stylesheet href=https://cdn.jsdelivr.net/npm/web-ignition@{{pkg.dependencies.web-ignition|version}}/dist/reset.min.css>
+   <style>
+      figure.logo {
+         position: relative;
+         width: 170px;
+         height: 170px;
+         background-size: 17px 17px;
+         background-image:
+            linear-gradient(to right,  white 2px, transparent 1px),
+            linear-gradient(to bottom, white 2px, transparent 1px);
+         border-right: 2px solid white;
+         border-bottom: 2px solid white;
+         background-color: dimgray;
+         outline: 40px solid dimgray;  /* x = 125px - width/2 */
+         margin: 100px;
+         }
+      figure.logo >figcaption {
+         position: absolute;
+         top: -12px;
+         left: 3px;
+         font-size: 8rem;
+         font-family: Chango;
+         color: white;
+         }
+      img {
+         border: 30px solid black;
+         }
+   </style>
+   <script defer src=https://cdn.jsdelivr.net/npm/web-ignition@{{pkg.dependencies.web-ignition|version}}/dist/lib-x.min.js></script>
+</head>
+<body>
+
+<main>
+   <h1>Think Metric</h1>
+   <h2>Logo</h2>
+   <figure class=logo>
+      <figcaption>M</figcaption>
+   </figure>
+   <ol>
+      <li>Screen capture</li>
+      <li>Run <b>ImageOptim</b> (remove Retina double resolution)</li>
+      <li>Crop in <b>Preview</b> to 500x500</li>
+      <li>Re-run <b>ImageOptim</b> (note: verify correct gray)</li>
+      <li>Duplicate to <code>bookmark.png</code>, crop solid gray padding, and resize to 192x192</li>
+   </ol>
+   <code>graphics/think-metric-logo.png</code><br>500x500
+   <p>
+      <img src={{webRoot}}/graphics/think-metric-logo.png alt=logo>
+   </p>
+   <code>graphics/bookmark.png</code><br>192x192
+   <p>
+      <img src={{webRoot}}/graphics/bookmark.png alt=icon>
+   </p>
+</main>
+
+<footer>
+   <a href={{webRoot}}><i data-icon=home></i></a>
+   <a href=https://creativecommons.org/public-domain/cc0 data-license=CC0 title=CC0 class=external-site><i data-brand=creative-commons></i></a>
+</footer>
+
+</body>
+</html>

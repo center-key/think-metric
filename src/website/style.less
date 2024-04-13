@@ -1,0 +1,112 @@
+//////////////////
+// Think Metric //
+//////////////////
+
+// Layout
+body {
+   >header {
+      background-image: url(graphics/kg-weights-by-ylanite-koppens-at-pexels.jpg);
+      nav#link-menu {
+         a, a:visited {
+            color: white;
+            border-color: white;
+            text-shadow: 0px 0px 0.6em black;
+            }
+         a.current, a:hover {
+            color: white;
+            border-color: gold;
+            }
+         }
+      h2 {
+         font-size: 1.5rem;
+         text-shadow: 0px 0px 0.6em black;
+        }
+      }
+   main {
+      >section {
+         &:last-child {
+            padding-bottom: 50px;
+            }
+         >p, >div {
+            text-align: left;
+            li {
+               font-size: 1em;
+               text-indent: 0px;
+               padding-left: 0em;
+               margin-bottom: 15px;
+               }
+            }
+         }
+      }
+   >footer {
+      >div {
+         padding: 5px 0px;
+         }
+      }
+   }
+
+// Components
+figure.box-frame {
+   background-color: white;
+   border: 5px solid silver;
+   padding: 5px 20px;
+   }
+figure.small-picture {
+   max-width: 200px;
+   }
+table.big-table {
+   .TableCell() {
+      font-size: 1em;
+      text-align: left;
+      &:first-child {
+         padding-left: 0px;
+         }
+      &:last-child {
+         padding-right: 0px;
+         }
+      }
+   margin: 0px;
+   thead {
+      tr {
+         th {
+            .TableCell();
+            }
+         }
+      }
+   tbody {
+      tr {
+         td {
+            .TableCell();
+            img {
+               max-width: 120px;
+               }
+            }
+         }
+      }
+   }
+
+// Page Specfic Styling
+main#home-page {
+   >section {
+      p {
+         text-align: center;
+         }
+      }
+   }
+main#products {
+   }
+main#poetry {
+   }
+main#elsewhere {
+   }
+
+// Responsive Design
+@media (max-width: 667px) {  /* selects iPhone 6/6s/7/8/SE2/SE3 landscape and anything narrower */
+   body {
+      >header {
+         h2 {
+            font-size: 1.0rem;
+            }
+         }
+      }
+   }
