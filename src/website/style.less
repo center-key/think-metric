@@ -62,9 +62,14 @@ figure.box-frame {
    background-color: white;
    border: 5px solid silver;
    padding: 5px 20px;
+   img {
+      height: 100px;
+      .MobileMode({ height: 70px; })
+      }
    }
 figure.small-picture {
    max-width: 200px;
+   .MobileMode({ max-width: 150px; })
    }
 table.big-table {
    .TableCell() {
@@ -113,11 +118,20 @@ main#elsewhere {
    }
 
 // Responsive Design
-@media (max-width: 667px) {  /* selects iPhone 6/6s/7/8/SE2/SE3 landscape and anything narrower */
+.MobileMode({
    body {
       >header {
          h2 {
-            font-size: 1.0rem;
+            font-size: 0.9rem;
+            }
+         img {
+            bottom: -50px;
+            width: 100px;
+            }
+         }
+      main {
+         >section:first-child {
+            padding-top: 80px;
             }
          }
       }
@@ -127,5 +141,9 @@ main#elsewhere {
          display : none;
          }
       }
-
+   });
+.MobileMode(@lessRules) {
+   @media (max-width: 667px) {  //selects iPhone 6/6s/7/8/SE2/SE3 landscape and anything narrower
+      @lessRules();
+      }
    }
