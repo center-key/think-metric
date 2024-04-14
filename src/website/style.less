@@ -29,11 +29,23 @@ body {
             }
          >p, >div {
             text-align: left;
+            code {
+               white-space: normal;
+               }
             li {
                font-size: 1em;
                text-indent: 0px;
                padding-left: 0em;
                margin-bottom: 15px;
+               }
+            }
+         >blockquote {
+            font-style: italic;
+            cite {
+               display: block;
+               font-size: 0.8rem;
+               font-weight: 100;
+               font-style: normal;
                }
             }
          }
@@ -109,4 +121,11 @@ main#elsewhere {
             }
          }
       }
+   table.big-table {  //hide 2nd column in compact mode
+      thead tr th:nth-child(2),
+      tbody tr td:nth-child(2) {
+         display : none;
+         }
+      }
+
    }
