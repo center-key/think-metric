@@ -10,7 +10,7 @@ jobs:
       id-token: write
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{steps.deployment.outputs.page_url}}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4               #see: https://github.com/actions/checkout/releases
@@ -21,6 +21,5 @@ jobs:
       - uses: actions/upload-pages-artifact@v3  #see: https://github.com/actions/upload-pages-artifact/releases
         with:
           path: docs
-      - name: Deploy to GitHub Pages
+      - uses: actions/deploy-pages@v4           #see: https://github.com/actions/deploy-pages/releases
         id: deployment
-        uses: actions/deploy-pages@v4           #see: https://github.com/actions/deploy-pages/releases
