@@ -20,7 +20,17 @@ body {
       h2 {
          font-size: 1.5rem;
          text-shadow: 0px 0px 0.6em black;
-        }
+         .MobileMode({
+            font-size: 0.8rem;
+            font-weight: normal;
+            });
+         }
+      img {
+         .MobileMode({
+            bottom: -50px;
+            width: 100px;
+            });
+         }
       #article-nav {
          // <div id=article-nav>
          //    <i data-icon=circle-left  data-on-click=app.goToArticle data-nav=prev></i>
@@ -30,11 +40,12 @@ body {
          position: absolute;
          left: 0px;
          right: 0px;
-         bottom: -80px;
+         bottom: -65px;
          display: flex;
          justify-content: space-between;
          width: 100%;
          max-width: 1000px;
+         padding: 0px 10px;
          margin: 0px auto;
          visibility: hidden;
          &.show {
@@ -54,6 +65,11 @@ body {
       }
    main {
       >section {
+         &:first-child {
+            .MobileMode({
+               padding-top: 80px;
+               });
+            }
          &:last-child {
             padding-bottom: 50px;
             }
@@ -94,6 +110,20 @@ body {
    }
 
 // Components
+main.center-line {
+   >section {
+      p {
+         text-align: center;
+         }
+      }
+   }
+ul.plain-list {
+   list-style-type: none;
+   padding-left: 0px;
+   li {
+      text-align: center;
+      }
+   }
 figure.box-frame {
    background-color: white;
    border: 5px solid silver;
@@ -138,47 +168,8 @@ table.big-table {
       }
    }
 
-// Page Specfic Styling
-main#home-page {
-   >section {
-      p {
-         text-align: center;
-         }
-      ul {
-         list-style-type: none;
-         li {
-            font-size: 1.0rem;
-            text-align: center;
-            margin-bottom: 10px;
-            }
-         }
-      }
-   }
-main#products {
-   }
-main#just-use-it {
-   }
-main#elsewhere {
-   }
-
 // Responsive Design
 .MobileMode({
-   body {
-      >header {
-         h2 {
-            font-size: 0.9rem;
-            }
-         img {
-            bottom: -50px;
-            width: 100px;
-            }
-         }
-      main {
-         >section:first-child {
-            padding-top: 80px;
-            }
-         }
-      }
    table.big-table {  //hide 2nd column in compact mode
       thead tr th:nth-child(2),
       tbody tr td:nth-child(2) {
