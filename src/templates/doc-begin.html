@@ -7,44 +7,70 @@
    <meta charset=utf-8>
    <meta name=viewport                   content="width=device-width, initial-scale=1">
    <meta name=robots                     content="index, follow">
-   <meta name=description                content="Think Metric 🇺🇸 {{pageTitle}} 🇺🇸 Practical ways to go metric">
+   <meta name=description                content="Think Metric 🇺🇸 {{articleTitle}} 🇺🇸 Practical ways to go metric">
    <meta name=apple-mobile-web-app-title content="Think Metric">
    <meta name=twitter:card               content="summary_large_image">
-   <meta name=twitter:title              content="{{pageTitle}}">
+   <meta name=twitter:title              content="{{articleTitle}}">
    <meta name=twitter:description        content="Think Metric 🇺🇸 Americans for Metrication: Practical ways to go metric">
-   <meta property=og:title               content="{{pageTitle}}">
+   <meta property=og:title               content="{{articleTitle}}">
    <meta property=og:description         content="Think Metric 🇺🇸 Americans for Metrication: Practical ways to go metric">
    <meta property=og:type                content="website">
    <meta property=og:image               content="https://think-metric.org/graphics/social-media/think-metric-logo-card.png">
    <meta property=og:image:alt           content="Logo">
-   <title>{{pageTitle}} 🇺🇸 Think Metric</title>
+   <title>{{articleTitle}} 🇺🇸 Think Metric</title>
    <link rel=icon             href={{webRoot}}/graphics/bookmark.png>
    <link rel=apple-touch-icon href={{webRoot}}/graphics/think-metric-logo.png>
    <link rel=preconnect       href=https://fonts.googleapis.com>
    <link rel=preconnect       href=https://fonts.gstatic.com crossorigin>
-   <link rel=stylesheet       href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@{{pkg.dependencies.-fortawesome-fontawesome-free|version}}/css/all.min.css>
-   <link rel=stylesheet       href=https://cdn.jsdelivr.net/npm/web-ignition@{{pkg.dependencies.web-ignition|version}}/dist/reset.min.css>
-   <link rel=stylesheet       href=https://cdn.jsdelivr.net/npm/web-ignition@{{pkg.dependencies.web-ignition|version}}/dist/layouts/zebra-sections.css>
+   <link rel=stylesheet       href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@{{package.dependencies.-fortawesome-fontawesome-free|version}}/css/all.min.css>
+   <link rel=stylesheet       href=https://cdn.jsdelivr.net/npm/dna-engine@{{package.dependencies.dna-engine|version}}/dist/dna-engine.min.css>
+   <link rel=stylesheet       href=https://cdn.jsdelivr.net/npm/web-ignition@{{package.dependencies.web-ignition|version}}/dist/reset.min.css>
+   <link rel=stylesheet       href=https://cdn.jsdelivr.net/npm/web-ignition@{{package.dependencies.web-ignition|version}}/dist/layouts/zebra-sections.css>
    <link rel=stylesheet       href={{webRoot}}/style.css>
-   <script src=https://cdn.jsdelivr.net/npm/web-ignition@{{pkg.dependencies.web-ignition|version}}/dist/lib-x.min.js></script>
-   <script>
+   <script defer src=https://cdn.jsdelivr.net/npm/dna-engine@{{package.dependencies.dna-engine|version}}/dist/dna-engine.min.js></script>
+   <script defer src=https://cdn.jsdelivr.net/npm/web-ignition@{{package.dependencies.web-ignition|version}}/dist/lib-x.min.js></script>
+   <script data-on-load=app.start>
       const app = {
+         setupArticlePage() {
+            // <div id=article-nav>
+            //    <i data-icon=circle-left></i>
+            //    <i data-icon=circle-right></i>
+            //    <ul><li><a href=../../article/go-metric>Go Metric<a><li>...
+            // </div>
+            const container = globalThis.document.getElementById('article-nav');
+            const articles = [...container.querySelectorAll('ul >li >a')];
+            const header =   'main >section:first-child >h2';
+            const title =    globalThis.document.querySelector(header).textContent;
+            const index =    articles.findIndex(article => article.textContent === title);
+            const configure = (button, index) => {
+               button.setAttribute('data-href', articles[index]?.getAttribute('href'));
+               button.setAttribute('title',     articles[index]?.textContent);
+               button.classList.add(index > -1 && index < articles.length ? 'show' : 'hide');
+               };
+            configure(container.children[0], index - 1);  //previous article
+            configure(container.children[1], index + 1);  //next article
+            container.classList.add('show');
+            },
          start() {
+            if (globalThis.location.href.includes('/article/'))
+               app.setupArticlePage();
+            console.log(globalThis.document.getElementById('article-nav'));  ///////
             // Link Menu HTML example:
             //    <nav id=link-menu><a href=.>Home</a><a href=about>About</a></nav>
             const linkMenu = globalThis.document.getElementById('link-menu');
             const setCurrentPage = () => {
-               const pageName = globalThis.location.pathname.replace(/index.[a-z]*$/, '').replace(/\/$/, '').replace(/.*\//, '');
-               const active =   linkMenu.querySelector(`a[href$="${pageName}"]`);
-               const current =  active || linkMenu.firstElementChild;
-               current.classList.add('current');
-               console.log({name, active, current});
+               const pageName = globalThis.location.pathname
+                  .replace(/index.[a-z]*$/, '').replace(/\/$/, '').replace(/.*\//, '');
+               const active =        linkMenu.querySelector(`a[href$="${pageName}"]`);
+               const isDefaultPage = /(\/|index\.[a-z]*)$/.test(globalThis.location.href);
+               const onHomePage =    linkMenu.children[0].getAttribute('href') === '.' && isDefaultPage;
+               const current =       onHomePage ? linkMenu.firstElementChild : active;
+               current?.classList.add('current');
                }
             if (linkMenu)
                setCurrentPage();
             },
          };
-      libX.dom.onReady(app.start);
    </script>
 </head>
 <body>
@@ -53,10 +79,15 @@
    <nav id=link-menu>
       <a href={{webRoot}}>Home</a>
       <a href={{webRoot}}/products>Products</a>
-      <a href={{webRoot}}/poetry>Poetry</a>
+      <a href={{webRoot}}/just-use-it>Just Use It</a>
       <a href={{webRoot}}/elsewhere>Elsewhere</a>
    </nav>
    <h1>Think Metric</h1>
    <h2>🇺🇸&nbsp;Americans for Metrication&nbsp;🇺🇸</h2>
    <img src={{webRoot}}/graphics/think-metric-logo.png alt=logo>
+   <div id=article-nav>
+      <i data-icon=circle-left></i>
+      <i data-icon=circle-right></i>
+      <ul>{% render 'src/templates/generated/articles.html' %}</ul>
+   </div>
 </header>

@@ -21,6 +21,36 @@ body {
          font-size: 1.5rem;
          text-shadow: 0px 0px 0.6em black;
         }
+      #article-nav {
+         // <div id=article-nav>
+         //    <i data-icon=circle-left  data-on-click=app.goToArticle data-nav=prev></i>
+         //    <i data-icon=circle-right data-on-click=app.goToArticle data-nav=next></i>
+         //    <ul>{% render 'src/templates/generated/articles.html' %}</ul>
+         // </div>
+         position: absolute;
+         left: 0px;
+         right: 0px;
+         bottom: -80px;
+         display: flex;
+         justify-content: space-between;
+         width: 100%;
+         max-width: 1000px;
+         margin: 0px auto;
+         visibility: hidden;
+         &.show {
+            visibility: visible;
+            }
+         >i {
+            font-size: 3em;
+            cursor: pointer;
+            &.hide {
+               visibility: hidden;
+               }
+            }
+         >ul {
+            display: none;
+            }
+         }
       }
    main {
       >section {
@@ -37,6 +67,12 @@ body {
                text-indent: 0px;
                padding-left: 0em;
                margin-bottom: 15px;
+               }
+            }
+         >figure {
+            padding: 0px 10px;
+            img {
+               max-height: 600px;
                }
             }
          >blockquote {
@@ -108,11 +144,19 @@ main#home-page {
       p {
          text-align: center;
          }
+      ul {
+         list-style-type: none;
+         li {
+            font-size: 1.0rem;
+            text-align: center;
+            margin-bottom: 10px;
+            }
+         }
       }
    }
 main#products {
    }
-main#poetry {
+main#just-use-it {
    }
 main#elsewhere {
    }
