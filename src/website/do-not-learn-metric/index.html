@@ -1,5 +1,7 @@
 {% assign articleTitle = 'Do Not Learn Metric' %}
-{% render 'src/templates/doc-begin.html', articleTitle: articleTitle %}
+{% assign heroFile =     '../../graphics/tape-measure-by-dem-pilafian-cc0.jpg' %}
+{% assign heroCaption =  'Easy Peasy' %}
+{% render 'src/templates/doc-begin.html', articleTitle: articleTitle, heroFile: heroFile, heroCaption: heroCaption %}
 
 <main>
 
@@ -22,8 +24,8 @@
          After switching over to Celsius for a week you'll likely have a good intuitive sense of Celsius.&nbsp;
       </p>
       <figure>
-         <img src={{webRoot}}/graphics/tape-measure-by-dem-pilafian-cc0.jpg data-author=dem-pilafian data-license=cc0 alt=measure>
-         <figcaption>Easy Peasy</figcaption>
+         <img src=../graphics/tape-measure-by-dem-pilafian-cc0.jpg data-author=dem-pilafian data-license=cc0 alt=measure>
+         <figcaption>{{heroCaption}}</figcaption>
       </figure>
       <p>
          If you get a metric only tape measure and switch over to using metric for your home projects, you'll quickly realize that millimeters are awesome.&nbsp;

@@ -1,5 +1,7 @@
 {% assign articleTitle = 'Metrication is the Path of Least Resistance' %}
-{% render 'src/templates/doc-begin.html', articleTitle: articleTitle %}
+{% assign heroFile =     'martian-ice-age.jpg' %}
+{% assign heroCaption =  'Signs of a Martian Ice Age (NASA ID: PIA20029)' %}
+{% render 'src/templates/doc-begin.html', articleTitle: articleTitle, heroFile: heroFile, heroCaption: heroCaption %}
 
 <main>
 
@@ -20,8 +22,8 @@
 
    <section>
       <figure>
-         <img src=martian-ice-age.jpg data-author=nasa data-license=public-domain alt=2d-radar>
-         <figcaption>Signs of a Martian Ice Age (NASA ID: PIA20029)</figcaption>
+         <img src={{heroFile}} data-author=nasa data-license=public-domain alt=2d-radar>
+         <figcaption>{{heroCaption}}</figcaption>
       </figure>
       <p>
          If NASA made a deliberate decision today to give a press release using metric units some misguided imperial zealots would lose their collective minds and go ballistic.&nbsp;

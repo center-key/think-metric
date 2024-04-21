@@ -1,6 +1,12 @@
+{% assign imageUrl = 'https://think-metric.org/graphics/social-media/think-metric-logo-card.png' %}
+{% if heroFile %}
+{% assign imageUrl = 'https://think-metric.org/article/' | append: file.folder | append: '/' | append: heroFile %}
+{% endif %}
+{% assign heroCaption = heroCaption | default: 'Logo' %}
 <!doctype html>
 <!-- - - - - - - - -->
 <!-- Think Metric  -->
+<!-- {{ "now" | date: "%Y-%m-%d" }}    -->
 <!-- - - - - - - - -->
 <html lang=en>
 <head>
@@ -12,11 +18,13 @@
    <meta name=twitter:card               content="summary_large_image">
    <meta name=twitter:title              content="{{articleTitle}}">
    <meta name=twitter:description        content="Think Metric 🇺🇸 Americans for Metrication: Practical ways to go metric">
+   <meta name=twitter:image              content="{{imageUrl}}">
+   <meta name=twitter:image:alt          content="{{heroCaption}}">
    <meta property=og:title               content="{{articleTitle}}">
    <meta property=og:description         content="Think Metric 🇺🇸 Americans for Metrication: Practical ways to go metric">
    <meta property=og:type                content="website">
-   <meta property=og:image               content="https://think-metric.org/graphics/social-media/think-metric-logo-card.png">
-   <meta property=og:image:alt           content="Logo">
+   <meta property=og:image               content="{{imageUrl}}">
+   <meta property=og:image:alt           content="{{heroCaption}}">
    <title>{{articleTitle}} 🇺🇸 Think Metric</title>
    <link rel=icon             href={{webRoot}}/graphics/bookmark.png>
    <link rel=apple-touch-icon href={{webRoot}}/graphics/think-metric-logo.png>
