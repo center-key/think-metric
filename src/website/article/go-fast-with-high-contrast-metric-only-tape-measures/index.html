@@ -1,0 +1,38 @@
+{% assign articleTitle = 'Go Fast With High Contrast Metric Only Tape Measures' %}
+{% assign heroFile =     'high-contrast.jpg' %}
+{% assign heroCaption =  'Big bold repeating digits from 1 to 9' %}
+{% render 'src/templates/doc-begin.html', articleTitle: articleTitle, heroFile: heroFile, heroCaption: heroCaption %}
+
+<main>
+
+   <section>
+      <h2>{{articleTitle}}</h2>
+      <p>
+         Traditional tape measures have scales with small numeric markings that continually
+         increase over the length of the scale.&nbsp;
+         The background is normally a drab shade of yellow.&nbsp;
+         This layout is familiar but it might be a less than optimal design.&nbsp;
+      </p>
+   </section>
+
+   <section>
+      <figure>
+         <img src={{heroFile}} data-author=dem-pilafian data-license=cc0 alt=-tape-measure>
+         <figcaption>{{heroCaption}}</figcaption>
+      </figure>
+     <p>
+         A newer high contrast design uses big bold digits that repeat from 1 to 9 on a white background.&nbsp;
+         Red boxes spaced every 10 centimeters show the total number of centimeters.&nbsp;
+         This vivid scale is super easy to read and makes measuring blazing fast.&nbsp;
+      </p>
+      <p>
+         If you want to speed up your work with a high contrast tape measure, take a look at the
+         <a href={{webRoot}}/products>Timesaving Metric Products</a>
+         page.&nbsp;
+         Takamine and PICAGER both make quality tape measurers with the high contrast design.&nbsp;
+      </p>
+   </section>
+
+</main>
+
+{% render 'src/templates/doc-end.html' %}
