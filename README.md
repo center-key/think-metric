@@ -28,7 +28,7 @@ $ npm run interactive
 ```
 
 To push changes to the live website:<br>
-GitHub.com project page > _Actions_ > _Publish Website_ > _Run workflow_
+GitHub project page -> _Actions_ -> _Publish Website_ -> _Run workflow_
 
 Pull requests welcome.  You can help by contributing anything from minor typo fixes to writing new articles.
 

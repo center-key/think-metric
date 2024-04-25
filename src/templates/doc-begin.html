@@ -39,6 +39,19 @@
    <script defer src=https://cdn.jsdelivr.net/npm/web-ignition@{{package.dependencies.web-ignition|version}}/dist/lib-x.min.js></script>
    <script data-on-load=app.start>
       const app = {
+         restoreChecklist(checklistElem) {
+            const checklist = JSON.parse(globalThis.localStorage.getItem('checklist'));
+            const setCheckbox = (li) =>
+               li.querySelector('input[type=checkbox]').checked = checklist[li.id];
+            if (checklist)
+               [...checklistElem.children].forEach(setCheckbox);
+            },
+         saveChecklist(checklistElem) {
+            const tasks =     [...checklistElem.querySelectorAll('li')];
+            const isChecked = (li) => li.querySelector('input[type=checkbox]').checked;
+            const checklist = Object.fromEntries(tasks.map(li => [li.id, isChecked(li)]));
+            globalThis.localStorage.setItem('checklist', JSON.stringify(checklist));
+            },
          setupArticlePage() {
             // <div id=article-nav>
             //    <i data-icon=circle-left></i>
@@ -62,7 +75,9 @@
          start() {
             if (globalThis.location.href.includes('/article/'))
                app.setupArticlePage();
-            console.log(globalThis.document.getElementById('article-nav'));  ///////
+            const checklistElem = globalThis.document.querySelector('.to-do-checklist');
+            if (checklistElem)
+               app.restoreChecklist(checklistElem);
             // Link Menu HTML example:
             //    <nav id=link-menu><a href=.>Home</a><a href=about>About</a></nav>
             const linkMenu = globalThis.document.getElementById('link-menu');
