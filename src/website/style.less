@@ -215,6 +215,7 @@ ol.to-do-checklist {
             font-size: @rowHeight * 0.4;
             text-align: left;
             padding: 0px (@rowHeight / 2) 0px 10px;
+            .MobileMode({ padding-right: 10px });
             margin: 0px;
             a:visited {
                color: dimgray;
@@ -227,7 +228,9 @@ ol.to-do-checklist {
             position: relative;
             font-size: @rowHeight;
             margin: 0px;
+            transform: translateX(-9999px);  //hide native component on mobile
             &::before, &::after {  //custom checkbox and checkmark
+               transform: translateX(9999px);
                position: absolute;
                content: "";
                top: -(@rowHeight * 0.2);
@@ -240,6 +243,14 @@ ol.to-do-checklist {
                border: 4px solid gray;
                border-radius: 25%;
                margin: 0px;
+               .MobileMode({
+                  top: -(@rowHeight * 0.15);
+                  left: -(@rowHeight * 0.0);
+                  width: (@rowHeight * 0.4);
+                  height: (@rowHeight * 0.4);
+                  line-height: (@rowHeight * 0.3);
+                  font-size: (@rowHeight * 0.6);
+                  });
                }
             &::after {
                content: "\2714";  //heavy checkmark (✔)
