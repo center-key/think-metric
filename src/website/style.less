@@ -172,100 +172,106 @@ table.big-table {
          }
       }
    }
-
 ol.to-do-checklist {
    @rowHeight: 2.6rem;
    list-style: none;
    counter-reset: item;
-   li {  //row
+   li {  //row (task item)
       counter-increment: item;
       display: flex;
       align-items: center;
-      padding: 0px (@rowHeight / 2) 0px 0px;
       text-indent: 0px;
       color: dimgray;
       background-color: gainsboro;
+      padding: 0px;
       margin-bottom: 15px;
       transition: all 500ms;
+      cursor: default;
       &:hover {
          color: black;
          background-color: silver;
          }
-      &::before {  //circle with number
+      &::before {  //number circle
          content: counter(item);
-         display: inline-block;
-         width: @rowHeight;
-         height: @rowHeight;
-         line-height: @rowHeight;
-         font-size: @rowHeight * 0.6;
-         font-weight: bold;
-         text-align: center;
-         color: white;
-         background: deepskyblue;
-         border-radius: 100%;
-         margin-right: 10px;
-         outline: 10px solid white;
+         .toDoChecklistCircle(@rowHeight);
+         }
+      p {  //task text
+         flex-grow: 1;
+         text-align: left;
+         font-size: @rowHeight * 0.4;
+         padding: 0px (@rowHeight * 0.8) 0px 10px;
+         margin: 0px;
+         a:visited {
+            color: dimgray;
+            }
+         a:hover {
+            color: white;
+            }
          }
       label {
-         width: 100%;
          display: flex;
-         justify-content: space-between;
          align-items: center;
-         span {  //task text
-            font-size: @rowHeight * 0.4;
-            text-align: left;
-            padding: 0px (@rowHeight / 2) 0px 10px;
-            .MobileMode({ padding-right: 10px });
-            margin: 0px;
-            a:visited {
-               color: dimgray;
-               }
-            a:hover {
-               color: white;
-               }
-            }
+         padding-right: 10px;  //checkbox right gap
+         cursor: pointer;
          input[type=checkbox] {
-            position: relative;
-            font-size: @rowHeight;
+            width: 0px;
+            height: 0px;
             margin: 0px;
-            transform: translateX(-9999px);  //hide native component on mobile
-            &::before, &::after {  //custom checkbox and checkmark
-               transform: translateX(9999px);
-               position: absolute;
+            opacity: 0;
+            }
+         input[type=checkbox]:checked + b::after {
+            opacity: 1;
+            }
+         b {  //custom checkbox
+            position: relative;
+            &::before {  //empty "unchecked" checkbox
+               .toDoChecklistCheckbox(@rowHeight);
                content: "";
-               top: -(@rowHeight * 0.2);
-               left: -(@rowHeight * 0.2);
-               width: (@rowHeight * 0.5);
-               height: (@rowHeight * 0.5);
-               line-height: (@rowHeight * 0.4);
-               font-size: (@rowHeight * 0.8);
-               background-color: white;
-               border: 4px solid gray;
-               border-radius: 25%;
-               margin: 0px;
-               .MobileMode({
-                  top: -(@rowHeight * 0.15);
-                  left: -(@rowHeight * 0.0);
-                  width: (@rowHeight * 0.4);
-                  height: (@rowHeight * 0.4);
-                  line-height: (@rowHeight * 0.3);
-                  font-size: (@rowHeight * 0.6);
-                  });
                }
-            &::after {
-               content: "\2714";  //heavy checkmark (✔)
-               text-align: center;
+            &::after {  //heavy checkmark
+               .toDoChecklistCheckbox(@rowHeight);
+               content: "\2714";  //character: ✔
                color: white;
                background-color: royalblue;
                border-color: royalblue;
                opacity: 0;
                transition: opacity 500ms;
                }
-            &:checked::after {
-               opacity: 1;
-               }
             }
          }
+      }
+   }
+.toDoChecklistCircle(@height) {
+   display: inline-block;
+   flex-shrink: 0;
+   width: @height;
+   height: @height;
+   line-height: @height;
+   font-size: @rowHeight * 0.6;
+   font-weight: bold;
+   text-align: center;
+   color: white;
+   background: deepskyblue;
+   border-radius: 100%;
+   margin-right: 10px;
+   outline: 10px solid white;
+   }
+.toDoChecklistCheckbox(@height) {
+   position: absolute;
+   top: -(@height * 0.33);
+   right: 0px;
+   width: (@height * 0.5);
+   height: (@height * 0.5);
+   line-height: (@height * 0.4);
+   font-size: (@height * 0.8);
+   text-align: center;
+   background-color: white;
+   border: 4px solid gray;
+   border-radius: 25%;
+   margin: 0px;
+   @supports (-webkit-touch-callout: none) {  //fix oversized font on iOS
+      line-height: (@height * 0.5);
+      font-size: (@height * 0.4);
       }
    }
 
