@@ -25,12 +25,6 @@ body {
             font-weight: normal;
             });
          }
-      img {
-         .MobileMode({
-            bottom: -50px;
-            width: 100px;
-            });
-         }
       #article-nav {
          // <div id=article-nav>
          //    <i data-icon=circle-left  data-on-click=app.goToArticle data-nav=prev></i>
@@ -65,14 +59,6 @@ body {
       }
    main {
       >section {
-         &:first-child {
-            .MobileMode({
-               padding-top: 80px;
-               });
-            }
-         &:last-child {
-            padding-bottom: 50px;
-            }
          >p, >div {
             text-align: left;
             code {
@@ -85,27 +71,9 @@ body {
                margin-bottom: 15px;
                }
             }
-         >figure {
-            padding: 0px 10px;
-            img {
-               max-height: 600px;
-               }
-            }
-         >blockquote {
-            font-style: italic;
-            cite {
-               display: block;
-               font-size: 0.8rem;
-               font-weight: 100;
-               font-style: normal;
-               }
-            }
          }
       }
    >footer {
-      >div {
-         padding: 5px 0px;
-         }
       }
    }
 
@@ -143,6 +111,7 @@ figure.small-picture {
    }
 
 table.big-table {
+   margin: 0px;
    .TableCell() {
       font-size: 1em;
       text-align: left;
@@ -153,7 +122,6 @@ table.big-table {
          padding-right: 0px;
          }
       }
-   margin: 0px;
    thead {
       tr {
          th {
@@ -175,6 +143,7 @@ table.big-table {
 ol.to-do-checklist {
    @rowHeight: 2.6rem;
    list-style: none;
+   margin-bottom: 40px;
    counter-reset: item;
    li {  //row (task item)
       counter-increment: item;
@@ -284,8 +253,6 @@ ol.to-do-checklist {
          }
       }
    });
-.MobileMode(@lessRules) {
-   @media (max-width: 667px) {  //selects iPhone 6/6s/7/8/SE2/SE3 landscape and anything narrower
-      @lessRules();
-      }
+.MobileMode(@lessRules) {  //selects iPhone 6/6s/7/8/SE2/SE3 landscape and anything narrower
+   @media (max-width: 667px) { @lessRules(); }
    }
