@@ -32,7 +32,7 @@
    },
    "runScriptsConfig": {
       "clean": [
-         "rimraf docs"
+         "rimraf build docs"
       ],
       "generated": [
          "replacer src/website/article --ext=.html --content={{lt}}li{{gt}}{{lt}}a{{space}}href{{equals}}{[webRoot]}/article/{{file.folder}}{{gt}}{{articleTitle}}{{lt}}/a{{gt}}{{lt}}/li{{gt}} src/templates/generated --find=[webRoot] --replacement={webRoot} --concat=articles.html"
@@ -41,12 +41,13 @@
          "jshint src"
       ],
       "build": [
-         "copy-file   src/cname.txt           docs/CNAME",
-         "copy-folder src/website/graphics    docs/graphics",
-         "copy-folder src/website/article     docs/article --ext=.png,.jpg",
-         "copy-file   src/website/app.js      docs/app.js",
-         "lessc       src/website/style.less  docs/style.css",
-         "replacer    src/website --ext=.html docs"
+         "copy-file   src/cname.txt           build/CNAME",
+         "copy-folder src/website/graphics    build/graphics",
+         "copy-folder src/website/article     build/article --ext=.png,.jpg",
+         "copy-file   src/website/app.js      build/app.js",
+         "lessc       src/website/style.less  build/style.css",
+         "replacer    src/website --ext=.html build",
+         "rev-web-assets build docs --meta-content-base=https://think-metric.org"
       ]
    },
    "scripts": {
@@ -64,6 +65,7 @@
       "jshint": "~2.13",
       "less": "~4.2",
       "replacer-util": "~1.3",
+      "rev-web-assets": "~1.3",
       "rimraf": "~5.0",
       "run-scripts-util": "~1.2",
       "w3c-html-validator": "~1.8",

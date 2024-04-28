@@ -1,5 +1,6 @@
 # Downloaded and generated files
 /node_modules/
+/build/
 /docs/
 /package-lock.json
 

@@ -1,7 +1,7 @@
 {% assign articleTitle = 'Do Not Learn Metric' %}
-{% assign heroFile =     '../../graphics/tape-measure-by-dem-pilafian-cc0.jpg' %}
+{% assign heroImage =    '../graphics/tape-measure-by-dem-pilafian-cc0.jpg' %}
 {% assign heroCaption =  'Easy Peasy' %}
-{% render 'src/templates/doc-begin.html', articleTitle: articleTitle, heroFile: heroFile, heroCaption: heroCaption %}
+{% render 'src/templates/doc-begin.html', articleTitle: articleTitle, heroImage: heroImage, heroCaption: heroCaption %}
 
 <main>
 
@@ -24,7 +24,7 @@
          After switching over to Celsius for a week you'll likely have a good intuitive sense of Celsius.&nbsp;
       </p>
       <figure>
-         <img src=../graphics/tape-measure-by-dem-pilafian-cc0.jpg data-author=dem-pilafian data-license=cc0 alt=measure>
+         <img src={{heroImage}} data-author=dem-pilafian data-license=cc0 alt=measure>
          <figcaption>{{heroCaption}}</figcaption>
       </figure>
       <p>
