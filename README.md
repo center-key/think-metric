@@ -1,4 +1,4 @@
-<img src=https://think-metric.org/graphics/think-metric-logo.png width=100 alt=logo>
+<img src=src/website/graphics/think-metric-logo.png width=100 alt=logo>
 
 # Think Metric
 ### 🇺🇸 Americans for Metrication 🇺🇸
@@ -15,7 +15,8 @@ https://think-metric.org/logo.html
 
 ## Practical Ways to Go Metric
 
-We promote metric units for casual everyday use in America.  The goal is to speed up metrication to boost America's economic competitiveness and champion good jobs.
+We promote metric units for casual everyday use in America.
+Our goal is to speed up metrication to boost America's economic competitiveness and champion good jobs.
 
 This project and the content published is free to reuse under a permissive Creative Commons license.
 
@@ -23,14 +24,15 @@ This project and the content published is free to reuse under a permissive Creat
 ```shell
 $ cd think-metric
 $ npm install
-$ npm test
 $ npm run interactive
 ```
+As you make edits to files in the *src* folder, your browser will automatically refresh to display the new changes.
 
-To push changes to the live website:<br>
-GitHub project page -> _Actions_ -> _Publish Website_ -> _Run workflow_
+To publish merges to the live website:<br>
+GitHub project page &#10132; _Actions_ &#10132; _Publish Website_ &#10132; _Run workflow_
 
-Pull requests welcome.  You can help by contributing anything from minor typo fixes to writing new articles.
+Pull requests welcome.
+You can help by contributing anything from minor typo fixes to writing new articles.
 
 <br>
 

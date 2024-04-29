@@ -48,17 +48,21 @@
          "lessc       src/website/style.less  build/style.css",
          "replacer    src/website --ext=.html build",
          "rev-web-assets build docs --meta-content-base=https://think-metric.org"
+      ],
+      "interactive": [
+         "chokidar src --command 'run-scripts lint build'",
+         "browser-sync . --startPath docs --files docs"
       ]
    },
    "scripts": {
       "pretest": "run-scripts clean lint generated build",
       "test": "html-validator docs '--ignore=Section lacks heading.'",
-      "preinteractive": "npm test",
-      "interactive": "browser-sync . --startPath docs --files docs"
+      "interactive": "npm test && run-scripts interactive --parallel"
    },
    "dependencies": {
       "@fortawesome/fontawesome-free": "~6.5",
       "browser-sync": "~3.0",
+      "chokidar-cli": "~3.0",
       "copy-file-util": "~1.2",
       "copy-folder-util": "~1.1",
       "dna-engine": "~3.1",

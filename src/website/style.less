@@ -141,7 +141,7 @@ table.big-table {
       }
    }
 ol.to-do-checklist {
-   @rowHeight: 2.6rem;
+   @rowHeight: 3.0rem;
    list-style: none;
    margin-bottom: 40px;
    counter-reset: item;
@@ -168,6 +168,7 @@ ol.to-do-checklist {
          flex-grow: 1;
          text-align: left;
          font-size: @rowHeight * 0.4;
+         .MobileMode({ font-size: @rowHeight * 0.3; });
          padding: 0px (@rowHeight * 0.8) 0px 10px;
          margin: 0px;
          a:visited {
@@ -177,7 +178,7 @@ ol.to-do-checklist {
             color: white;
             }
          }
-      label {
+      label {  //checkbox
          display: flex;
          align-items: center;
          padding-right: 10px;  //checkbox right gap
@@ -216,7 +217,7 @@ ol.to-do-checklist {
    width: @height;
    height: @height;
    line-height: @height;
-   font-size: @rowHeight * 0.6;
+   font-size: @height * 0.5;
    font-weight: bold;
    text-align: center;
    color: white;
