@@ -26,7 +26,7 @@ $ cd think-metric
 $ npm install
 $ npm run interactive
 ```
-As you make edits to files in the *src* folder, your browser will automatically refresh to display the new changes.
+As you make edits to files in the **src** folder, your browser will automatically refresh to display the new changes.
 
 To publish merges to the live website:<br>
 GitHub project page &#10132; _Actions_ &#10132; _Publish Website_ &#10132; _Run workflow_
