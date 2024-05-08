@@ -65,7 +65,7 @@
       "chokidar-cli": "~3.0",
       "copy-file-util": "~1.2",
       "copy-folder-util": "~1.1",
-      "dna-engine": "~3.1",
+      "dna-engine": "~3.2",
       "jshint": "~2.13",
       "less": "~4.2",
       "replacer-util": "~1.3",
