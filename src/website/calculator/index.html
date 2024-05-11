@@ -1,0 +1,102 @@
+{% assign articleTitle = 'Recipe Converter Calculator' %}
+{% assign heroImage =    'banana-bread-by-nist.jpg' %}
+{% assign heroCaption =  'Convert ingredients to grams' %}
+{% render 'src/templates/doc-begin.html', articleTitle: articleTitle, heroImage: heroImage, heroCaption: heroCaption %}
+
+<main class=center-line>
+
+   <section class=calculator data-on-load=app.calculator.init>
+      <h2>{{articleTitle}}</h2>
+      <form>
+         <label>
+            <span>Quantity:</span>
+            <input name=quantity value=1 maxlength=8 required
+               data-on-input=app.calculator.convertToGrams placeholder=Quantity...>
+         </label>
+         <label>
+            <span>Units:</span>
+            <select name=units data-on-change=app.calculator.convertToGrams>
+               <option value=teaspoon   data-type=volume data-per-cup=48>        Teaspoons</option>
+               <option value=tablespoon data-type=volume data-per-cup=16>        Tablespoons</option>
+               <option value=floz       data-type=volume data-per-cup=8>         Fluid Ounces (fl oz)</option>
+               <option value=stick      data-type=volume data-per-cup=2>         Sticks (4 oz)</option>
+               <option value=cup        data-type=volume data-per-cup=1 selected>Cups</option>
+               <option value=block      data-type=volume data-per-cup=0.5>       Blocks (4 sticks)</option>
+               <option value=pint       data-type=volume data-per-cup=0.5>       Pints</option>
+               <option value=quart      data-type=volume data-per-cup=0.25>      Quarts</option>
+               <option value=gallon     data-type=volume data-per-cup=0.0625>    Gallons</option>
+               <option value=oz         data-type=weight data-grams=28.3495>     Ounces (oz weight)</option>
+               <option value=lb         data-type=weight data-grams=453.592>     Pounds (lb weight)</option>
+            </select>
+         </label>
+         <label>
+            <span>Ingredient:</span>
+            <select name=ingredient data-on-change=app.calculator.convertToGrams autofocus>
+               <option id=input-ingredient class=dna-template>~~[value]~~</option>
+            </select>
+         </label>
+         <p>Quantity can include fractions, such as: <i>3 1/2</i></p>
+      </form>
+      <figure id=calculator-result class=dna-template>
+         <figcaption>
+            <b data-format-number=#.###>~~imperial.quantity~~</b>
+            <b>~~imperial.units~~</b> <b>~~imperial.name~~</b>
+         </figcaption>
+         <p><i data-icon=arrow-alt-circle-down></i></p>
+         <div>
+            <output data-array=~~metric~~>
+               <b data-precision=2 data-format-number=#>~~grams~~</b> <b>grams</b>
+               <b>~~ingredient.form~~</b> <b>~~ingredient.name~~</b>
+            </output>
+         </div>
+      </figure>
+   </section>
+
+   <section class=oven-temperature>
+      <h2>Oven Temperature Conversion</h2>
+      <div>
+         <form><input value=350 data-on-input=app.calculator.updateTemperature>&deg;F</form>
+         <i data-icon=arrow-alt-circle-right></i>
+         <figure><output id=celsius class=dna->180</output>&deg;C</figure>
+      </div>
+   </section>
+
+   <section>
+      <h2>NIST Metric Kitchen</h2>
+      <figure>
+         <img src={{heroImage}} data-author=nist.gov data-license=public-domain alt=bread>
+         <figcaption>Metric Banana Bread</figcaption>
+      </figure>
+      <p>
+         Get helpful cooking and baking tips from the NIST* Metric Kitchen at:<br>
+         <a href=https://www.nist.gov/pml/owm/metric-si/metric-kitchen class=external-site>
+            nist.gov/pml/owm/metric-si/metric-kitchen
+         </a>
+      </p>
+      <p>
+         NIST has metric recipes for banana bread, mac and cheese, apple crisps, and more at:<br>
+         <a href=https://doi.org/10.6028/NIST.SP.1290 class=external-site>
+            doi.org/10.6028/NIST.SP.1290
+         </a>
+      </p>
+      <small><b>*NIST:</b> National Institute of Standards and Technology</small>
+   </section>
+
+   <section>
+      <i data-brand=github></i>
+      <h2>Open Source</h2>
+      <p>
+         The <i>Recipe Converter Calculator</i> is an open source community project.&nbsp;
+         You can help out by submitting corrections and additions.&nbsp;
+      </p>
+      <p>
+         Data for the calculator is on GitHub at:<br>
+         <a href=https://github.com/center-key/think-metric/blob/main/src/website/calculator/ingredients-db.js>
+            ingredients-db.js
+         </a>
+      </p>
+   </section>
+
+</main>
+
+{% render 'src/templates/doc-end.html' %}

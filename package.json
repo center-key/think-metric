@@ -42,9 +42,7 @@
       ],
       "build": [
          "copy-file   src/cname.txt           build/CNAME",
-         "copy-folder src/website/graphics    build/graphics",
-         "copy-folder src/website/article     build/article --ext=.png,.jpg",
-         "copy-file   src/website/app.js      build/app.js",
+         "copy-folder src/website             build --ext=.png,.jpg,.js",
          "lessc       src/website/style.less  build/style.css",
          "replacer    src/website --ext=.html build",
          "rev-web-assets build docs --meta-content-base=https://think-metric.org"

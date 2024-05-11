@@ -2,82 +2,10 @@
 // Think Metric //
 //////////////////
 
-// Layout
-body {
-   >header {
-      background-image: url(graphics/kg-weights-by-ylanite-koppens-at-pexels.jpg);
-      nav#link-menu {
-         a, a:visited {
-            color: white;
-            border-color: white;
-            text-shadow: 0px 0px 0.6em black;
-            }
-         a.current, a:hover {
-            color: white;
-            border-color: gold;
-            }
-         }
-      h2 {
-         font-size: 1.5rem;
-         text-shadow: 0px 0px 0.6em black;
-         .MobileMode({
-            font-size: 0.8rem;
-            font-weight: normal;
-            });
-         }
-      #article-nav {
-         // <div id=article-nav>
-         //    <i data-icon=circle-left  data-on-click=app.goToArticle data-nav=prev></i>
-         //    <i data-icon=circle-right data-on-click=app.goToArticle data-nav=next></i>
-         //    <ul>{% render 'src/templates/generated/articles.html' %}</ul>
-         // </div>
-         position: absolute;
-         left: 0px;
-         right: 0px;
-         bottom: -65px;
-         display: flex;
-         justify-content: space-between;
-         width: 100%;
-         max-width: 1000px;
-         padding: 0px 10px;
-         margin: 0px auto;
-         visibility: hidden;
-         &.show {
-            visibility: visible;
-            }
-         >i {
-            font-size: 3em;
-            cursor: pointer;
-            &.hide {
-               visibility: hidden;
-               }
-            }
-         >ul {
-            display: none;
-            }
-         }
-      }
-   main {
-      >section {
-         >p, >div {
-            text-align: left;
-            code {
-               white-space: normal;
-               }
-            li {
-               font-size: 1em;
-               text-indent: 0px;
-               padding-left: 0em;
-               margin-bottom: 15px;
-               }
-            }
-            >figure { padding: 0px 10px; }      //temporary until v2.1.4
-            >figure img { max-height: 550px; }  //temporary until v2.1.4
-         }
-      }
-   >footer {
-      }
-   }
+@import "css/static/utility-box";
+@import "css/layout";
+@import "css/metrication-checklist";
+@import "calculator/calculator";
 
 // Components
 
@@ -85,6 +13,9 @@ main.center-line {
    >section {
       p {
          text-align: center;
+         }
+      >i.font-icon {
+         font-size: 3rem;
          }
       }
    }
@@ -142,110 +73,6 @@ table.big-table {
          }
       }
    }
-ol.to-do-checklist {
-   @rowHeight: 3.0rem;
-   list-style: none;
-   margin-bottom: 40px;
-   counter-reset: item;
-   li {  //row (task item)
-      counter-increment: item;
-      display: flex;
-      align-items: center;
-      text-indent: 0px;
-      color: dimgray;
-      background-color: gainsboro;
-      padding: 0px;
-      margin-bottom: 15px;
-      transition: all 500ms;
-      cursor: default;
-      &:hover {
-         color: black;
-         background-color: silver;
-         }
-      &::before {  //number circle
-         content: counter(item);
-         .toDoChecklistCircle(@rowHeight);
-         }
-      p {  //task text
-         flex-grow: 1;
-         text-align: left;
-         font-size: @rowHeight * 0.4;
-         .MobileMode({ font-size: @rowHeight * 0.3; });
-         padding: 0px (@rowHeight * 0.8) 0px 10px;
-         margin: 0px;
-         a:visited {
-            color: dimgray;
-            }
-         a:hover {
-            color: white;
-            }
-         }
-      label {  //checkbox
-         display: flex;
-         align-items: center;
-         padding-right: 10px;  //checkbox right gap
-         cursor: pointer;
-         input[type=checkbox] {
-            width: 0px;
-            height: 0px;
-            margin: 0px;
-            opacity: 0;
-            }
-         input[type=checkbox]:checked + b::after {
-            opacity: 1;
-            }
-         b {  //custom checkbox
-            position: relative;
-            &::before {  //empty "unchecked" checkbox
-               .toDoChecklistCheckbox(@rowHeight);
-               content: "";
-               }
-            &::after {  //heavy checkmark
-               .toDoChecklistCheckbox(@rowHeight);
-               content: "\2714";  //character: ✔
-               color: white;
-               background-color: royalblue;
-               border-color: royalblue;
-               opacity: 0;
-               transition: opacity 500ms;
-               }
-            }
-         }
-      }
-   }
-.toDoChecklistCircle(@height) {
-   display: inline-block;
-   flex-shrink: 0;
-   width: @height;
-   height: @height;
-   line-height: @height;
-   font-size: @height * 0.5;
-   font-weight: bold;
-   text-align: center;
-   color: white;
-   background: deepskyblue;
-   border-radius: 100%;
-   margin-right: 10px;
-   outline: 10px solid white;
-   }
-.toDoChecklistCheckbox(@height) {
-   position: absolute;
-   top: -(@height * 0.33);
-   right: 0px;
-   width: (@height * 0.5);
-   height: (@height * 0.5);
-   line-height: (@height * 0.4);
-   font-size: (@height * 0.8);
-   text-align: center;
-   background-color: white;
-   border: 4px solid gray;
-   border-radius: 25%;
-   margin: 0px;
-   @supports (-webkit-touch-callout: none) {  //fix oversized font on iOS
-      line-height: (@height * 0.5);
-      font-size: (@height * 0.4);
-      }
-   }
 
 // Responsive Design
 .MobileMode({
@@ -256,6 +83,3 @@ ol.to-do-checklist {
          }
       }
    });
-.MobileMode(@lessRules) {  //selects iPhone 6/6s/7/8/SE2/SE3 landscape and anything narrower
-   @media (max-width: 667px) { @lessRules(); }
-   }

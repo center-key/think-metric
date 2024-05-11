@@ -5,7 +5,7 @@ const app = {
    checklist: {
       restore(checklistSection) {
          // Set checklist task items according to previously saved values.
-         const listElem =    checklistSection.querySelector('ol.to-do-checklist');
+         const listElem =    checklistSection.querySelector('ol.metrication-checklist');
          const checklist =   JSON.parse(globalThis.localStorage.getItem('checklist'));
          const getCheckbox = (li) => li.querySelector('input[type=checkbox]');
          const setCheckbox = (li) => getCheckbox(li).checked = checklist[li.id];
@@ -35,13 +35,6 @@ const app = {
       //    <output>
       //       <span id=metric-ingredient class=dna-template>
       //          <b>~~grams~~</b> grams <b>~~form~~</b> <b>~~name~~</b>
-      ingredients: [
-         { name: 'Almonds', form: 'Sliced',  gramsPerCup: 110 },
-         { name: 'Almonds', form: 'Raw',     gramsPerCup: 130 },
-         { name: 'Almonds', form: 'Roasted', gramsPerCup: 120 },
-         { name: 'Butter',  form: null,      gramsPerCup: 227 },
-         { name: 'Honey',   form: null,      gramsPerCup: 340 },
-         ],
       convertToGrams(elem) {
          const calculatorForm = elem.closest('form');
          const elemMap = {
@@ -56,17 +49,33 @@ const app = {
          const unitsPerCup =    Number(unitsOption.dataset.perCup);
          const unitsGrams =     Number(unitsOption.dataset.grams);
          const ingredientName = elemMap.ingredient.value;
-         const ingredients =    app.calculator.ingredients.filter(ingredient => ingredient.name === ingredientName);
-         ingredients.forEach(ingredient =>
-            ingredient.grams = quantity * (unitType === 'volume' ?
-               ingredient.gramsPerCup / unitsPerCup : unitsGrams)
-            );
-         if (!isNaN(quantity))
-            dna.clone('metric-ingredient', ingredients, {empty: true});
+         const ingredients =    globalThis.ingredientsDB.filter(ingredient => ingredient.name === ingredientName);
+         const toGrams = (ingredient) => quantity * (unitType === 'volume' ?
+            ingredient.gramsPerCup / unitsPerCup : unitsGrams);
+         const toMetric = (ingredient) => ({ ingredient: ingredient, grams: toGrams(ingredient)});
+         const calculatorResult = () => ({
+            imperial: {
+               quantity: quantity,
+               units:    unitsOption.textContent.replace(/\(.*/, '').trim().toLowerCase(),
+               name:     elemMap.ingredient.value,
+               },
+            metric: ingredients.map(toMetric),
+            });
+         if (!isNaN(quantity) && quantity > 0 && elemMap.ingredient.selectedIndex > 0)
+            dna.clone('calculator-result', calculatorResult(), { empty: true });
+         },
+      updateTemperature(elem) {
+         const tempF =     Number(elem.value);
+         const output =    elem.closest('section').querySelector('output');
+         const toCelsius = () => Math.round((tempF - 32) * 5 / 9);
+         output.textContent = isNaN(tempF) ? 'N/A' : dna.util.round(toCelsius(), 2);
          },
       init() {
-         const allNames =        app.calculator.ingredients.map(ingredient => ingredient.name);
+         const allNames =        globalThis.ingredientsDB.map(ingredient => ingredient.name);
          const ingredientNames = [...new Set(allNames)];
+         const ingredientPlaceholder = dna.clone('input-ingredient', 'Select...');
+         ingredientPlaceholder.selected = true;
+         ingredientPlaceholder.disabled = true;
          dna.clone('input-ingredient', ingredientNames);
          },
       },
@@ -99,6 +108,8 @@ const app = {
       },
 
    start() {
+      globalThis.document.querySelectorAll('form:not([action])').forEach(
+         form => form.onsubmit = () => false);  //disable submitting form on enter key
       console.log('Think Metric');
       console.log('🇺🇸 Americans for Metrication 🇺🇸');
       app.article.init();
