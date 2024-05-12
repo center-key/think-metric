@@ -22,19 +22,17 @@ const app = {
       },
 
    calculator: {
-      // <form class=calculator>
-      //    <label>
-      //       <input name=quantity>
-      //    <label>
-      //       <select name=units>
-      //          <option value=teaspoon data-type=volume data-per-cup=48>
-      //          <option value=lb       data-type=weight data-grams=453.592>
-      //    <label>
-      //       <select name=ingredient>
-      //          <option id=input-ingredient class=dna-template>~~name~~</option>
-      //    <output>
-      //       <span id=metric-ingredient class=dna-template>
-      //          <b>~~grams~~</b> grams <b>~~form~~</b> <b>~~name~~</b>
+      // <section class=calculator data-on-load=app.calculator.init>
+      //    <form>
+      //       <label>
+      //          <input name=quantity>
+      //       <label>
+      //          <select name=units>
+      //             <option value=teaspoon data-type=volume data-per-cup=48>
+      //             <option value=lb       data-type=weight data-grams=453.592>
+      //       <label>
+      //          <select name=ingredient>
+      //             <option id=input-ingredient class=dna-template>~~name~~</option>
       convertToGrams(elem) {
          const calculatorForm = elem.closest('form');
          const elemMap = {
@@ -42,27 +40,25 @@ const app = {
             units:      calculatorForm.querySelector('select[name=units]'),
             ingredient: calculatorForm.querySelector('select[name=ingredient]'),
             };
-         const quantityText =   elemMap.quantity.value.trim().replace(/[^0-9.\/\s]/g, '').replace(/\s+/g, ' ');
-         const quantity =       Number(quantityText);
-         const unitsOption =    elemMap.units.options[elemMap.units.selectedIndex];
-         const unitType =       unitsOption.dataset.type;
-         const unitsPerCup =    Number(unitsOption.dataset.perCup);
-         const unitsGrams =     Number(unitsOption.dataset.grams);
-         const ingredientName = elemMap.ingredient.value;
-         const ingredients =    globalThis.ingredientsDB.filter(ingredient => ingredient.name === ingredientName);
-         const toGrams = (ingredient) => quantity * (unitType === 'volume' ?
-            ingredient.gramsPerCup / unitsPerCup : unitsGrams);
-         const toMetric = (ingredient) => ({ ingredient: ingredient, grams: toGrams(ingredient)});
-         const calculatorResult = () => ({
-            imperial: {
-               quantity: quantity,
-               units:    unitsOption.textContent.replace(/\(.*/, '').trim().toLowerCase(),
-               name:     elemMap.ingredient.value,
-               },
-            metric: ingredients.map(toMetric),
-            });
-         if (!isNaN(quantity) && quantity > 0 && elemMap.ingredient.selectedIndex > 0)
-            dna.clone('calculator-result', calculatorResult(), { empty: true });
+         const qtyClean =     elemMap.quantity.value.replace(/\s+/g, ' ').trim();                        //ex: '1 3/4'
+         const qtyParts =     qtyClean.replace(/[^0-9.\/\s]/g, '').split(' ');                           //ex: ['1', '3/4']
+         const toDecimal =    (fraction) => Number(fraction[0]) / Number(fraction[1]);                   //ex: ['3', '4'] -> 0.75
+         const toNum =        (part) => part.includes('/') ? toDecimal(part.split('/')) : Number(part);  //ex: '3/4' -> 0.75
+         const qty =          qtyParts.map(toNum).reduce((sum, num) => sum + num, 0);                    //ex: 1.75
+         const qtyValid =     !isNaN(qty) && qty > 0 && qty < 100000;
+         const unitsOption =  elemMap.units.options[elemMap.units.selectedIndex];                        //ex: <option value=teaspoon data-type=volume data-per-cup=48>Teaspoons</option>
+         const unitsLabel =   unitsOption.textContent.replace(/\(.*/, '').trim().toLowerCase();          //ex: 'cups'
+         const isVolume =     unitsOption.dataset.type === 'volume';                                     //check if 'volume' or 'weight'
+         const unitsPerCup =  Number(unitsOption.dataset.perCup);
+         const gramsPerUnit = Number(unitsOption.dataset.grams);
+         const name =         elemMap.ingredient.value;                                                  //ex: 'Almonds'
+         const ingredients =  globalThis.ingredientsDB.filter(ingredient => ingredient.name === name);   //ex: [{ name: 'Almonds', ...
+         const byVolume =     (ingredient) => qty * ingredient.gramsPerCup / unitsPerCup;
+         const toGrams =      (ingredient) => isVolume ? byVolume(ingredient) : qty * gramsPerUnit;
+         const toMetric =     (ingredient) => ({ ingredient: ingredient, grams: toGrams(ingredient)});
+         const calcResults =  () => ({ quantity: qty, unitsLabel, name, metric: ingredients.map(toMetric) });
+         if (qtyValid && elemMap.ingredient.selectedIndex > 0)
+            dna.clone('calculator-result', calcResults(), { empty: true });
          },
       updateTemperature(elem) {
          const tempF =     Number(elem.value);
@@ -70,13 +66,16 @@ const app = {
          const toCelsius = () => Math.round((tempF - 32) * 5 / 9);
          output.textContent = isNaN(tempF) ? 'N/A' : dna.util.round(toCelsius(), 2);
          },
-      init() {
-         const allNames =        globalThis.ingredientsDB.map(ingredient => ingredient.name);
-         const ingredientNames = [...new Set(allNames)];
+      populateIngredientDropDown() {
+         const allNames =              globalThis.ingredientsDB.map(ingredient => ingredient.name);
+         const ingredientNames =       [...new Set(allNames)];
          const ingredientPlaceholder = dna.clone('input-ingredient', 'Select...');
          ingredientPlaceholder.selected = true;
          ingredientPlaceholder.disabled = true;
          dna.clone('input-ingredient', ingredientNames);
+         },
+      init() {
+         app.calculator.populateIngredientDropDown();
          },
       },
 
