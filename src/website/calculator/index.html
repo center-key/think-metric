@@ -10,29 +10,31 @@
       <form>
          <label>
             <span>Quantity:</span>
-            <input name=quantity value=1 maxlength=8 required
+            <input name=quantity value=2/3 maxlength=8 required autofocus
                data-on-input=app.calculator.convertToGrams placeholder=Quantity...>
          </label>
          <label>
             <span>Units:</span>
             <select name=units data-on-change=app.calculator.convertToGrams>
-               <option value=teaspoon   data-type=volume data-per-cup=48>        Teaspoons</option>
-               <option value=tablespoon data-type=volume data-per-cup=16>        Tablespoons</option>
-               <option value=floz       data-type=volume data-per-cup=8>         Fluid Ounces (fl oz)</option>
-               <option value=stick      data-type=volume data-per-cup=2>         Sticks (4 oz)</option>
-               <option value=cup        data-type=volume data-per-cup=1 selected>Cups</option>
-               <option value=block      data-type=volume data-per-cup=0.5>       Blocks (4 sticks)</option>
-               <option value=pint       data-type=volume data-per-cup=0.5>       Pints</option>
-               <option value=quart      data-type=volume data-per-cup=0.25>      Quarts</option>
-               <option value=gallon     data-type=volume data-per-cup=0.0625>    Gallons</option>
-               <option value=oz         data-type=weight data-grams=28.3495>     Ounces (oz weight)</option>
-               <option value=lb         data-type=weight data-grams=453.592>     Pounds (lb weight)</option>
+               <option data-type=volume data-per-cup=48>        Teaspoons</option>
+               <option data-type=volume data-per-cup=16>        Tablespoons</option>
+               <option data-type=volume data-per-cup=8>         Fluid Ounces (fl oz)</option>
+               <option data-type=volume data-per-cup=2>         Sticks (4 oz)</option>
+               <option data-type=volume data-per-cup=1 selected>Cups</option>
+               <option data-type=volume data-per-cup=0.5>       Blocks (4 sticks)</option>
+               <option data-type=volume data-per-cup=0.5>       Pints</option>
+               <option data-type=volume data-per-cup=0.25>      Quarts</option>
+               <option data-type=volume data-per-cup=0.0625>    Gallons</option>
+               <option data-type=weight data-grams=28.3495>     Ounces (oz weight)</option>
+               <option data-type=weight data-grams=453.592>     Pounds (lb weight)</option>
+               <option data-type=volume data-per-cup=236.588>   Milliliters (ml)</option>
+               <option data-type=volume data-per-cup=0.236588>  Liters (L)</option>
             </select>
          </label>
          <label>
             <span>Ingredient:</span>
-            <select name=ingredient data-on-change=app.calculator.convertToGrams autofocus>
-               <option id=input-ingredient class=dna-template>~~[value]~~</option>
+            <select name=ingredient data-on-change=app.calculator.convertToGrams>
+               <option id=input-ingredient class=dna-template>~~key~~</option>
             </select>
          </label>
          <p>Quantity can include fractions, such as: <i>3 1/2</i></p>
@@ -45,8 +47,9 @@
          <p><i data-icon=arrow-alt-circle-down></i></p>
          <div>
             <output data-array=~~metric~~>
-               <b data-precision=2 data-format-number=#>~~grams~~</b> <b>grams</b>
-               <b>~~ingredient.form~~</b> <b>~~ingredient.name~~</b>
+               <b data-precision=2 data-format-number=#>~~grams~~</b>
+               <b>grams</b>
+               <b>~~ingredient.description~~</b>
             </output>
          </div>
       </figure>
