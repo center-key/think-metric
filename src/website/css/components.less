@@ -1,0 +1,77 @@
+// Think Metric
+// Style: Components
+
+main.center-line {
+   >section {
+      p {
+         text-align: center;
+         }
+      >i.font-icon {
+         font-size: 3rem;
+         }
+      }
+   }
+
+ul.plain-list {
+   list-style-type: none;
+   padding-left: 0px;
+   li {
+      text-align: center;
+      }
+   }
+
+figure.box-frame {
+   background-color: white;
+   border: 5px solid silver;
+   padding: 5px 20px;
+   img {
+      height: 100px;
+      .MobileMode({ height: 70px; })
+      }
+   }
+
+figure.small-picture {
+   max-width: 200px;
+   .MobileMode({ max-width: 150px; })
+   }
+
+table.big-table {
+   margin: 0px;
+   .TableCell() {
+      font-size: 1em;
+      text-align: left;
+      &:first-child {
+         padding-left: 0px;
+         }
+      &:last-child {
+         padding-right: 0px;
+         }
+      }
+   thead {
+      tr {
+         th {
+            .TableCell();
+            }
+         }
+      }
+   tbody {
+      tr {
+         td {
+            .TableCell();
+            img {
+               max-width: 120px;
+               }
+            }
+         }
+      }
+   }
+
+// Responsive Design
+.MobileMode({
+   table.big-table {  //hide 2nd column in compact mode
+      thead tr th:nth-child(2),
+      tbody tr td:nth-child(2) {
+         display : none;
+         }
+      }
+   });

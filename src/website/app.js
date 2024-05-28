@@ -22,30 +22,36 @@ const app = {
       },
 
    calculator: {
-      // <section class=calculator data-on-load=app.calculator.init>
-      //    <form>
-      //       <label>
-      //          <input name=quantity>
-      //       <label>
-      //          <select name=units>
-      //             <option value=teaspoon data-type=volume data-per-cup=48>
-      //             <option value=lb       data-type=weight data-grams=453.592>
-      //       <label>
-      //          <select name=ingredient>
-      //             <option id=input-ingredient class=dna-template>~~name~~</option>
+      fractionToFloat(str) {
+         // Example:
+         //    fractionToFloat('1 3/4') -> 1.75
+         const qtyClean =  str.replace(/\s+/g, ' ').trim();                                           //ex: '1 3/4'
+         const qtyParts =  qtyClean.replace(/[^0-9.\/\s]/g, '').split(' ');                           //ex: ['1', '3/4']
+         const toDecimal = (fraction) => Number(fraction[0]) / Number(fraction[1]);                   //ex: ['3', '4'] -> 0.75
+         const toNum =     (part) => part.includes('/') ? toDecimal(part.split('/')) : Number(part);  //ex: '3/4' -> 0.75
+         const qty =       qtyParts.map(toNum).reduce((sum, num) => sum + num, 0);                    //ex: 1.75
+         const qtyValid =  !isNaN(qty) && qty > 0 && qty < 100000;
+         return qtyValid ? qty : null;
+         },
       convertToGrams(elem) {
-         const calculatorForm = elem.closest('form');
+         // <section class=calculator data-on-load=app.calculator.init>
+         //    <form>
+         //       <label>
+         //          <input name=quantity>
+         //       <label>
+         //          <select name=units>
+         //             <option value=teaspoon data-type=volume data-per-cup=48>
+         //             <option value=lb       data-type=weight data-grams=453.592>
+         //       <label>
+         //          <select name=ingredient>
+         //             <option id=input-ingredient class=dna-template>~~name~~</option>
+         const form = elem.closest('form');
          const elemMap = {
-            quantity:   calculatorForm.querySelector('input[name=quantity]'),
-            units:      calculatorForm.querySelector('select[name=units]'),
-            ingredient: calculatorForm.querySelector('select[name=ingredient]'),
+            quantity:   form.querySelector('input[name=quantity]'),
+            units:      form.querySelector('select[name=units]'),
+            ingredient: form.querySelector('select[name=ingredient]'),
             };
-         const qtyClean =     elemMap.quantity.value.replace(/\s+/g, ' ').trim();                        //ex: '1 3/4'
-         const qtyParts =     qtyClean.replace(/[^0-9.\/\s]/g, '').split(' ');                           //ex: ['1', '3/4']
-         const toDecimal =    (fraction) => Number(fraction[0]) / Number(fraction[1]);                   //ex: ['3', '4'] -> 0.75
-         const toNum =        (part) => part.includes('/') ? toDecimal(part.split('/')) : Number(part);  //ex: '3/4' -> 0.75
-         const qty =          qtyParts.map(toNum).reduce((sum, num) => sum + num, 0);                    //ex: 1.75
-         const qtyValid =     !isNaN(qty) && qty > 0 && qty < 100000;
+         const qty =          app.calculator.fractionToFloat(elemMap.quantity.value);
          const unitsOption =  elemMap.units.options[elemMap.units.selectedIndex];                        //ex: <option value=teaspoon data-type=volume data-per-cup=48>Teaspoons</option>
          const unitsLabel =   unitsOption.textContent.replace(/\(.*/, '').trim().toLowerCase();          //ex: 'cups'
          const isVolume =     unitsOption.dataset.type === 'volume';                                     //check if 'volume' or 'weight'
@@ -54,16 +60,21 @@ const app = {
          const key =          elemMap.ingredient.value;                                                  //ex: 'Almonds'
          const ingredients =  globalThis.ingredientsDB.filter(ingredient => ingredient.key === key);     //ex: [{ key: 'Almonds', ...
          const byVolume =     (ingredient) => qty * ingredient.gramsPerCup / unitsPerCup;
-         const toGrams =      (ingredient) => isVolume ? byVolume(ingredient) : qty * gramsPerUnit;
+         const round5 =       (grams) => Math.round(dna.util.round(grams, 2) / 5) * 5;
+         const round =        (grams) => grams < 10 ? Math.ceil(grams) : round5(grams);
+         const toGrams =      (ingredient) => round((isVolume ? byVolume(ingredient) : qty * gramsPerUnit));
          const toMetric =     (ingredient) => ({ ingredient: ingredient, grams: toGrams(ingredient)});
-         const calcResults =  () => ({ quantity: qty, unitsLabel, name: key, metric: ingredients.map(toMetric) });
-
-         console.log({ calculatorForm, elemMap, qty, qtyValid, unitsOption, unitsLabel, isVolume, unitsPerCup, gramsPerUnit, name: key, ingredients });
-
-         if (qtyValid)
-            dna.clone('calculator-result', calcResults(), { empty: true });
+         const calcResults = () => ({
+            qty,
+            unitsLabel,
+            key,
+            metric: ingredients.map(toMetric),
+            packed: ingredients.some(ingredient => ingredient.packed),
+            });
+         if (qty)
+            dna.clone('grams-calculator-result', calcResults(), { empty: true });
          },
-      updateTemperature(elem) {
+      convertToCelsius(elem) {
          const tempF =     Number(elem.value);
          const output =    elem.closest('section').querySelector('output');
          const toCelsius = () => Math.round((tempF - 32) * 5 / 9);
@@ -83,7 +94,8 @@ const app = {
          },
       init() {
          app.calculator.populateIngredientDropDown();
-         globalThis.document.activeElement.select();  //highlight the "Quantity" field value
+         const highlightInputField = () => globalThis.document.activeElement.select();
+         globalThis.requestAnimationFrame(highlightInputField);
          },
       },
 

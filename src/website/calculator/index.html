@@ -5,7 +5,7 @@
 
 <main class=center-line>
 
-   <section class=calculator data-on-load=app.calculator.init>
+   <section class=grams-calculator data-on-load=app.calculator.init>
       <h2>{{articleTitle}}</h2>
       <form>
          <label>
@@ -39,28 +39,28 @@
          </label>
          <p>Quantity can include fractions, such as: <i>3 1/2</i></p>
       </form>
-      <figure id=calculator-result class=dna-template>
+      <figure id=grams-calculator-result class=dna-template>
          <figcaption>
-            <b data-format-number=#.###>~~quantity~~</b>
-            <b>~~unitsLabel~~</b> <b>~~name~~</b>
+            <b data-format-number=#.###>~~qty~~</b>
+            <span>~~unitsLabel~~</span> <b>~~key~~</b>
          </figcaption>
          <p><i data-icon=arrow-alt-circle-down></i></p>
          <div>
             <output data-array=~~metric~~>
-               <b data-precision=2 data-format-number=#>~~grams~~</b>
-               <b>grams</b>
-               <b>~~ingredient.description~~</b>
+               <b data-format-number=#>~~grams~~</b> grams
+               <b>~~ingredient.description~~</b><span data-true=~~ingredient.packed~~>*</span>
             </output>
          </div>
+         <small data-true=~~packed~~>* Use this measurment if the ingredients in <span>~~unitsLabel~~</span> were pressed or packed.</small>
       </figure>
    </section>
 
-   <section class=oven-temperature>
+   <section class=celsius-calculator>
       <h2>Oven Temperature Conversion</h2>
       <div>
-         <form><input value=350 data-on-input=app.calculator.updateTemperature>&deg;F</form>
+         <form><input value=350 data-on-input=app.calculator.convertToCelsius>&deg;F</form>
          <i data-icon=arrow-alt-circle-right></i>
-         <figure><output id=celsius class=dna->180</output>&deg;C</figure>
+         <figure><output>180</output>&deg;C</figure>  <!-- Start at 350°F = 180°C -->
       </div>
    </section>
 
@@ -90,7 +90,9 @@
       <h2>Open Source</h2>
       <p>
          The <i>Recipe Converter Calculator</i> is an open source community project.&nbsp;
-         You can help out by submitting corrections and additions.&nbsp;
+         You can help out by submitting corrections and additions on GitHub or by posting to the
+         <a href=https://www.reddit.com/r/ThinkMetric>r/ThinkMetric</a> sub on Reddit.&nbsp;
+         If you post to Reddit, add the <i>"Food, Recipies, & Grams"</i> flair.&nbsp;
       </p>
       <p>
          Data for the calculator is on GitHub at:<br>
