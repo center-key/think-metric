@@ -80,6 +80,22 @@ const app = {
          const toCelsius = () => Math.round((tempF - 32) * 5 / 9);
          output.textContent = isNaN(tempF) ? 'N/A' : dna.util.round(toCelsius(), 2);
          },
+      convertToMilliliters(elem) {
+         // <option data-type=volume data-per-cup=16>Tablespoons</option>
+         const mlPerCup = 236.588;
+         const form = elem.closest('form');
+         const elemMap = {
+            quantity: form.querySelector('input[name=quantity]'),
+            units:    form.querySelector('select[name=units]'),
+            };
+         const qty =         app.calculator.fractionToFloat(elemMap.quantity.value);
+         const unitsOption = elemMap.units.options[elemMap.units.selectedIndex];
+         const unitsPerCup = Number(unitsOption.dataset.perCup);
+         const toMl =        () => Math.round(mlPerCup * qty / unitsPerCup);
+         const format =      (ml) => dna.format.getNumberFormatter('#')(dna.util.round(ml, 2));
+         const output =      form.closest('section').querySelector('output');
+         output.textContent = qty ? format(toMl()) : 'N/A';
+         },
       populateIngredientDropDown() {
          const defaultIngredient = 'Almonds';
          const keys = [...new Set(globalThis.ingredientsDB.map(ingredient => ingredient.key))];

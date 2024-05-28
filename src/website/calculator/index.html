@@ -64,6 +64,32 @@
       </div>
    </section>
 
+   <section class=milliliters-calculator>
+      <h2>Volume Conversion</h2>
+      <div>
+         <form>
+            <label>
+               <span>Quantity:</span>
+               <input name=quantity value=1 data-on-input=app.calculator.convertToMilliliters>
+            </label>
+            <label>
+               <span>Units:</span>
+               <select name=units data-on-change=app.calculator.convertToMilliliters>
+                  <option data-type=volume data-per-cup=48>         Teaspoons</option>
+                  <option data-type=volume data-per-cup=16 selected>Tablespoons</option>
+                  <option data-type=volume data-per-cup=8>          Fluid Ounces</option>
+                  <option data-type=volume data-per-cup=1>          Cups</option>
+                  <option data-type=volume data-per-cup=0.5>        Pints</option>
+                  <option data-type=volume data-per-cup=0.25>       Quarts</option>
+                  <option data-type=volume data-per-cup=0.0625>     Gallons</option>
+               </select>
+            </label>
+         </form>
+         <i data-icon=arrow-alt-circle-right></i>
+         <figure><output>15</output> ml</figure>  <!-- Start at 1 tbsp = 15 ml -->
+      </div>
+   </section>
+
    <section>
       <h2>NIST Metric Kitchen</h2>
       <figure>

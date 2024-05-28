@@ -144,3 +144,42 @@ section.celsius-calculator {
          }
       }
    }
+
+section.milliliters-calculator {
+   >div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0px 5px;
+      >form {
+         display: flex;
+         align-items: center;
+         background-color: lightblue;
+         border-radius: 10px;
+         padding: 10px 20px 10px 25px;
+         margin: 0px 20px 0px 0px;
+         .MobileMode({ margin-right: 5px; });
+         input {
+            width: 4em;
+            margin: 0px 0.3em 0px 0px;
+            }
+         }
+      >i.font-icon {
+         font-size: 2rem;
+         color: royalblue;
+         margin: 0px;
+         }
+      >figure {
+         font-size: 1.8rem;
+         padding: 0px;
+         margin: 0px;
+         output {
+            display: inline-block;
+            min-width: 3em;
+            .MobileMode({ min-width: 2em; });
+            text-align: right;
+            margin-right: 0.2em;
+            }
+         }
+      }
+   }
