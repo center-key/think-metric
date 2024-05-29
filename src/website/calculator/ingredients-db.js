@@ -374,7 +374,7 @@ globalThis.ingredientsDB = [
    { key: "Ginger",        description: "Fresh Sliced Ginger",                      gramsPerCup: 228 },
    { key: "Ginger",        description: "Ground Ginger",                            gramsPerCup: 123 },
    { key: "Granola",       description: "Granola",                                  gramsPerCup: 113 },
-   { key: "Grape Nuts",    description: "Grape",                                    gramsPerCup: 115 },
+   { key: "Grape Nuts",    description: "Grape Nutes",                              gramsPerCup: 115 },
    { key: "Grapefruit",    description: "Segments of Peeled Grapefruit",            gramsPerCup: 225 },
    { key: "Grapes",        description: "Halved Pitted Grapes",                     gramsPerCup: 175 },
    { key: "Grapes",        description: "Whole Grapes",                             gramsPerCup: 100 },
