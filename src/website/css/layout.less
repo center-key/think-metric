@@ -72,10 +72,14 @@ body {
          a {
             white-space: normal;
             }
-         >figure { padding: 0px 10px; }      //temporary until v2.1.4
-         >figure img { max-height: 550px; }  //temporary until v2.1.4
          >p + h3 {
             margin-top: 50px;
+            }
+         >p:has(i[data-icon=arrow-alt-circle-down]) {
+            text-align: center;
+            i[data-icon=arrow-alt-circle-down] {
+               color: darkcyan;
+               }
             }
          }
       }

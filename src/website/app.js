@@ -83,7 +83,7 @@ const app = {
       convertToMilliliters(elem) {
          // <option data-type=volume data-per-cup=16>Tablespoons</option>
          const mlPerCup = 236.588;
-         const form = elem.closest('form');
+         const form =     elem.closest('form');
          const elemMap = {
             quantity: form.querySelector('input[name=quantity]'),
             units:    form.querySelector('select[name=units]'),
@@ -97,14 +97,13 @@ const app = {
          output.textContent = qty ? format(toMl()) : 'N/A';
          },
       populateIngredientDropDown() {
-         const defaultIngredient = 'Almonds';
-         const keys = [...new Set(globalThis.ingredientsDB.map(ingredient => ingredient.key))];
-         const ingredients = keys.map(key => ({
-            key:   key,
-            words: globalThis.ingredientsDB.filter(item => item.key === key).map(item => item.description).join(' '),
-            }));
-         const options = dna.clone('input-ingredient', ingredients);
-         const defaultOption = options[keys.indexOf(defaultIngredient)];
+         const defaultChoice = 'Almonds';
+         const keys =          [...new Set(globalThis.ingredientsDB.map(item => item.key))];
+         const findByKey =     (key) => globalThis.ingredientsDB.filter(item => item.key === key);
+         const getWords =      (key) => findByKey(key).map(item => item.description).join(' ');
+         const ingredients =   keys.map(key => ({ key: key, words: getWords(key) }));
+         const options =       dna.clone('input-ingredient', ingredients);
+         const defaultOption = options[keys.indexOf(defaultChoice)];
          defaultOption.selected = true;
          app.calculator.convertToGrams(defaultOption);
          },
@@ -123,10 +122,10 @@ const app = {
          //    <ul><li><a href=../../article/go-metric>Go Metric<a><li>...
          // </div>
          const container = globalThis.document.getElementById('article-nav');
-         const articles = [...container.querySelectorAll('ul >li >a')];
-         const header =   'main >section:first-child >h2';
-         const title =    globalThis.document.querySelector(header).textContent;
-         const index =    articles.findIndex(article => article.textContent === title);
+         const articles =  [...container.querySelectorAll('ul >li >a')];
+         const header =    'main >section:first-child >h2';
+         const title =     globalThis.document.querySelector(header).textContent;
+         const index =     articles.findIndex(article => article.textContent === title);
          const configure = (button, index) => {
             button.setAttribute('data-href', articles[index]?.getAttribute('href'));
             button.setAttribute('title',     articles[index]?.textContent);
@@ -143,8 +142,6 @@ const app = {
       },
 
    start() {
-      globalThis.document.querySelectorAll('form:not([action])').forEach(
-         form => form.onsubmit = () => false);  //disable submitting form on enter key
       console.log('Think Metric');
       console.log('🇺🇸 Americans for Metrication 🇺🇸');
       app.article.init();
