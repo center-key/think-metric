@@ -1,42 +1,6 @@
 // Think Metric
 // Style: Calculator
 
-
-// <label>
-//    <span>Color:</span>
-//    <select>
-//       <option>Plum</option>
-///      <option>Pink</option>
-//    </select>
-// </label>
-label:has(select) {  //temporary until v2.4.6
-   position: relative;
-   max-width: 25em;
-   text-align: left;
-   padding: 0px;
-   &::after {
-      content: "\276F";  //arrow: "❯" (Heavy Right-Pointing Angle Quotation Mark Ornament)
-      position: absolute;
-      right: 0.4em;
-      bottom: 0.03em;
-      font-size: 1.5em;
-      transform: rotate(90deg);  //point down
-      pointer-events: none;
-      }
-   span {
-      }
-   select {
-      appearance: none;
-      background-color: mintcream;
-      border: 1px solid silver;
-      padding: 0.3em 2.0em 0.3em 0.3em;
-      margin: 0px;
-      &:invalid {
-         color: firebrick;
-         }
-      }
-   }
-
 b.flair {
    display: inline-block;
    font-size: 0.9em;
