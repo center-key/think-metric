@@ -59,14 +59,38 @@ body {
       >section {
          >p, >div {
             text-align: left;
-            code {
-               white-space: normal;
-               }
             li {
                font-size: 1em;
                text-indent: 0px;
                padding-left: 0em;
                margin-bottom: 15px;
+               }
+            //TEMPORARY
+            code {
+               white-space: normal;
+               }
+            blockquote {
+               display: block;
+               width: 100%;
+               font-size: 1.2rem;
+               font-style: italic;
+               text-align: left;
+               border: 1px solid silver;
+               padding: 10px 25px;
+               margin: 0px 0px 20px 0px;
+               cite {
+                  display: block;
+                  font-size: 0.8rem;
+                  font-weight: 100;
+                  font-style: normal;
+                  letter-spacing: 0.05em;
+                  text-align: right;
+                  padding-top: 5px;
+                  &::before {
+                     content: @symbolEmDash;  //character: —
+                     margin-right: 0.4em;
+                     }
+                  }
                }
             }
          a {
