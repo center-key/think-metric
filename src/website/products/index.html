@@ -2,6 +2,7 @@
 {% assign heroImage =    'warehouse-by-axisadman-at-wikimedia-cc-by-sa.jpg' %}
 {% assign heroCaption =  'Lots of Products' %}
 {% render 'src/templates/doc-begin.html', articleTitle: articleTitle, heroImage: heroImage, heroCaption: heroCaption %}
+{% assign gitHubProductData = 'https://github.com/center-key/think-metric/blob/main/src/templates/table-of-products.html' %}
 
 <main>
 
@@ -10,10 +11,10 @@
       <h3>Go metric to boost your efficiency</h3>
       <p>
          It's challenging in the U.S. to get your hands on metric-only products.&nbsp;
-         You mostly have to shop online, and unfortunately Amazon was the only e-commerce company
-         that offered a variety of metric-only products.&nbsp;
+         You mostly have to shop online, and unfortunately Amazon has historically been the only
+         e-commerce company that offered a variety of metric-only products.&nbsp;
          Walmart and Target have been expanding their online product selections, and now they do
-         sell some metric-only products.
+         sell some metric-only products.&nbsp;
       </p>
       <figure>
          <img src={{heroImage}} alt=warehouse data-author=axisadman data-license=cc-by-sa>
@@ -23,7 +24,7 @@
    <section>
       <p>
          Products listed below are (or at were at one time) available in the U.S. with
-         <i>"Free Shipping by Amazon"</i>.
+         <i>"Free Shipping by Amazon"</i>.&nbsp;
       </p>
    </section>
 
@@ -36,7 +37,14 @@
          {% render 'src/templates/table-of-products.html' %}
       </div>
       <p>
-         The above links are <b>NOT</b> affiliate links &mdash; there are no commissions earned.
+         The above links are <b>NOT</b> affiliate links &mdash; there are no commissions
+         earned.&nbsp;
+      </p>
+      <p>
+         The list of products is manually currated by volunteers, and you can contribute by
+         posting on <a href=https://www.reddit.com/r/ThinkMetric>Reddit</a>
+         with the <b class=flair data-flair=teal>Photos &amp; Products</b>
+         flair or by submitting a PR on <a href={{gitHubProductData}}>GitHub</a>.&nbsp;
       </p>
    </section>
 
@@ -44,7 +52,7 @@
       <h2>Spread the Word</h2>
       <p>
          If you read a useful customer review for a metric-only product, be sure to click the
-         review's <b>"Helpful"</b> button 👍.
+         review's <b>"Helpful"</b> button 👍.&nbsp;
       </p>
    </section>
 

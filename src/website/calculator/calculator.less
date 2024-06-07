@@ -5,9 +5,16 @@ b.flair {
    display: inline-block;
    font-size: 0.9em;
    color: white;
-   background-color: forestgreen;
    padding: 3px 15px;
    border-radius: 20px;
+   &[data-flair=green] {
+      color: white;
+      background-color: forestgreen;
+      }
+   &[data-flair=teal] {
+      color: black;
+      background-color: turquoise;
+      }
    }
 
 section.grams-calculator {
