@@ -1,0 +1,97 @@
+{% assign articleTitle = 'The Millimeter Standard War' %}
+{% assign heroImage =    '155-mm-field-gun-1918.jpg' %}
+{% assign heroCaption =  'A 155 mm field gun used by the American Expeditionary Force in 1918' %}
+{% render 'src/templates/doc-begin.html', articleTitle: articleTitle, heroImage: heroImage, heroCaption: heroCaption %}
+
+<main>
+
+   <section>
+      <h2>{{articleTitle}}</h2>
+      <figure>
+         <img src={{heroImage}} alt=ww1 data-author=us-army data-license=public-domain>
+         <figcaption>{{heroCaption}}</figcaption>
+      </figure>
+      <p>
+         Using only millimeters for length measurements has the nice advantage that you don't need
+         to specify units becasue everyone on a project knows that all lengths will be communicated
+         in millimeters.&nbsp;
+         Sticking to exclusively millimeters, especially in engineering and manufacturing
+         environments, reduces ambiguity and saves time.&nbsp;
+         Some call this practice the "Millimeter Standard" policy.&nbsp;
+      </p>
+      <p>
+         If your shop has made the decision to go "Millimeter Standard", that's great.&nbsp;
+         However, "Millimeter Standard" in casual use can be rather cumbersome because of the
+         unwieldy number of digits.&nbsp;
+         When headed to the local garden center to buy 20 meters of irrigation tubing, you probably
+         don't want to be burdened with the 5-digit number 20,000.&nbsp;
+      </p>
+      <p>
+         Many people find meters and centimeters most efficient for everyday measurements and only
+         use millimeters when working with very small items.&nbsp;
+         On the other hand, if you prefer using millimeters for everything, go for it.&nbsp;
+      </p>
+      <p>
+         Unfortunately, there are a number of vocal pseudo-experts out there Hell-bent on
+         eradicating centimeters.&nbsp;
+         They consider centimeters unpure and unholy, but this stuborness impedes
+         metrication.&nbsp;
+         Stay away from these pernicious crazies.&nbsp;
+      </p>
+   </section>
+
+   <section>
+      <h2>Human Scale</h2>
+      <p>
+         A centimeter is the perfect precision for most "human scale" measurements.&nbsp;
+         For example, the imperial inch is too clunky to measure your height, and that's why a
+         person's imperial height is often given to the 1/2 inch.&nbsp;
+         Use of millimeters for human height leads to false precision and absurdly large
+         numbers.&nbsp;
+      </p>
+      <p>
+         Centimeters provide the correct level of precision and are super easy to communicate.&nbsp;
+         To answer an inquiry about your height, you just need to reply with a simple number, such
+         as "184", and you're done.&nbsp;
+      </p>
+      <p>
+         Long live the centimeter!&nbsp;
+      </p>
+   </section>
+
+   <section>
+      <h2>Tape Measure Scales</h2>
+      <p>
+         A final note regarding tape measures is somewhat counter-intuitive.&nbsp;
+         Beleive it or not, a regular metric tape measure is better for "Millimeter Standard"
+         work than a specialized millimeter only tape measure.&nbsp;
+      </p>
+      <figure>
+         <img src=green-tape-measure-10cm.jpg alt=10cm data-license=fair-use>
+         <figcaption>Big, bold, high-contrast scale</figcaption>
+      </figure>
+      <p>
+         If you are measuring in millimeters on a regular metric tape measure, treat the numeric
+         markers as the leading digits and the selected tick mark as the last digit.&nbsp;
+         For example, a reading of "7" concatenated with the 3rd tick mark means a measurement
+         of 73 mm.&nbsp;
+         Rather than summing up the two components of the numbers, you're just gluing them
+         together.&nbsp;
+         This technique is cognitively faster because it involves no math.&nbsp;
+      </p>
+      <figure>
+         <img src=fastcap-tape-by-fredquint-wikimedia-cc.jpg alt=fastcap
+            data-author=fredquint data-license=cc>
+         <figcaption>Specialized millimeter only tape measure scale with tiny digits</figcaption>
+      </figure>
+      <p>
+         Specialized millimeter only tape measures are a fundamentally flawed design because the
+         last digit of every numeric marker is always useless.&nbsp;
+         The throwaway digit crowds the scale leading to reduced readability.&nbsp;
+      </p>
+      <figure>🎖️ 🎖️ 🎖️</figure>
+   </section>
+
+</main>
+
+{% render 'src/templates/doc-end.html' %}
