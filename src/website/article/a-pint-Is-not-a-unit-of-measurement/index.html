@@ -1,0 +1,58 @@
+{% assign articleTitle = 'A Pint Is Not a Unit of Measurement' %}
+{% assign heroImage =    'fermentation-nih.gov.jpg' %}
+{% assign heroCaption =  'It is just a glass of beer' %}
+{% render 'src/templates/doc-begin.html', articleTitle: articleTitle, heroImage: heroImage, heroCaption: heroCaption %}
+
+<main>
+
+   <section>
+      <h2>{{articleTitle}}</h2>
+      <p>
+         Someday in the future, the word "pint" will lose all meaning as a unit of
+         measurement.&nbsp;
+         A "pint" will simply mean a glass of beer.&nbsp;
+         Saying "a pint of beer" will be as ridiculous as saying "a beer of beer."&nbsp;
+      </p>
+      <figure>
+         <img src={{heroImage}} alt=beer data-author=nih.gov data-license=public-domain>
+         <figcaption>{{heroCaption}}</figcaption>
+      </figure>
+      <p>
+         In other words, <b>ordering a pint at your local pub is perfectly fine in a
+         metric world.</b>&nbsp;
+         A pint is no more a unit of measurement than a glass.&nbsp;
+         A glass of beer is generally about 500 ml, but it varies a lot just like a pint.&nbsp;
+         A pint is not a unit of measurement.&nbsp;
+      </p>
+      <p>
+         If you prefer your beer in a can, you can order a "tinnie" instead of a pint.&nbsp;
+      </p>
+   </section>
+
+   <section>
+      <h2>It's Just a Ton</h2>
+      <figure>
+         <img src=1927-chevrolet-truck-usda.gov.jpg alt=truck
+            data-author=usda.gov data-license=public-domain>
+         <figcaption>USDA Forest Service 1927 Chevrolet Truck</figcaption>
+      </figure>
+      <p>
+         Eventually there will only be a single meaning of the word "ton" for weight, and it will
+         unambiguously mean exactly 1,000 kg.&nbsp;
+         Today, unfortunately, we have the British ton (long ton), tonne (metric ton), and
+         U.S. ton (short ton).&nbsp;
+         Crazy.&nbsp;
+      </p>
+      <p>
+         The spelling of the word "tonne" is bizarre &mdash; the word needs to die out.&nbsp;
+         Saying "metric ton" solves the ambiguity problem, but it seems as redundant as
+         saying "metric liter".&nbsp;
+         Even if it takes 100 years, the ridiculous and inefficient jumble of units will be
+         relegated to the dustbin of history, and a ton will just be a ton.&nbsp;
+      </p>
+      <figure>🍺 🍺 🍺</figure>
+   </section>
+
+</main>
+
+{% render 'src/templates/doc-end.html' %}
