@@ -1,0 +1,100 @@
+{% assign articleTitle = 'Fractions are a Royal Pain in Imperial' %}
+{% assign heroImage =    'fractions-1890.jpg' %}
+{% assign heroCaption =  'Educational school chart by R.O. Evans &amp; G.A. Bass, 1890' %}
+{% render 'src/templates/doc-begin.html', articleTitle: articleTitle, heroImage: heroImage, heroCaption: heroCaption %}
+
+<main>
+
+   <section>
+      <h2>{{articleTitle}}</h2>
+      <figure class=small-picture>
+         <img src={{heroImage}} alt=fractions data-license=public-domain>
+         <figcaption>{{heroCaption}}</figcaption>
+      </figure>
+      <p>
+         What is a fifth of an imperial foot?&nbsp;
+         Answering that question is going to require a bit of math.&nbsp;
+      </p>
+      <p>
+         Most likely the questioner expects the answer in inches, so we'll begin by
+         multiplying by 12 to convert feet to inches.&nbsp;
+         Below are all the steps to convert 1/5 foot into proper fractional inches.&nbsp;
+      </p>
+      <table>
+         <thead><tr><th>Value</th><th>Step</th></tr></thead>
+         <tbody>
+            <tr><td><code>1/5 foot</code></td>                          <td>What's 1/5 of a foot?</td></tr>
+            <tr><td><code>12/5 inch</code></td>                         <td>Multiply by 12 to convert to inches.</td></tr>
+            <tr><td><code>2 inches + 2/5 inch</code></td>               <td>Extract whole inches for simplicity.</td></tr>
+            <tr><td><code>2 inches + 0.4 inch</code></td>               <td>Convert to decimal to help multiplication.</td></tr>
+            <tr><td><code>2 inches + 0.4 &times; 64/64 inch</code></td> <td>Assume 1/64 inch precision.</td></tr>
+            <tr><td><code>2 inches + 25.6/64 inch</code></td>           <td>Multiply to get numerator.</td></tr>
+            <tr><td><code>2 inches + 26/64 inch</code></td>             <td>Round to nearest 1/64 of an inch.</td></tr>
+            <tr><td><code>2 inches + 13/32 inch</code></td>             <td>Reduce fraction to simplify fraction.</td></tr>
+            <tr><td><code>2 13/32 inches</code></td>                    <td>Presto!  We have the proper fractional inch answer.</td></tr>
+         </tbody>
+      </table>
+      <p>
+         Below are the answers for other common imperial lengths.&nbsp;
+         Can you do the math required to get the correct answer?&nbsp;
+      </p>
+      <table>
+         <thead><tr><th>Imperial Question</th><th>Answer</th></tr></thead>
+         <tbody>
+            <tr><td>What's 1/5 of an inch?</td> <td><code>13/64 inches</code></td></tr>
+            <tr><td>What's 1/5 of a foot?</td>  <td><code>2 13/32 inches</code></td></tr>
+            <tr><td>What's 1/5 of a yard?</td>  <td><code>7 13/64 inches</code></td></tr>
+            <tr><td>What's 1/5 of a mile?</td>  <td><code>1,056 feet</code></td></tr>
+         </tbody>
+      </table>
+      <p>
+         Metric is easier by a country klick.&nbsp;
+         For example, there are 10 mm in a cm, so 1/5 of a cm is 2 mm.&nbsp;
+      </p>
+      <table>
+         <thead><tr><th>Metric Question</th><th>Answer</th></tr></thead>
+         <tbody>
+            <tr><td>What's 1/5 of a cm?</td>    <td><code>2 mm</code></td></tr>
+            <tr><td>What's 1/5 of a meter?</td> <td><code>20 cm</code></td></tr>
+            <tr><td>What's 1/5 of a km?</td>    <td><code>200 m</code></td></tr>
+         </tbody>
+      </table>
+   </section>
+
+   <section id=third>
+      <h2>0.3333333333</h2>
+      <p>
+         Some imperial zealots like to obsess about 1/3 because they incorrectly believe it makes
+         them look smart.&nbsp;
+         When they pull this stunt, simply ask them what is a 1/3 of a U.S. dollar?&nbsp;
+         There's never been a world financial meltdown because someone couldn't do division on a
+         dollar.&nbsp;
+      </p>
+      <p>
+         Answering the 1/3 question in metric is not a problem.&nbsp;
+         Depending on the desired precision, the answer to what is 1/3 of a meter is either
+         33 cm or 333 mm.&nbsp;
+         Easy peasy.&nbsp;
+      </p>
+      <p>
+         Even if you need to pull out a calculator, metric is still far less effort.&nbsp;
+         Let's say your measurement is 1,267 mm.&nbsp;
+         You punch in 1,267 and divide by 3, and you're done in one operation.&nbsp;
+      </p>
+      <figure>
+         <img src=imperial-tape-measure.jpg alt=fractions data-license=fair-use>
+         <figcaption>Where are the tick marks for 0.63 of an inch? 😡 😤 🤬</figcaption>
+      </figure>
+      <p>
+         The imperial equivalent is 49 7/8 inches, so you punch 7 into your calculator and divide
+         by 8 then add 49 then hit equals and finally divide by 3.&nbsp;
+         You get 16.63 inches, but sadly your tape measure does not have tick marks for 0.63 of an
+         inch.&nbsp;
+         <b>Doh!</b>&nbsp;
+         What a royal pain for something so trivial.&nbsp;
+      <figure>🥧 🥧 🥧</figure>
+   </section>
+
+</main>
+
+{% render 'src/templates/doc-end.html' %}
