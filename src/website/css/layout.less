@@ -1,6 +1,20 @@
 // Think Metric
 // Style: Layout
 
+.SectionStyle() {
+   table {
+      thead tr th {
+         font-size: 1rem;
+         text-align: left;
+         }
+      tbody tr td {
+         font-size: 1rem;
+         .MobileMode({ font-size: 0.9rem; });
+         text-align: left;
+         }
+      }
+   }
+
 body {
    >header {
       background-image: url(graphics/kg-weights-by-ylanite-koppens-at-pexels.jpg);
@@ -57,6 +71,7 @@ body {
       }
    main {
       >section {
+         .SectionStyle();
          >p, >div {
             text-align: left;
             li {
