@@ -12,6 +12,20 @@ main.center-line {
       }
    }
 
+.ballot-x-mark {
+   position: relative;
+   text-align: center;
+   &::before {
+      position: absolute;
+      top: -0.18em;
+      left: 0px;
+      right: 0px;
+      content: @symbolBallotXMark;
+      font-size: 2rem;
+      color: firebrick;
+      }
+   }
+
 ul.plain-list {
    list-style-type: none;
    padding-left: 0px;
