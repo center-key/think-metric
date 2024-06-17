@@ -136,7 +136,8 @@ const app = {
          container.classList.add('show');
          },
       init() {
-         if (globalThis.location.href.includes('/article/'))
+         const hasArticleTitle = /\/article\/./;
+         if (hasArticleTitle.test(globalThis.location.href))
             app.article.setupPage();
          },
       },

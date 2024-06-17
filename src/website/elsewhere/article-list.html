@@ -1,0 +1,17 @@
+{% assign articleTitle = 'List of Articles' %}
+{% render 'src/templates/doc-begin.html', articleTitle: articleTitle %}
+
+<main>
+
+   <section>
+      <h2>{{articleTitle}}</h2>
+      <div>
+         <ul class=plain-list>
+            {% render 'src/templates/generated/articles.html' %}
+         </ul>
+      </div>
+   </section>
+
+</main>
+
+{% render 'src/templates/doc-end.html' %}

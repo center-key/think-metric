@@ -41,10 +41,11 @@
          "jshint src"
       ],
       "build": [
-         "copy-file   src/cname.txt           build/CNAME",
-         "copy-folder src/website             build --ext=.png,.jpg,.js",
-         "lessc       src/website/style.less  build/style.css",
-         "replacer    src/website --ext=.html build",
+         "copy-file   src/cname.txt                     build/CNAME",
+         "copy-folder src/website                       build --ext=.png,.jpg,.js",
+         "lessc       src/website/style.less            build/style.css",
+         "replacer    src/website --ext=.html           build",
+         "copy-file   build/elsewhere/article-list.html build/article/index.html --move",
          "rev-web-assets build docs --meta-content-base=https://think-metric.org"
       ],
       "interactive": [
