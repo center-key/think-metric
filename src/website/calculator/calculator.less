@@ -133,15 +133,19 @@ section.milliliters-calculator {
       gap: 0px 5px;
       >form {
          display: flex;
+         column-gap: 10px;
          align-items: center;
          background-color: lightblue;
          border-radius: 10px;
          padding: 10px 20px 10px 25px;
          margin: 0px 20px 0px 0px;
          .MobileMode({ margin-right: 5px; });
-         input {
-            width: 4em;
-            margin: 0px 0.3em 0px 0px;
+         >label {
+            margin: 0px;
+            >input {
+               width: 4em;
+               margin: 0px 0.3em 0px 0px;
+               }
             }
          }
       >i.font-icon {
