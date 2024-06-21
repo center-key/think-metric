@@ -126,11 +126,25 @@ section.celsius-calculator {
    }
 
 section.milliliters-calculator {
+   // section.milliliters-calculator
+   //    h2
+   //    div
+   //       form
+   //          label
+   //             span
+   //             input[name=quantity]
+   //          label
+   //             span
+   //             select[name=units]
+   //       i[data-icon=arrow-alt-circle-right]
+   //       figure
+   //          output
    >div {
       display: flex;
+      .MobileMode({ flex-direction: column; });
       justify-content: center;
       align-items: center;
-      gap: 0px 5px;
+      column-gap: 20px;
       >form {
          display: flex;
          column-gap: 10px;
@@ -138,8 +152,7 @@ section.milliliters-calculator {
          background-color: lightblue;
          border-radius: 10px;
          padding: 10px 20px 10px 25px;
-         margin: 0px 20px 0px 0px;
-         .MobileMode({ margin-right: 5px; });
+         margin: 0px;
          >label {
             margin: 0px;
             >input {
@@ -152,6 +165,8 @@ section.milliliters-calculator {
          font-size: 2rem;
          color: royalblue;
          margin: 0px;
+         .MobileMode({ transform: rotate(90deg); });
+         transition: all 1s;
          }
       >figure {
          font-size: 1.8rem;
@@ -160,7 +175,7 @@ section.milliliters-calculator {
          output {
             display: inline-block;
             min-width: 3em;
-            .MobileMode({ min-width: 2em; });
+            .MobileMode({ min-width: auto; });
             text-align: right;
             margin-right: 0.2em;
             }
