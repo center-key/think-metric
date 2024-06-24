@@ -44,10 +44,18 @@ figure.box-frame {
       }
    }
 
-figure.small-picture {
-   img {
-      width: 200px;
-      .MobileMode({ width: 150px; });
+figure {
+   &.small-picture {
+      img {
+         width: 200px;
+         .MobileMode({ width: 150px; });
+         }
+      }
+   &.medium-picture {
+      img {
+         width: 350px;
+         .MobileMode({ width: 300px; });
+         }
       }
    }
 
