@@ -5,7 +5,7 @@ const app = {
    checklist: {
       restore(checklistSection) {
          // Set checklist task items according to previously saved values.
-         const listElem =    checklistSection.querySelector('ol.metrication-checklist');
+         const listElem =    checklistSection.querySelector('ol.numbered-marble-checklist');
          const checklist =   JSON.parse(globalThis.localStorage.getItem('checklist'));
          const getCheckbox = (li) => li.querySelector('input[type=checkbox]');
          const setCheckbox = (li) => getCheckbox(li).checked = checklist[li.id];
