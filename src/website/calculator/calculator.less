@@ -1,59 +1,22 @@
 // Think Metric
 // Style: Calculator
 
-b.flair {
-   display: inline-block;
-   font-size: 0.9em;
-   color: white;
-   padding: 3px 15px;
-   border-radius: 20px;
-   &[data-flair=green] {
-      color: white;
-      background-color: forestgreen;
-      }
-   &[data-flair=teal] {
-      color: black;
-      background-color: turquoise;
-      }
-   }
-
 section.grams-calculator {
-   min-height: 750px;  //prevent jitter when calculations refresh
-   >form {
+   min-height: 750px;  //reduce jitter when calculations refresh
+   >div {
       position: relative;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px 30px;
-      text-align: left;
-      background-color: lightblue;
-      border: 10px solid white;
-      border-radius: 30px;
-      padding: 20px 20px 40px 20px;
-      margin-bottom: 10px;
-      >label {
-         >span {
-            margin-bottom: 3px;
-            }
-         >input[name=quantity] {
-            max-width: 6em;
-            margin: 0px;
-            }
-         >select {
-            margin: 0px;
-            &[name=units] {
-               }
-            &[name=ingredient] {
-               }
-            option {
+      >form {
+         padding-bottom: 40px;
+         >label {
+            >input[name=quantity] {
+               max-width: 6em;
                }
             }
          }
-      p {
+      >form + p {
          position: absolute;
-         bottom: 5px;
+         bottom: 1.7em;
          font-size: 0.8rem;
-         margin: 0px;
          }
       }
    >figure {
@@ -65,8 +28,9 @@ section.grams-calculator {
             }
          }
       >p {
-         font-size: 2rem;
-         color: royalblue;
+         >i.font-icon {
+            font-size: 3rem;
+            }
          margin-bottom: 15px;
          }
       >div {
@@ -87,28 +51,19 @@ section.grams-calculator {
 
 section.celsius-calculator {
    >div {
-      display: flex;
-      justify-content: center;
       align-items: center;
-      gap: 0px 5px;
+      column-gap: 5px;
       >form {
-         display: flex;
-         align-items: center;
-         background-color: lightblue;
-         border-radius: 10px;
-         padding: 10px 20px 10px 25px;
+         column-gap: 0px;
          margin: 0px 20px 0px 0px;
          .MobileMode({ margin-right: 5px; });
          input {
             width: 5em;
             .MobileMode({ width: 3.5em; });
-            margin: 0px 0.3em 0px 0px;
+            margin-right: 5px;
             }
          }
       >i.font-icon {
-         font-size: 2rem;
-         color: royalblue;
-         margin: 0px;
          }
       >figure {
          font-size: 1.8rem;
@@ -136,7 +91,7 @@ section.milliliters-calculator {
    //          label
    //             span
    //             select[name=units]
-   //       i[data-icon=arrow-alt-circle-right]
+   //       i[data-icon]
    //       figure
    //          output
    >div {
@@ -146,27 +101,16 @@ section.milliliters-calculator {
       align-items: center;
       column-gap: 20px;
       >form {
-         display: flex;
          column-gap: 10px;
-         align-items: center;
-         background-color: lightblue;
-         border-radius: 10px;
-         padding: 10px 20px 10px 25px;
          margin: 0px;
          >label {
-            margin: 0px;
-            >input {
+            >input[name=quantity] {
                width: 4em;
-               margin: 0px 0.3em 0px 0px;
                }
             }
          }
       >i.font-icon {
-         font-size: 2rem;
-         color: royalblue;
-         margin: 0px;
          .MobileMode({ transform: rotate(90deg); });
-         transition: all 1s;
          }
       >figure {
          font-size: 1.8rem;

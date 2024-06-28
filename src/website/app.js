@@ -34,17 +34,17 @@ const app = {
          return qtyValid ? qty : null;
          },
       convertToGrams(elem) {
-         // <section class=calculator data-on-load=app.calculator.init>
-         //    <form>
-         //       <label>
-         //          <input name=quantity>
-         //       <label>
-         //          <select name=units>
-         //             <option value=teaspoon data-type=volume data-per-cup=48>
-         //             <option value=lb       data-type=weight data-grams=453.592>
-         //       <label>
-         //          <select name=ingredient>
-         //             <option id=input-ingredient class=dna-template>~~name~~</option>
+         // section.calculator[data-on-load=app.calculator.init]
+         //    form
+         //       label
+         //          input[name=quantity]
+         //       label
+         //          select[name=units]
+         //             option[value=teaspoon, data-type=volume, data-per-cup=48]
+         //             option[value=lb,       data-type=weight, data-grams=453.592]
+         //       label
+         //          select[name=ingredient]
+         //             option#input-ingredient.dna-template
          const form = elem.closest('form');
          const elemMap = {
             quantity:   form.querySelector('input[name=quantity]'),
@@ -116,11 +116,11 @@ const app = {
 
    article: {
       setupPage() {
-         // <div id=article-nav>
-         //    <i data-icon=circle-left></i>
-         //    <i data-icon=circle-right></i>
-         //    <ul><li><a href=../../article/go-metric>Go Metric<a><li>...
-         // </div>
+         // div#article-nav
+         //    i[data-icon=circle-left]
+         //    i[data-icon=circle-right]
+         //    ul
+         //       li a[href]
          const container = globalThis.document.getElementById('article-nav');
          const articles =  [...container.querySelectorAll('ul >li >a')];
          const header =    'main >section:first-child >h2';

@@ -7,44 +7,46 @@
 
    <section class=grams-calculator data-on-load=app.calculator.init>
       <h2>{{articleTitle}}</h2>
-      <form>
-         <label>
-            <span>Quantity:</span>
-            <input name=quantity value=2/3 maxlength=8 required autofocus
-               data-on-input=app.calculator.convertToGrams placeholder=Quantity...>
-         </label>
-         <label>
-            <span>Units:</span>
-            <select name=units data-on-change=app.calculator.convertToGrams>
-               <option data-type=volume data-per-cup=48>        Teaspoons</option>
-               <option data-type=volume data-per-cup=16>        Tablespoons</option>
-               <option data-type=volume data-per-cup=8>         Fluid Ounces (fl oz)</option>
-               <option data-type=volume data-per-cup=2>         Sticks (4 oz)</option>
-               <option data-type=volume data-per-cup=1 selected>Cups</option>
-               <option data-type=volume data-per-cup=0.5>       Blocks (4 sticks)</option>
-               <option data-type=volume data-per-cup=0.5>       Pints</option>
-               <option data-type=volume data-per-cup=0.25>      Quarts</option>
-               <option data-type=volume data-per-cup=0.0625>    Gallons</option>
-               <option data-type=weight data-grams=28.3495>     Ounces (oz weight)</option>
-               <option data-type=weight data-grams=453.592>     Pounds (lb weight)</option>
-               <option data-type=volume data-per-cup=236.588>   Milliliters (ml)</option>
-               <option data-type=volume data-per-cup=0.236588>  Liters (L)</option>
-            </select>
-         </label>
-         <label>
-            <span>Ingredient:</span>
-            <select name=ingredient data-on-change=app.calculator.convertToGrams>
-               <option id=input-ingredient class=dna-template>~~key~~</option>
-            </select>
-         </label>
+      <div>
+         <form>
+            <label>
+               <span>Quantity:</span>
+               <input name=quantity value=2/3 maxlength=8 required autofocus
+                  data-on-input=app.calculator.convertToGrams placeholder=Quantity...>
+            </label>
+            <label>
+               <span>Units:</span>
+               <select name=units data-on-change=app.calculator.convertToGrams>
+                  <option data-type=volume data-per-cup=48>        Teaspoons</option>
+                  <option data-type=volume data-per-cup=16>        Tablespoons</option>
+                  <option data-type=volume data-per-cup=8>         Fluid Ounces (fl oz)</option>
+                  <option data-type=volume data-per-cup=2>         Sticks (4 oz)</option>
+                  <option data-type=volume data-per-cup=1 selected>Cups</option>
+                  <option data-type=volume data-per-cup=0.5>       Blocks (4 sticks)</option>
+                  <option data-type=volume data-per-cup=0.5>       Pints</option>
+                  <option data-type=volume data-per-cup=0.25>      Quarts</option>
+                  <option data-type=volume data-per-cup=0.0625>    Gallons</option>
+                  <option data-type=weight data-grams=28.3495>     Ounces (oz weight)</option>
+                  <option data-type=weight data-grams=453.592>     Pounds (lb weight)</option>
+                  <option data-type=volume data-per-cup=236.588>   Milliliters (ml)</option>
+                  <option data-type=volume data-per-cup=0.236588>  Liters (L)</option>
+               </select>
+            </label>
+            <label>
+               <span>Ingredient:</span>
+               <select name=ingredient data-on-change=app.calculator.convertToGrams>
+                  <option id=input-ingredient class=dna-template>~~key~~</option>
+               </select>
+            </label>
+         </form>
          <p>Quantity can include fractions, such as: <i>3 1/2</i></p>
-      </form>
+      </div>
       <figure id=grams-calculator-result class=dna-template>
          <figcaption>
             <b data-format-number=#.###>~~qty~~</b>
             <span>~~unitsLabel~~</span> <b>~~key~~</b>
          </figcaption>
-         <p><i data-icon=arrow-alt-circle-down></i></p>
+         <p><i data-icon=circle-down></i></p>
          <div>
             <output data-array=~~metric~~>
                <b data-format-number=#>~~grams~~</b> grams
@@ -64,7 +66,7 @@
          <form>
             <input value=350 data-on-input=app.calculator.convertToCelsius>&deg;F
          </form>
-         <i data-icon=arrow-alt-circle-right></i>
+         <i data-icon=circle-right></i>
          <figure><output>180</output>&deg;C</figure>  <!-- Start at 350°F = 180°C -->
       </div>
    </section>
@@ -90,7 +92,7 @@
                </select>
             </label>
          </form>
-         <i data-icon=arrow-alt-circle-right></i>
+         <i data-icon=circle-right></i>
          <figure><output>15</output> ml</figure>  <!-- Start at 1 tbsp = 15 ml -->
       </div>
    </section>

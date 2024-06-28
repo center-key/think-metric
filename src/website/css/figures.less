@@ -1,0 +1,33 @@
+// Think Metric
+// Style: Figures
+
+section {
+   figure {
+      &.box-frame {
+         background-color: white;
+         border: 5px solid silver;
+         padding: 5px 20px;
+         img {
+            height: 100px;
+            .MobileMode({ height: 70px; });
+            }
+         }
+      &.small-picture {
+         img {
+            width: 200px;
+            .MobileMode({ width: 150px; });
+            }
+         }
+      &.medium-picture {
+         img {
+            width: 400px;
+            .MobileMode({ width: 350px; });
+            }
+         }
+      &.window-shadow {
+         figcaption {
+            margin-top: -40px;
+            }
+         }
+      }
+   }

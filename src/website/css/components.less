@@ -1,103 +1,113 @@
 // Think Metric
 // Style: Components
 
-main.center-line {
-   >section {
-      p {
+section {
+
+   i[data-icon^=circle] {
+      font-size: 2rem;
+      color: royalblue;
+      transition: all 1s;
+      }
+
+   .ballot-x-mark {
+      position: relative;
+      text-align: center;
+      &::before {
+         position: absolute;
+         top: -0.18em;
+         left: 0px;
+         right: 0px;
+         content: @symbolBallotXMark;
+         font-size: 2rem;
+         color: firebrick;
+         }
+      }
+
+   code.block {
+      display: block;
+      font-size: 0.9rem;
+      background-color: lightcyan;
+      border: 2px dotted royalblue;
+      padding: 5px 15px;
+      }
+
+   b.flair {
+      display: inline-block;
+      font-size: 0.9em;
+      color: white;
+      padding: 3px 15px;
+      border-radius: 20px;
+      &[data-flair=green] {
+         color: white;
+         background-color: forestgreen;
+         }
+      &[data-flair=teal] {
+         color: black;
+         background-color: turquoise;
+         }
+      }
+
+   ul.plain-list {
+      list-style-type: none;
+      padding-left: 0px;
+      li {
          text-align: center;
          }
-      >i.font-icon {
-         font-size: 3rem;
-         }
       }
-   }
 
-.ballot-x-mark {
-   position: relative;
-   text-align: center;
-   &::before {
-      position: absolute;
-      top: -0.18em;
-      left: 0px;
-      right: 0px;
-      content: @symbolBallotXMark;
-      font-size: 2rem;
-      color: firebrick;
-      }
-   }
-
-ul.plain-list {
-   list-style-type: none;
-   padding-left: 0px;
-   li {
-      text-align: center;
-      }
-   }
-
-figure.box-frame {
-   background-color: white;
-   border: 5px solid silver;
-   padding: 5px 20px;
-   img {
-      height: 100px;
-      .MobileMode({ height: 70px; });
-      }
-   }
-
-figure {
-   &.small-picture {
-      img {
-         width: 200px;
-         .MobileMode({ width: 150px; });
-         }
-      }
-   &.medium-picture {
-      img {
-         width: 400px;
-         .MobileMode({ width: 350px; });
-         }
-      }
-   }
-
-figure.window-shadow {
-   figcaption {
-      margin-top: -40px;
-      }
-   }
-
-code.block {
-   display: block;
-   font-size: 0.9rem;
-   background-color: lightcyan;
-   border: 2px dotted darkcyan;
-   padding: 5px 15px;
-   }
-
-table.big-table {
-   margin: 0px;
-   .TableCell() {
-      &:first-child {
-         padding-left: 0px;
-         }
-      &:last-child {
-         padding-right: 0px;
-         }
-      }
-   thead {
-      tr {
-         th {
-            .TableCell();
+   table.big-table {
+      margin: 0px;
+      .TableCell() {
+         &:first-child {
+            padding-left: 0px;
+            }
+         &:last-child {
+            padding-right: 0px;
             }
          }
-      }
-   tbody {
-      tr {
-         td {
-            .TableCell();
-            img {
-               max-width: 120px;
+      thead {
+         tr {
+            th {
+               .TableCell();
+               }
+            }
+         }
+      tbody {
+         tr {
+            td {
+               .TableCell();
+               img {
+                  max-width: 120px;
+                  }
                }
             }
          }
       }
+
+   form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      row-gap: 10px;
+      column-gap: 30px;
+      max-width: none;
+      text-align: left;
+      background-color: lightblue;
+      border-radius: 20px;
+      padding: 20px 30px;
+      >label {
+         margin: 0px;
+         >span {
+            margin: -3px 0px 3px 0px;
+            }
+         >input {
+            margin: 0px;
+            }
+         >select {
+            margin: 0px;
+            }
+         }
+      }
+
    }

@@ -38,11 +38,11 @@ body {
             });
          }
       #article-nav {
-         // <div id=article-nav>
-         //    <i data-icon=circle-left  data-on-click=app.goToArticle data-nav=prev></i>
-         //    <i data-icon=circle-right data-on-click=app.goToArticle data-nav=next></i>
-         //    <ul>{% render 'src/templates/generated/articles.html' %}</ul>
-         // </div>
+         // div#article-nav
+         //    i[data-icon=circle-left,  data-on-click=app.goToArticle, data-nav=prev]
+         //    i[data-icon=circle-right, data-on-click=app.goToArticle, data-nav=next]
+         //    ul
+         //       li a[href]
          position: absolute;
          left: 0px;
          right: 0px;
@@ -90,11 +90,8 @@ body {
          >p + h3 {
             margin-top: 50px;
             }
-         >p:has(i[data-icon=arrow-alt-circle-down]) {
+         >p:has(i[data-icon=circle-down]) {
             text-align: center;
-            i[data-icon=arrow-alt-circle-down] {
-               color: darkcyan;
-               }
             }
          }
       >section:last-child >figure:last-child {
@@ -103,5 +100,13 @@ body {
          }
       }
    >footer {
+      }
+   }
+
+main.center-line {
+   >section {
+      p {
+         text-align: center;
+         }
       }
    }
