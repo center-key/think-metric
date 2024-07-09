@@ -1,0 +1,119 @@
+{% assign articleTitle = 'How to Switch Your Mobile Device to Metric' %}
+{% assign heroImage =    'iphone-metric-thumbs-up.png' %}
+{% assign heroCaption =  'Changing your phone to metric is easy' %}
+{% render 'src/templates/doc-begin.html', articleTitle: articleTitle, heroImage: heroImage, heroCaption: heroCaption %}
+
+<main class=center-line>
+
+   <section>
+      <h2>{{articleTitle}}</h2>
+      <figure class=medium-picture>
+         <img src={{heroImage}} alt=iphone data-license=cc0>
+         <figcaption>{{heroCaption}}</figcaption>
+      </figure>
+      <p>
+         One of the most effective ways to become familiar with metric units is to configure your
+         mobile device and laptop to display measurements using the metric system instead of
+         imperial.&nbsp;
+         After you've make the switch, try to avoid doing unit conversions.&nbsp;
+         You'll find that you gain familiarity with metric surprisingly quickly by just using
+         it.&nbsp;
+      </p>
+   </section>
+
+   <section id=toc>
+      <h2>Instructions</h2>
+      <div>
+         <ul class=icon-bullets>
+            <li><i data-brand=apple   data-href=#iphone></i>  <a href=#iphone>Apple iPhone and iPad (iOS)</a></li>
+            <li><i data-brand=android data-href=#android></i> <a href=#android>Android (AOSP)</a></li>
+            <li><i data-brand=apple   data-href=#macbook></i> <a href=#macbook>Apple MacBook (macOS)</a></li>
+            <!--
+            <li><i data-brand=windows data-href=#windows></i> <a href=#windows>Mircosoft Windows PC</a></li>
+            -->
+         </ul>
+      </div>
+   </section>
+
+   <section id=iphone>
+      <h2><i data-brand=apple></i>Switch Your iPhone or iPad to Metric</h2>
+      <figure class=small-picture>
+         <img src=iphone-settings-icon.png alt=settings data-license=fair-use>
+      </figure>
+      <figure>
+         <img src=iphone-steps.png alt=steps data-license=fair-use>
+      </figure>
+      <h3>Steps</h3>
+      <p>
+         Settings              <i data-icon=right-long></i>
+         General               <i data-icon=right-long></i>
+         Language &amp; Region <i data-icon=right-long></i>
+      </p>
+      <p>
+         Temperature           <i data-icon=right-long></i>
+         Celsius (&deg;C)      <i data-icon=right-long></i>
+         Back                  <i data-icon=right-long></i>
+      </p>
+      <p>
+         Measuring system      <i data-icon=right-long></i>
+         Metric
+      </p>
+   </section>
+
+   <section id=android>
+      <h2><i data-brand=android></i>Switch Your Android to Metric</h2>
+      <figure>
+         <img src=android-steps.png alt=steps data-license=fair-use>
+      </figure>
+      <h3>Steps</h3>
+      <p>
+         Settings              <i data-icon=right-long></i>
+         System                <i data-icon=right-long></i>
+         Languages &amp; input <i data-icon=right-long></i>
+      </p>
+      <p>
+         Regional preferences  <i data-icon=right-long></i>
+         Temperature units     <i data-icon=right-long></i>
+         Celsius(&deg;C)
+      </p>
+   </section>
+
+   <section id=macbook>
+      <h2><i data-brand=apple></i>Switch Your MacBook to Metric</h2>
+      <figure class=small-picture>
+         <img src=macos-1-apple-menu.png alt=macos data-license=fair-use>
+      </figure>
+      <figure>
+         <img src=macos-2-system-settings.png alt=macos data-license=fair-use>
+      </figure>
+      <figure>
+         <img src=macos-3-language-region.png alt=macos data-license=fair-use>
+      </figure>
+      <h3>Steps</h3>
+      <p>
+         Apple Menu            <i data-icon=right-long></i>
+         System Settings...    <i data-icon=right-long></i>
+         General               <i data-icon=right-long></i>
+         Language &amp; Region <i data-icon=right-long></i>
+      </p>
+      <p>
+         Temperature           <i data-icon=right-long></i>
+         Celsius (&deg;C)      <i data-icon=right-long></i>
+      </p>
+      <p>
+         Measuring system      <i data-icon=right-long></i>
+         Metric
+      </p>
+   </section>
+
+   <section id=conversions>
+      <h2>Unit Conversions</h2>
+      <p>
+         Don't.
+      </p>
+      <figure>📱 📱 📱</figure>
+   </section>
+
+</main>
+
+{% render 'src/templates/doc-end.html' %}
