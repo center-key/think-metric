@@ -21,10 +21,18 @@
       </figure>
    </section>
 
-   <section id=shipping>
+   <section id=toc>
+      <h2>Table of Contents</h2>
+      <div>
+         <ol>
+            {% render 'src/templates/table-of-products-toc.html' %}
+         </ol>
+      </div>
       <p>
          Products listed below are (or at were at one time) available in the U.S. with
          <i>"Free Shipping by Amazon"</i>.&nbsp;
+         The links are <b>NOT</b> affiliate links &mdash; there are no commissions
+         earned.&nbsp;
       </p>
    </section>
 
@@ -34,7 +42,14 @@
          🏆: Favorite product
       </p>
       <div>
-         {% render 'src/templates/table-of-products.html' %}
+         <table class=big-table data-hide-column=2>
+            <thead>
+               <tr><th>Item</th><th>Note</th><th>Image</th></tr>
+            </thead>
+            <tbody class=external-site>
+               {% render 'src/templates/table-of-products.html' %}
+            </tbody>
+         </table>
       </div>
       <p>
          The above links are <b>NOT</b> affiliate links &mdash; there are no commissions
