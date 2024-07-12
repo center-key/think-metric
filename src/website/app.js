@@ -64,11 +64,12 @@ const app = {
          const round =        (grams) => grams < 10 ? Math.ceil(grams) : round5(grams);
          const toGrams =      (ingredient) => round((isVolume ? byVolume(ingredient) : qty * gramsPerUnit));
          const toMetric =     (ingredient) => ({ ingredient: ingredient, grams: toGrams(ingredient)});
+         const byGrams =      (metric1, metric2) => metric1.grams - metric2.grams;
          const calcResults = () => ({
             qty,
             unitsLabel,
             key,
-            metric: ingredients.map(toMetric),
+            metric: ingredients.map(toMetric).sort(byGrams),
             packed: ingredients.some(ingredient => ingredient.packed),
             });
          if (qty)

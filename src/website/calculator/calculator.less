@@ -2,6 +2,23 @@
 // Style: Calculator
 
 section.grams-calculator {
+   // section.grams-calculator
+   //    h2
+   //    div
+   //       form
+   //          label
+   //             input[name=quantity]
+   //          label
+   //             select[name=units]
+   //          label
+   //             select[name=ingredient]
+   //       p
+   //    figure#grams-calculator-result
+   //       figcaption
+   //       p
+   //       div
+   //          output
+   //       small
    min-height: 750px;  //reduce jitter when calculations refresh
    >div {
       position: relative;
@@ -34,11 +51,19 @@ section.grams-calculator {
          margin-bottom: 15px;
          }
       >div {
+         display: flex;
+         flex-direction: column;
+         width: max-content;
+         align-items: start;
+         margin: 0px auto;
          >output {
             display: block;
             font-style: normal;
             margin-bottom: 5px;
-            b {
+            b:first-child {
+               display: inline-block;
+               min-width: 3em;
+               text-align: right;
                }
             }
          }
