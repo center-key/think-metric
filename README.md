@@ -1,4 +1,4 @@
-<img src=src/website/graphics/think-metric-logo.png width=100 alt=logo>
+<img src=src/website/assets/think-metric-logo.png width=100 alt=logo>
 
 # Think Metric
 ### 🇺🇸 Americans for Metrication 🇺🇸

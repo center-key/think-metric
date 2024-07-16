@@ -1,4 +1,4 @@
-{% assign defaultImageUrl = webRoot | append: '/graphics/social-media/think-metric-logo-card.png' %}
+{% assign defaultImageUrl = webRoot | append: '/assets/think-metric-logo-card.png' %}
 {% assign imageUrl =        heroImage | default: defaultImageUrl %}
 {% assign imageCaption =    heroCaption | default: 'Logo' %}
 <!doctype html>
@@ -24,8 +24,8 @@
    <meta property=og:image               content="{{imageUrl}}">
    <meta property=og:image:alt           content="{{imageCaption}}">
    <title>{{articleTitle}} 🇺🇸 Think Metric</title>
-   <link rel=icon             href={{webRoot}}/graphics/bookmark.png>
-   <link rel=apple-touch-icon href={{webRoot}}/graphics/think-metric-logo.png>
+   <link rel=icon             href={{webRoot}}/assets/bookmark.png>
+   <link rel=apple-touch-icon href={{webRoot}}/assets/think-metric-logo.png>
    <link rel=preconnect       href=https://fonts.googleapis.com>
    <link rel=preconnect       href=https://fonts.gstatic.com crossorigin>
    <link rel=stylesheet       href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@{{package.dependencies.-fortawesome-fontawesome-free|version}}/css/all.min.css>
@@ -50,7 +50,7 @@
    </nav>
    <h1>Think Metric</h1>
    <h2>🇺🇸&nbsp;Americans for Metrication&nbsp;🇺🇸</h2>
-   <img src={{webRoot}}/graphics/think-metric-logo.png alt=logo>
+   <img src={{webRoot}}/assets/think-metric-logo.png alt=logo>
    <div id=article-nav>
       <i data-icon=circle-left></i>
       <i data-icon=circle-right></i>

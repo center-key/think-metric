@@ -41,20 +41,23 @@
          "jshint src"
       ],
       "build": [
-         "copy-file   src/cname.txt                     build/CNAME",
          "copy-folder src/website                       build --ext=.png,.jpg,.js",
          "lessc       src/website/style.less            build/style.css",
          "replacer    src/website --ext=.html           build",
-         "copy-file   build/elsewhere/article-list.html build/article/index.html --move",
-         "rev-web-assets build docs --meta-content-base=https://think-metric.org"
+         "copy-file   build/elsewhere/article-list.html build/article/index.html --move"
+      ],
+      "publish": [
+         "rev-web-assets build                      docs --meta-content-base=https://think-metric.org",
+         "copy-file src/cname.txt                   docs/CNAME",
+         "copy-file src/website/assets/bookmark.png docs/graphics --folder"
       ],
       "interactive": [
-         "chokidar src --command 'run-scripts lint build'",
+         "chokidar src --command 'run-scripts lint build publish'",
          "browser-sync . --startPath docs --files docs"
       ]
    },
    "scripts": {
-      "pretest": "run-scripts clean lint generated build",
+      "pretest": "run-scripts clean lint generated build publish",
       "test": "html-validator docs '--ignore=Section lacks heading.'",
       "interactive": "npm test && run-scripts interactive --parallel"
    },
