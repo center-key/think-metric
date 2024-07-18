@@ -62,7 +62,7 @@
       "interactive": "npm test && run-scripts interactive --parallel"
    },
    "dependencies": {
-      "@fortawesome/fontawesome-free": "~6.5",
+      "@fortawesome/fontawesome-free": "~6.6",
       "browser-sync": "~3.0",
       "chokidar-cli": "~3.0",
       "copy-file-util": "~1.2",
@@ -73,7 +73,7 @@
       "replacer-util": "~1.3",
       "rev-web-assets": "~1.4",
       "rimraf": "~6.0",
-      "run-scripts-util": "~1.2",
+      "run-scripts-util": "~1.3",
       "w3c-html-validator": "~1.8",
       "web-ignition": "~2.2"
    }
