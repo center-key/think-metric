@@ -123,18 +123,25 @@ const app = {
          //    ul
          //       li a[href]
          const container = globalThis.document.getElementById('article-nav');
+         const nav =       { prev: container.children[0], next: container.children[1] };
          const articles =  [...container.querySelectorAll('ul >li >a')];
          const header =    'main >section:first-child >h2';
          const title =     globalThis.document.querySelector(header).textContent;
          const index =     articles.findIndex(article => article.textContent === title);
+         const quote =     (title) => `"${title}"`;
          const configure = (button, index) => {
             button.setAttribute('data-href', articles[index]?.getAttribute('href'));
-            button.setAttribute('title',     articles[index]?.textContent);
+            button.setAttribute('title',     quote(articles[index]?.textContent));
             button.classList.add(index > -1 && index < articles.length ? 'show' : 'hide');
             };
-         configure(container.children[0], index - 1);  //previous article
-         configure(container.children[1], index + 1);  //next article
+         configure(nav.prev, index - 1);
+         configure(nav.next, index + 1);
          container.classList.add('show');
+         const iconBar = globalThis.document.querySelector('section:last-child >figure:last-child');
+         iconBar.setAttribute('title', 'Hit the ENTER key to view the next article.');
+         const jumpToNextArticle = () => nav.next.classList.contains('show') && nav.next.click();
+         dna.dom.onEnterKey(jumpToNextArticle);
+         dna.dom.onKeyUp((elem, event) => event.key === '1' && articles[0].click());
          },
       init() {
          const hasArticleTitle = /\/article\/./;

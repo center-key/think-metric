@@ -3,15 +3,6 @@
 
 section {
    figure {
-      &.box-frame {
-         background-color: white;
-         border: 5px solid silver;
-         padding: 5px 20px;
-         img {
-            height: 100px;
-            .MobileMode({ height: 70px; });
-            }
-         }
       &.small-picture {
          img {
             width: 200px;
@@ -24,10 +15,40 @@ section {
             .MobileMode({ width: 350px; });
             }
          }
+      &.floating-card {
+         &:not(:last-child) {
+            margin-bottom: 50px;
+            }
+         img {
+            background-color: white;
+            border: 3px solid silver;
+            border-radius: 20px;
+            box-shadow: 3px 3px 0.2em 0.2em rgba(0, 0, 0, 0.7);
+            padding: 10px 40px;
+            .MobileMode({ padding: 10px 10px; });
+            margin-bottom: 5px;
+            }
+         &+blockquote {
+            margin-top: -35px;
+            }
+         }
+      &.box-frame {
+         background-color: white;
+         border: 5px solid silver;
+         padding: 5px 20px;
+         img {
+            height: 100px;
+            .MobileMode({ height: 70px; });
+            }
+         }
       &.window-shadow {
          figcaption {
             margin-top: -40px;
             }
+         }
+      &+blockquote {
+         font-size: 1.2rem;
+         margin: -15px auto 55px auto;
          }
       }
    }
