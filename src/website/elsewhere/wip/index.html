@@ -1,0 +1,32 @@
+{% assign articleTitle = 'This is an Article' %}
+{% assign heroImage =    'hero-image.png' %}
+{% assign heroCaption =  'This is the hero image caption' %}
+{% render 'src/templates/doc-begin.html', articleTitle: articleTitle, heroImage: heroImage, heroCaption: heroCaption %}
+
+<main>
+
+   <section>
+      <h2>{{articleTitle}}</h2>
+      <p>
+         Text goes here...&nbsp;
+      </p>
+      <figure>
+         <img src={{heroImage}} alt=hero data-author=unknown data-license=cc0>
+         <figcaption>{{heroCaption}}</figcaption>
+      </figure>
+      <p>
+         More text goes here...&nbsp;
+      </p>
+   </section>
+
+   <section id=conclusion>
+      <h2>Conclusion</h2>
+      <p>
+         Last words...&nbsp;
+      </p>
+      <figure>😼 😼 😼</figure>
+   </section>
+
+</main>
+
+{% render 'src/templates/doc-end.html' %}
