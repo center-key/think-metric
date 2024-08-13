@@ -45,25 +45,41 @@
       {% render 'src/templates/metrication-checklist.html' %}
    </section>
 
-   <section>
-      <h2>Metric Poetry</h2>
-      <h3>Common words for SI</h3>
-      <p><i>"A journey of a thousand kays begins with a single step."</i></p>
-      <figure class=small-picture>
-         <a href={{webRoot}}/poetry><img src={{webRoot}}/article/metric-poetry/si-wheel.png alt=si></a>
-      </figure>
-      <p>
-         <a href={{webRoot}}/poetry>think-metric.org/poetry</a>
-      </p>
-   </section>
-
    <section id=articles>
+      <figure class=small-picture>
+         <img src={{webRoot}}/assets/si-wheel.png alt=si>
+      </figure>
       <h2>Articles</h2>
       <div>
          <ul class=plain-list>
             {% render 'src/templates/generated/articles.html' %}
          </ul>
       </div>
+   </section>
+
+   <section id=about>
+      <h2>About the Project</h2>
+      <p>
+         <b>Think Metric</b> is an
+         <a href=https://github.com/center-key/think-metric>Open Source project</a>,
+         and the content we create is published under the CC0 license.&nbsp;
+         CC0 is the permissive Creative Commons License for public domain work with
+         "No&nbsp;Rights&nbsp;Reserved".&nbsp;
+      </p>
+      <figure class=small-picture>
+         <a href=https://creativecommons.org/public-domain/cc0 class=external-site>
+            <img src={{webRoot}}/assets/cc0-license.png alt=cc0>
+         </a>
+      </figure>
+      <p>
+         We promote metric units for casual everyday use in America.&nbsp;
+         Our goal is to speed up metrication in order to boost America's economic competitiveness
+         and generate more good jobs.&nbsp;
+      </p>
+      <p>
+         Everyone interested in advocating for metrication is welcome to participate in the
+         <b>Think Metric</b> project.&nbsp;
+      </p>
    </section>
 
 </main>
