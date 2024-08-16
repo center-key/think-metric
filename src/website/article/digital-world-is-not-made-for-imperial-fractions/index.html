@@ -1,0 +1,92 @@
+{% assign articleTitle = 'The Digital World is Not Made for Imperial Fractions' %}
+{% assign heroImage =    'saw-blade-fractional-inches.png' %}
+{% assign heroCaption =  'Fractional inches make a mess of online shopping&nbsp; 🤷‍♀️' %}
+{% render 'src/templates/doc-begin.html', articleTitle: articleTitle, heroImage: heroImage, heroCaption: heroCaption %}
+
+<main>
+
+   <section>
+      <h2>{{articleTitle}}</h2>
+      <sup>Updated <time datetime={{file.timestamp}}>{{file.modified}}</time></sup>
+      <p>
+         Writing down a fractional inch measurement on paper is trivial.&nbsp;
+         The same is not true for computer user interfaces.&nbsp;
+         Using fractions on a website is fraught with inconveniences.&nbsp;
+      </p>
+      <figure class=floating-card>
+         <img src={{heroImage}} alt=saw-blades data-license=fair-use>
+         <figcaption>{{heroCaption}}</figcaption>
+      </figure>
+      <p>
+         Fractions and computers are like oil and water.
+      </p>
+   </section>
+
+   <section>
+      <h2>Online Annoyances</h2>
+      <div>
+         <h3>Imperial fractions muck up the internet:</h3>
+         <ol>
+            <li>Entering fractions into <b>input fields is unpredictable</b></li>
+            <li>Fractional inches force customers to do <b>manual decimal conversions</b></li>
+            <li>Fractions cause <b>extraneous product duplicates</b></li>
+            <li>Fractions are <b>chaos for sorting</b></li>
+            <li>Spaces in fractional units <b>break search tools</b></li>
+         </ol>
+      </div>
+   </section>
+
+   <section>
+      <h2>Tedium of Extra Manual Steps</h2>
+      <p>
+         The <a href={{webRoot}}/calculator>kitchen calculator</a> on this website accepts
+         both decimal and fractional imperial units, but the user interface is awkward and special
+         instructions are needed.&nbsp;
+         Without special instructions, users won't even know that fractions are allowed.&nbsp;
+         Similarly, the ordering system for custom windows at America's largest chain of home
+         improvement stores automatically converts fractional inches to decimal inches.&nbsp;
+         To verify the correctness of an order, the customer is forced to manually convert decimal
+         inches back to fractional inches.&nbsp;
+      </p>
+      <p>
+         Even if the user doesn't need to type out a fraction, fractions still wreak havoc on
+         product listings because computers will consider sizes like
+         <code>3.5"</code>, <code>3 1/2"</code>, and <code>3 4/8"</code> to all be different sizes
+         when in fact they are identical.&nbsp;
+      </p>
+      <p>
+         Fractions also break sorting algorithms.&nbsp;
+         Computers often consider <code>1/2</code> to be less then <code>3/16</code> because "1"
+         comes before "3".&nbsp;
+         Likewise, the space character in <code>6 3/4"</code> tricks computers into thinking the
+         user might be interested in 6-packs and <code>3/4"</code> drill bits, neither of which
+         have anything at all to do with the measurement of <code>6 3/4"</code>.&nbsp;
+      </p>
+   </section>
+
+   <section>
+      <h2>Stop the Insanity</h2>
+      <figure class=floating-card>
+         <img src=paper-cup-decimal-inches.jpg data-license=fair-use>
+         <figcaption>Online retailers don't do fractions&nbsp; 🤣 🤣 🤣 </figcaption>
+      </figure>
+      <p>
+         Many of these problems could be mitigated if software developers were given infinite time
+         to build perfect websites, but the reality is that dealing with fractions will never be a
+         business priority.&nbsp;
+         <b>Imperial fractions are a waste of money, and business operates on money.&nbsp;
+         FULL&nbsp;STOP.</b>
+      </p>
+   </section>
+
+   <section>
+      <h2><img src={{webRoot}}/assets/google-maps-icon.png alt=maps data-license=fair-use>Google Maps</h2>
+      <figure>
+         <img src={{webRoot}}/assets/5,280.png alt=5,280 data-license=fair-use>
+      </figure>
+      <figure>🛜 🛜 🛜</figure>
+   </section>
+
+</main>
+
+{% render 'src/templates/doc-end.html' %}
