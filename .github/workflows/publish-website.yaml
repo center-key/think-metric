@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4               #see: https://github.com/actions/checkout/releases
         with:
-          ref: dist       #supplies full git history needed by git-restore-mtime-action
+          ref: main       #supplies full git history needed by git-restore-mtime-action
           fetch-depth: 0  #needed by git-restore-mtime-action
       - uses: chetan/git-restore-mtime-action@v2
       - uses: actions/setup-node@v4             #see: https://github.com/actions/setup-node/releases
