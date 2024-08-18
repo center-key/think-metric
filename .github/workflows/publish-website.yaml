@@ -13,17 +13,17 @@ jobs:
       url: ${{steps.deployment.outputs.page_url}}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4               #see: https://github.com/actions/checkout/releases
+      - uses: actions/checkout@v4                 #see: https://github.com/actions/checkout/releases
         with:
-          ref: main       #supplies full git history needed by git-restore-mtime-action
-          fetch-depth: 0  #needed by git-restore-mtime-action
-      - uses: chetan/git-restore-mtime-action@v2
-      - uses: actions/setup-node@v4             #see: https://github.com/actions/setup-node/releases
+          ref: main       #fetch the full git history of the "main"
+          fetch-depth: 0  #branch for git-restore-mtime-action below
+      - uses: chetan/git-restore-mtime-action@v2  #see: https://github.com/chetan/git-restore-mtime-action/releases
+      - uses: actions/setup-node@v4               #see: https://github.com/actions/setup-node/releases
       - run: npm install
       - run: npm test
-      - uses: actions/configure-pages@v5        #see: https://github.com/actions/configure-pages/releases
-      - uses: actions/upload-pages-artifact@v3  #see: https://github.com/actions/upload-pages-artifact/releases
+      - uses: actions/configure-pages@v5          #see: https://github.com/actions/configure-pages/releases
+      - uses: actions/upload-pages-artifact@v3    #see: https://github.com/actions/upload-pages-artifact/releases
         with:
           path: docs
-      - uses: actions/deploy-pages@v4           #see: https://github.com/actions/deploy-pages/releases
+      - uses: actions/deploy-pages@v4             #see: https://github.com/actions/deploy-pages/releases
         id: deployment
