@@ -7,20 +7,20 @@
 <head>
    <meta charset=utf-8>
    <meta name=viewport      content="width=device-width, initial-scale=1">
-   <meta http-equiv=refresh content="1; url=../{{uri}}">
+   <meta http-equiv=refresh content="1; url={{webRoot}}/{{uri}}">
    <meta name=description   content="{{title}} &bull; {{subtitle}}">
    <title>{{title}} &bull; {{subtitle}}</title>
-   <link rel=icon       href=../assets/bookmark.png>
+   <link rel=icon       href={{webRoot}}/assets/bookmark.png>
    <link rel=stylesheet href=https://cdn.jsdelivr.net/npm/web-ignition@{{package.dependencies.web-ignition|version}}/dist/reset.min.css>
    <style>main { opacity: 0; }</style>
-   <script>globalThis.location.href = '../{{uri}}';</script>
+   <script>globalThis.location.href = '{{webRoot}}/{{uri}}';</script>
 </head>
 <body>
 
 <main>
    <h1>{{title}}</h1>
    <h2>{{subtitle}}</h2>
-   <a href=../{{uri}}>https://think-metric.org/{{file.folder}}</a>
+   <a href={{webRoot}}/{{uri}}>https://think-metric.org/{{file.folder}}</a>
 </main>
 
 </body>
