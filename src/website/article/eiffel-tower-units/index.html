@@ -1,0 +1,48 @@
+{% assign articleTitle = 'Eiffel Tower Units' %}
+{% assign heroImage =    'asian-elephant.jpg' %}
+{% assign heroCaption =  'An elephant is neither imperial nor metric' %}
+{% render 'src/templates/doc-begin.html', articleTitle: articleTitle, heroImage: heroImage, heroCaption: heroCaption %}
+
+<main>
+
+   <section>
+      <h2>{{articleTitle}}</h2>
+      <sup>Updated <time datetime={{file.timestamp}}>{{file.modified}}</time></sup>
+      <p>
+         A frame of reference, such as the weight of an elephant or the length of a school bus,
+         spices up storytelling.&nbsp;
+         Authors incorporate frame of references to create interesting visualizations, and
+         communication would be more bland without such tangible comparisons.&nbsp;
+      </p>
+      <figure>
+         <img src={{heroImage}} alt=almonds data-author=dem-pilafian data-license=cc0>
+         <figcaption>{{heroCaption}}</figcaption>
+      </figure>
+   </section>
+
+   <section id=eiffel-tower>
+      <h2>Eiffel Tower Units are OK</h2>
+      <p>
+         When American news media company CNN reported on traveling over the Millau Viaduct, the
+         reporter used the height of the Eiffel Tower as a reference.&nbsp;
+         The fallback units were meters not feet, with the Eiffel Tower listed as 330 m.&nbsp;
+         If CNN had been trying to avoid metric, the Eiffel Tower would have been listed as 1,083
+         feet.&nbsp;
+      </p>
+      <figure class=simple-rounded>
+         <img src=eiffel-tower-units-cnn-2024-08-20.jpg alt=eiffel-tower
+            data-author=cnn data-license=fair-use>
+         <figcaption>Eiffel Tower Units</figcaption>
+      </figure>
+      <p>
+         The take away for metrication advocates is that a frame of reference, such as the height
+         of the Eiffel Tower, is not an attempt to avoid metric.&nbsp;
+         On the contrary, showing the Eiffel Tower along with the metric measurement of 330 m
+         helps create a memorable visualization and foster an intuitive sense of meters.&nbsp;
+      </p>
+      <figure>🐘 🐘 🐘</figure>
+   </section>
+
+</main>
+
+{% render 'src/templates/doc-end.html' %}

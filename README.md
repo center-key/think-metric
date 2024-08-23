@@ -16,9 +16,9 @@ https://think-metric.org/logo.html
 ## Practical Ways to Go Metric
 
 We promote metric units for casual everyday use in America.
-Our goal is to speed up metrication to boost America's economic competitiveness and champion good jobs.
+Our goal is to speed up metrication to boost America's economic competitiveness and generate more good manufacturing jobs.
 
-This project and the content published is free to reuse under a permissive Creative Commons license.
+This project and the content we publish are free to reuse under a permissive Creative Commons license.
 
 ## Contributor Notes
 ```shell
