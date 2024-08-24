@@ -58,15 +58,21 @@
          font-size: 1rem;
          text-align: left;
          }
-      tbody tr td {
-         font-size: 1rem;
-         .MobileMode({ font-size: 0.9rem; });
-         text-align: left;
-         }
-      tbody tr th {
-         i.font-icon {
-            font-size: 1.1em;
-            padding-right: 0.4em;
+      tbody tr {
+         th[colspan] {
+            padding: 6px 0px;
+            i.font-icon {
+               font-size: 1.1em;
+               padding-right: 0.4em;
+               }
+            }
+         td {
+            font-size: 1rem;
+            .MobileMode({ font-size: 0.9rem; });
+            text-align: left;
+            i.font-icon {
+               color: steelblue;
+               }
             }
          }
       }

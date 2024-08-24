@@ -14,7 +14,7 @@ section {
       padding: 0px 0.4em;
       }
 
-   .ballot-x-mark {
+   .BallotMark(@symbol, @color) {
       position: relative;
       text-align: center;
       &::before {
@@ -22,10 +22,18 @@ section {
          top: -0.18em;
          left: 0px;
          right: 0px;
-         content: @symbolBallotXMark;
+         content: @symbol;
          font-size: 2rem;
-         color: firebrick;
+         color: @color;
          }
+      }
+
+   .ballot-checkmark {
+      .BallotMark(@symbolCheckmark, green);
+      }
+
+   .ballot-x-mark {
+      .BallotMark(@symbolBallotXMark, firebrick);
       }
 
    code.block {
