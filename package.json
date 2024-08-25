@@ -35,6 +35,7 @@
          "rimraf build docs"
       ],
       "generated": [
+         "replacer src/templates/table-of-products.html --content={{lt}}time{{space}}datetime{{equals}}{{file.timestamp}}{{gt}}{{file.modified}}{{lt}}/time{{gt}} src/templates/generated --concat=products-timestamp.html",
          "replacer src/website/article --ext=.html --content={{lt}}li{{gt}}{{lt}}a{{space}}href{{equals}}{[webRoot]}/article/{{file.folder}}{{gt}}{{articleTitle}}{{lt}}/a{{gt}}{{lt}}/li{{gt}} src/templates/generated --find=[webRoot] --replacement={webRoot} --concat=articles.html"
       ],
       "lint": [
