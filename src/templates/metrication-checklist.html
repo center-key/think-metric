@@ -6,7 +6,7 @@
 {% assign redditSub =    'https://www.reddit.com/r/ThinkMetric' %}
 {% assign tapeMeasure =  'article/go-fast-with-high-contrast-metric-only-tape-measures' %}
 
-<ol class=numbered-marble-checklist data-on-click=app.checklist.save>
+<ol class=marble-checklist data-on-load=libX.marbleChecklist.setup>
    <li id=phone>        <p>Set your <a href={{mobileDevice}}>mobile device</a> to metric</p>                      <label><input type=checkbox><b></b></label></li>
    <li id=car>          <p>Set the display in your car to Celsius (&deg;C)</p>                                    <label><input type=checkbox><b></b></label></li>
    <li id=home>         <p>Set your home thermostat to Celsius (&deg;C)</p>                                       <label><input type=checkbox><b></b></label></li>

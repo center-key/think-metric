@@ -2,25 +2,6 @@
 
 const app = {
 
-   checklist: {
-      restore(checklistSection) {
-         // Set checklist task items according to previously saved values.
-         const listElem =    checklistSection.querySelector('ol.numbered-marble-checklist');
-         const checklist =   JSON.parse(globalThis.localStorage.getItem('checklist'));
-         const getCheckbox = (li) => li.querySelector('input[type=checkbox]');
-         const setCheckbox = (li) => getCheckbox(li).checked = checklist[li.id];
-         if (checklist)
-            [...listElem.children].forEach(setCheckbox);
-         },
-      save(checklistElem) {
-         // Record current status of checklist tasks to Local Storage.
-         const tasks =     [...checklistElem.querySelectorAll('li')];
-         const isChecked = (li) => li.querySelector('input[type=checkbox]').checked;
-         const checklist = Object.fromEntries(tasks.map(li => [li.id, isChecked(li)]));
-         globalThis.localStorage.setItem('checklist', JSON.stringify(checklist));
-         },
-      },
-
    calculator: {
       fractionToFloat(str) {
          // Example:
