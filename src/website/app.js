@@ -109,17 +109,16 @@ const app = {
          const header =    'main >section:first-child >h2';
          const title =     globalThis.document.querySelector(header).textContent;
          const index =     articles.findIndex(article => article.textContent === title);
-         const quote =     (title) => `"${title}"`;
-         const configure = (button, index) => {
+         const configure = (button, index, leadingText) => {
             button.setAttribute('data-href', articles[index]?.getAttribute('href'));
-            button.setAttribute('title',     quote(articles[index]?.textContent));
+            button.setAttribute('title',     `${leadingText} "${articles[index]?.textContent}"`);
             button.classList.add(index > -1 && index < articles.length ? 'show' : 'hide');
             };
-         configure(nav.prev, index - 1);
-         configure(nav.next, index + 1);
+         configure(nav.prev, index - 1, 'View');
+         configure(nav.next, index + 1, 'Press ENTER to view');
          container.classList.add('show');
          const iconBar = globalThis.document.querySelector('section:last-child >figure:last-child');
-         iconBar.setAttribute('title', 'Hit the ENTER key to view the next article.');
+         iconBar.setAttribute('title', 'Press ENTER to view the next article.');
          const jumpToNextArticle = () => nav.next.classList.contains('show') && nav.next.click();
          dna.dom.onEnterKey(jumpToNextArticle);
          dna.dom.onKeyUp((elem, event) => event.key === '1' && articles[0].click());
