@@ -42,11 +42,11 @@
          "jshint src"
       ],
       "build": [
-         "copy-folder src/website                       build --ext=.png,.jpg,.js",
-         "lessc       src/website/style.less            build/style.css",
-         "replacer    src/website   --ext=.html         build",
-         "replacer    src/redirects --ext=.html         build",
-         "copy-file   build/elsewhere/article-list.html build/article/index.html --move"
+         "copy-folder src/website                   build --ext=.png,.jpg,.svg,.js",
+         "lessc       src/website/style.less        build/style.css",
+         "replacer    src/website   --ext=.html     build",
+         "replacer    src/redirects --ext=.html     build",
+         "copy-file   build/article-list/index.html build/article --folder"
       ],
       "publish": [
          "rev-web-assets build                      docs --meta-content-base=https://think-metric.org",
