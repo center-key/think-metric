@@ -3,44 +3,42 @@
 {% assign heroCaption =  'Convert ingredients to grams' %}
 {% render 'src/templates/doc-begin.html', articleTitle: articleTitle, heroImage: heroImage, heroCaption: heroCaption %}
 
-<main class=center-line>
+<main>
 
    <section class=grams-calculator data-on-load=app.calculator.init>
       <h2>{{articleTitle}}</h2>
-      <div>
-         <form>
-            <label>
-               <span>Quantity:</span>
-               <input name=quantity value=2/3 maxlength=8 required autofocus
-                  data-on-input=app.calculator.convertToGrams placeholder=Quantity...>
-            </label>
-            <label>
-               <span>Units:</span>
-               <select name=units data-on-change=app.calculator.convertToGrams>
-                  <option data-type=volume data-per-cup=48>        Teaspoons</option>
-                  <option data-type=volume data-per-cup=16>        Tablespoons</option>
-                  <option data-type=volume data-per-cup=8>         Fluid Ounces (fl oz)</option>
-                  <option data-type=volume data-per-cup=2>         Sticks (4 oz)</option>
-                  <option data-type=volume data-per-cup=1 selected>Cups</option>
-                  <option data-type=volume data-per-cup=0.5>       Blocks (4 sticks)</option>
-                  <option data-type=volume data-per-cup=0.5>       Pints</option>
-                  <option data-type=volume data-per-cup=0.25>      Quarts</option>
-                  <option data-type=volume data-per-cup=0.0625>    Gallons</option>
-                  <option data-type=weight data-grams=28.3495>     Ounces (oz weight)</option>
-                  <option data-type=weight data-grams=453.592>     Pounds (lb weight)</option>
-                  <option data-type=volume data-per-cup=236.588>   Milliliters (ml)</option>
-                  <option data-type=volume data-per-cup=0.236588>  Liters (L)</option>
-               </select>
-            </label>
-            <label>
-               <span>Ingredient:</span>
-               <select name=ingredient data-on-change=app.calculator.convertToGrams>
-                  <option id=input-ingredient class=dna-template>~~key~~</option>
-               </select>
-            </label>
-         </form>
+      <form>
+         <label>
+            <span>Quantity:</span>
+            <input name=quantity value=2/3 maxlength=8 required autofocus
+               data-on-input=app.calculator.convertToGrams placeholder=Quantity...>
+         </label>
+         <label>
+            <span>Units:</span>
+            <select name=units data-on-change=app.calculator.convertToGrams>
+               <option data-type=volume data-per-cup=48>        Teaspoons</option>
+               <option data-type=volume data-per-cup=16>        Tablespoons</option>
+               <option data-type=volume data-per-cup=8>         Fluid Ounces (fl oz)</option>
+               <option data-type=volume data-per-cup=2>         Sticks (4 oz)</option>
+               <option data-type=volume data-per-cup=1 selected>Cups</option>
+               <option data-type=volume data-per-cup=0.5>       Blocks (4 sticks)</option>
+               <option data-type=volume data-per-cup=0.5>       Pints</option>
+               <option data-type=volume data-per-cup=0.25>      Quarts</option>
+               <option data-type=volume data-per-cup=0.0625>    Gallons</option>
+               <option data-type=weight data-grams=28.3495>     Ounces (oz weight)</option>
+               <option data-type=weight data-grams=453.592>     Pounds (lb weight)</option>
+               <option data-type=volume data-per-cup=236.588>   Milliliters (ml)</option>
+               <option data-type=volume data-per-cup=0.236588>  Liters (L)</option>
+            </select>
+         </label>
+         <label>
+            <span>Ingredient:</span>
+            <select name=ingredient data-on-change=app.calculator.convertToGrams>
+               <option id=input-ingredient class=dna-template>~~key~~</option>
+            </select>
+         </label>
          <p>Quantity can include fractions, such as: <i>3 1/2</i></p>
-      </div>
+      </form>
       <figure id=grams-calculator-result class=dna-template>
          <figcaption>
             <b data-format-number=#.###>~~qty~~</b>
@@ -103,69 +101,68 @@
          <img src={{heroImage}} alt=bread data-author=nist.gov data-license=public-domain>
          <figcaption>Metric banana bread</figcaption>
       </figure>
-      <p>
+      <div>
          The National Institute of Standards and Technology (NIST) website has helpful
          cooking and baking tips plus a bunch of tasty metric recipes.
-      </p>
-      <p>
-         <a href=https://www.nist.gov/pml/owm/metric-si/metric-kitchen class=external-site>
-            NIST Metric Kitchen
-         </a>
-      </p>
-      <p>
-         <a href=https://doi.org/10.6028/NIST.SP.1290 class=external-site>
-            Banana Bread, Mac and Cheese, Apple Crisps, and more
-         </a>
-      </p>
+      </div>
+      <div>
+         <header>NIST</header>
+         <ul class=external-site>
+            <li><a href=https://www.nist.gov/pml/owm/metric-si/metric-kitchen>
+               Metric Kitchen</a></li>
+            <li><a href=https://doi.org/10.6028/NIST.SP.1290>
+               Mac and Cheese, Banana Bread, and Apple Crisps</a></li>
+         </ul>
+      </div>
    </section>
 
    <section id=consistency>
       <h2>Grams Are More Consistent</h2>
-      <p>
+      <div>
          The density of an ingredient can vary significantly based on processing and
          compaction.&nbsp;
          This variation causes notable inconsistencies when measuring by cups and
          tablespoons.&nbsp;
-      </p>
+      </div>
       <figure class=medium-picture>
          <img src=morton-salt-by-cups.jpg alt=salt data-author=morton data-license=fair-use>
          <figcaption>Imperial units create inconsistencies</figcaption>
       </figure>
-      <p>
+      <div>
          For example, some forms of salt are more than twice as dense as other forms.&nbsp;
          A 1/4 cup of popcorn salt can contain <b>double the salt</b> of a 1/4 cup of coarse sea
          salt.&nbsp;
          Likewise, 1 cup of pressed brown sugar is about <b>a third more sugar</b> than 1 cup of
          loose brown sugar.&nbsp;
-      </p>
-      <p>
+      </div>
+      <div>
          Weighing in grams gives you better accuracy and predictability so that variations of
          ingredient processing and compaction don't botch up your recipe.&nbsp;
-      </p>
+      </div>
       <figure class=medium-picture data-href={{webRoot}}/products/#scales>
          <img src=scale-with-tare-function.jpg alt=scale data-author=Tanita data-license=fair-use>
          <figcaption>Hit "ZERO" to tare the scale</figcaption>
       </figure>
-      <p>
+      <div>
          Of course, the real reason that the best chefs prefer metric recipes is that weighing
          ingredients in a single mixing bowl using the scale's tare function means less mess and
          less cleanup.&nbsp;
-      </p>
+      </div>
    </section>
 
    <section id=community>
       <i data-brand=github></i>
       <h2>Open Source</h2>
-      <p>
+      <div>
          The <i>Recipe Converter Calculator</i> is an Open Source community project.&nbsp;
-      </p>
-      <p>
+      </div>
+      <div>
          Data for the calculator is on GitHub in the file:<br>
          <a href=https://github.com/center-key/think-metric/blob/main/src/website/calculator/ingredients-db.js>
             ingredients-db.js
          </a>
-      </p>
-      <p>
+      </div>
+      <div>
          You can get involved by submitting an issue or PR (pull request) on GitHub or by posting
          a suggestion to the <a href=https://www.reddit.com/r/ThinkMetric>r/ThinkMetric</a> sub on
          Reddit.&nbsp;
@@ -174,7 +171,7 @@
             Food, Recipes &amp; Grams
          </b>
          flair.&nbsp;
-      </p>
+      </div>
    </section>
 
 </main>

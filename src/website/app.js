@@ -98,11 +98,13 @@ const app = {
 
    article: {
       setupPage() {
-         // div#article-nav
-         //    i[data-icon=circle-left]
-         //    i[data-icon=circle-right]
-         //    ul
-         //       li a[href]
+         // <header>
+         //    <div id=article-nav>
+         //       <i data-icon=circle-left>
+         //       <i data-icon=circle-right>
+         //       <ul>
+         //          <li><a>
+         // <main>
          const container = globalThis.document.getElementById('article-nav');
          const nav =       { prev: container.children[0], next: container.children[1] };
          const articles =  [...container.querySelectorAll('ul >li >a')];

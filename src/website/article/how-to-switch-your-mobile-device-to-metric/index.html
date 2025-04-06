@@ -3,11 +3,11 @@
 {% assign heroCaption =  'Changing your phone to metric is easy' %}
 {% render 'src/templates/doc-begin.html', articleTitle: articleTitle, heroImage: heroImage, heroCaption: heroCaption %}
 
-<main class=center-line>
+<main>
 
    <section>
       <h2>{{articleTitle}}</h2>
-      <sup>Updated <time datetime={{file.timestamp}}>{{file.modified}}</time></sup>
+      <cite>Updated <time datetime={{file.timestamp}}>{{file.modified}}</time></cite>
       <figure class=medium-picture>
          <img src={{heroImage}} alt=iphone data-license=cc0>
          <figcaption>{{heroCaption}}</figcaption>
@@ -25,14 +25,14 @@
    <section id=toc>
       <h2>Instructions</h2>
       <div>
-         <ul class=icon-bullets>
+         <menu>
             <li><i data-brand=apple   data-href=#iphone></i>  <a href=#iphone>Apple iPhone and iPad (iOS)</a></li>
             <li><i data-brand=android data-href=#android></i> <a href=#android>Android (AOSP)</a></li>
             <li><i data-brand=apple   data-href=#macbook></i> <a href=#macbook>Apple MacBook (macOS)</a></li>
             <!--
             <li><i data-brand=windows data-href=#windows></i> <a href=#windows>Mircosoft Windows PC</a></li>
             -->
-         </ul>
+         </menu>
       </div>
    </section>
 
@@ -45,20 +45,20 @@
          <img src=iphone-steps.png alt=steps data-license=fair-use>
       </figure>
       <h3>Steps</h3>
-      <p>
+      <div>
          Settings              <i data-icon=right-long></i>
          General               <i data-icon=right-long></i>
          Language &amp; Region <i data-icon=right-long></i>
-      </p>
-      <p>
+      </div>
+      <div>
          Temperature           <i data-icon=right-long></i>
          Celsius (&deg;C)      <i data-icon=right-long></i>
          Back                  <i data-icon=right-long></i>
-      </p>
-      <p>
+      </div>
+      <div>
          Measurement System    <i data-icon=right-long></i>
          Metric
-      </p>
+      </div>
    </section>
 
    <section id=android>
@@ -67,16 +67,16 @@
          <img src=android-steps.png alt=steps data-license=fair-use>
       </figure>
       <h3>Steps</h3>
-      <p>
+      <div>
          Settings              <i data-icon=right-long></i>
          System                <i data-icon=right-long></i>
          Languages &amp; input <i data-icon=right-long></i>
-      </p>
-      <p>
+      </div>
+      <div>
          Regional preferences  <i data-icon=right-long></i>
          Temperature units     <i data-icon=right-long></i>
          Celsius(&deg;C)
-      </p>
+      </div>
    </section>
 
    <section id=macbook>
@@ -91,27 +91,27 @@
          <img src=macos-3-language-region.png alt=macos data-license=fair-use>
       </figure>
       <h3>Steps</h3>
-      <p>
+      <div>
          Apple Menu            <i data-icon=right-long></i>
          System Settings...    <i data-icon=right-long></i>
          General               <i data-icon=right-long></i>
          Language &amp; Region <i data-icon=right-long></i>
-      </p>
-      <p>
+      </div>
+      <div>
          Temperature           <i data-icon=right-long></i>
          Celsius (&deg;C)      <i data-icon=right-long></i>
-      </p>
-      <p>
+      </div>
+      <div>
          Measurement system    <i data-icon=right-long></i>
          Metric
-      </p>
+      </div>
    </section>
 
    <section id=conversions>
       <h2>Unit Conversions</h2>
-      <p>
+      <div>
          Don't.
-      </p>
+      </div>
       <figure>📱 📱 📱</figure>
    </section>
 

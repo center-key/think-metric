@@ -7,53 +7,18 @@
    &#toc {
       ol {
          li {
-            margin-bottom: 2px;
+            margin-bottom: 4px;
             i.font-icon {
-               width: 1.4em;
-               font-size: 1.0em;
-               text-align: center;
+               color: steelblue;
                }
             }
          }
       }
    >h2 {
-      >i.font-icon {
-         font-size: 1em;
-         padding-right: 0.4em;
-         }
-      >img {
+      >img {  //google maps icon
          height: 1.1em;
-         padding-right: 0.5em;
          margin-bottom: -0.2em;
          }
-      }
-   >h2+sup {
-      display: block;
-      margin-top: -10px;
-      }
-   >p, >div {
-      text-align: left;
-      li {
-         font-size: 1em;
-         text-indent: 0px;
-         padding-left: 0em;
-         margin-bottom: 15px;
-         &:last-child {
-            margin-bottom: 0px;
-            }
-         }
-      }
-   a {
-      white-space: normal;
-      }
-   >figure {
-      display: block;
-      }
-   >p + h3 {
-      margin-top: 50px;
-      }
-   >p:has(i[data-icon=circle-down]) {
-      text-align: center;
       }
    table {
       thead tr th {
@@ -96,7 +61,6 @@ body {
          }
       h2 {
          font-size: 1.5rem;
-         text-shadow: 0px 0px 0.6em black;
          .MobileMode({
             font-size: 0.8rem;
             font-weight: normal;
@@ -124,6 +88,7 @@ body {
             }
          >i {
             font-size: 3em;
+            text-shadow: none;
             cursor: pointer;
             &.hide {
                visibility: hidden;
@@ -144,13 +109,5 @@ body {
          }
       }
    >footer {
-      }
-   }
-
-main.center-line {
-   >section {
-      p {
-         text-align: center;
-         }
       }
    }

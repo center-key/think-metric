@@ -3,7 +3,7 @@
 
 @import "static/utility-box";
 
-section {
+main >section {
 
    i[data-icon^=circle] {
       font-size: 2rem;
@@ -62,30 +62,7 @@ section {
          }
       }
 
-   ul.plain-list {
-      list-style-type: none;
-      padding-left: 0px;
-      li {
-         text-align: center;
-         i.font-icon {
-            padding-right: 0.3em;
-            }
-         }
-      }
-
-   ul.icon-bullets {
-      list-style-type: none;
-      padding-left: 0px;
-      li {
-         text-align: left;
-         i.font-icon {
-            width: 1.5em;
-            }
-         }
-      }
-
    table.big-table {
-      margin: 0px;
       .TableCell() {
          &:first-child {
             padding-left: 0px;
@@ -114,17 +91,18 @@ section {
       }
 
    form {
-      display: flex;
+      display: inline-flex;
+      flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
       row-gap: 10px;
       column-gap: 30px;
-      max-width: none;
       text-align: left;
       background-color: lightblue;
       border-radius: 20px;
       padding: 20px 30px;
+      margin-bottom: 45px;
       >label {
          margin: 0px;
          >span {
