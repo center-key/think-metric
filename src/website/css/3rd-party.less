@@ -3,6 +3,20 @@
 
 @import "static/utility-box";
 
+/* Zebra Sections layout -- customize header */
+body >header {
+   background-image: url(assets/kg-weights-by-ylanite-koppens-at-pexels.jpg);
+   }
+body >header nav#link-menu a,
+body >header nav#link-menu a.current,
+body >header nav#link-menu a:hover {
+   color: white;
+   }
+body >header nav#link-menu a.current,
+body >header nav#link-menu a:hover {
+   border-color: gold;
+   }
+
 // Marble Checklist
 ol.marble-checklist >li::before { background-color: deepskyblue; }  //marble
 ol.marble-checklist >li label b::after { background-color: royalblue; border-color: royalblue; }  //checkbox

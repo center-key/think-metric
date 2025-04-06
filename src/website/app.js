@@ -105,6 +105,8 @@ const app = {
          //       <ul>
          //          <li><a>
          // <main>
+         //    <section>
+         //       <footer>
          const container = globalThis.document.getElementById('article-nav');
          const nav =       { prev: container.children[0], next: container.children[1] };
          const articles =  [...container.querySelectorAll('ul >li >a')];
@@ -119,7 +121,7 @@ const app = {
          configure(nav.prev, index - 1, 'View');
          configure(nav.next, index + 1, 'Press ENTER to view');
          container.classList.add('show');
-         const iconBar = globalThis.document.querySelector('section:last-child >figure:last-child');
+         const iconBar = globalThis.document.querySelector('section >footer');
          iconBar.setAttribute('title', 'Press ENTER to view the next article.');
          const jumpToNextArticle = () => nav.next.classList.contains('show') && nav.next.click();
          dna.dom.onEnterKey(jumpToNextArticle);
