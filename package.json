@@ -49,9 +49,9 @@
          "copy-file   build/article-list/index.html build/article --folder"
       ],
       "publish": [
-         "rev-web-assets build                      docs --meta-content-base=https://think-metric.org",
-         "copy-file src/cname.txt                   docs/CNAME",
-         "copy-file src/website/assets/bookmark.png docs/graphics --folder"
+         "rev-web-assets build                           docs --meta-content-base=https://think-metric.org",
+         "copy-file src/cname.txt                        docs/CNAME",
+         "copy-file src/website/assets/bookmark-icon.png docs/graphics --folder"
       ],
       "interactive": [
          "chokidar src --command 'run-scripts lint build publish'",
