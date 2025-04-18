@@ -3,20 +3,20 @@
 
 @import "static/utility-box";
 
+// <figure class=small-picture data-size=2>
+//    <img src=buffalo.jpg alt=buffalo>
+//    <figcaption>buffalo</figcaption>
+// </figure>
+figure.small-picture {
+   &[data-size="1"] { img { width: 100px; .MobileMode({ width:  75px; }); } }
+   &[data-size="2"] { img { width: 200px; .MobileMode({ width: 150px; }); } }
+   &[data-size="3"] { img { width: 300px; .MobileMode({ width: 225px; }); } }
+   &[data-size="4"] { img { width: 400px; .MobileMode({ width: 300px; }); } }
+   &[data-size="5"] { img { width: 500px; .MobileMode({ width: 375px; }); } }
+   }
+
 section {
    figure {
-      &.small-picture {
-         img {
-            width: 200px;
-            .MobileMode({ width: 150px; });
-            }
-         }
-      &.medium-picture {
-         img {
-            width: 400px;
-            .MobileMode({ width: 350px; });
-            }
-         }
       &.floating-card {
          &:not(:last-child) {
             margin-bottom: 50px;
