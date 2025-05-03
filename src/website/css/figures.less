@@ -3,20 +3,28 @@
 
 @import "static/utility-box";
 
-// <figure class=small-picture data-size=2>
+// <figure data-picture-size=2>
 //    <img src=buffalo.jpg alt=buffalo>
 //    <figcaption>buffalo</figcaption>
 // </figure>
-figure.small-picture {
-   &[data-size="1"] { img { width: 100px; .MobileMode({ width:  75px; }); } }
-   &[data-size="2"] { img { width: 200px; .MobileMode({ width: 150px; }); } }
-   &[data-size="3"] { img { width: 300px; .MobileMode({ width: 225px; }); } }
-   &[data-size="4"] { img { width: 400px; .MobileMode({ width: 300px; }); } }
-   &[data-size="5"] { img { width: 500px; .MobileMode({ width: 375px; }); } }
+figure {
+   &[data-picture-size="1"] { img { width: 100px; .MobileMode({ width:  75px; }); } }
+   &[data-picture-size="2"] { img { width: 200px; .MobileMode({ width: 150px; }); } }
+   &[data-picture-size="3"] { img { width: 300px; .MobileMode({ width: 225px; }); } }
+   &[data-picture-size="4"] { img { width: 400px; .MobileMode({ width: 300px; }); } }
+   &[data-picture-size="5"] { img { width: 500px; .MobileMode({ width: 375px; }); } }
    }
 
 section {
    figure {
+      &.dark-mode-border img { .DarkMode({
+         border: 1px solid gainsboro;
+         }); }
+      &.dark-mode-frame img { .DarkMode({
+         background-color: white;
+         border: 3px solid gray;
+         padding: 10px;
+         }); }
       &.floating-card {
          &:not(:last-child) {
             margin-bottom: 50px;

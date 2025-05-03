@@ -7,12 +7,12 @@ main >section {
 
    i[data-icon^=circle] {
       font-size: 2rem;
-      color: royalblue;
+      color: royalblue;  .DarkMode({ color: dodgerblue; });
       transition: all 1s;
       }
    i[data-icon=right-long] {
       font-size: 0.9rem;
-      color: royalblue;
+      color: royalblue;  .DarkMode({ color: dodgerblue; });
       padding: 0px 0.4em;
       }
 
@@ -41,8 +41,8 @@ main >section {
    code.block {
       display: block;
       font-size: 0.9rem;
-      background-color: lightcyan;
-      border: 2px dotted royalblue;
+      background-color: lightcyan;   .DarkMode({ background-color: seagreen; });
+      border: 2px dotted royalblue;  .DarkMode({ border-color: gainsboro });
       padding: 5px 15px;
       }
 
@@ -117,4 +117,9 @@ main >section {
          }
       }
 
+   }
+
+main >section#list table.big-table tbody tr td:last-child {
+   background-color: white;  //product image
+   .DarkMode({ padding-right: 3px; })
    }
