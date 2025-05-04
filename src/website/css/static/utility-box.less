@@ -1,7 +1,12 @@
-// Think Metric
-// Style: Constants and Utilities -- Reusable values and mixins
+//! web-ignition v2.3.8 ~~ https://github.com/center-key/web-ignition ~~ MIT License
 
-// Custom Colors
+// Add utility-box to your project:
+//    1) $ npm install --save-dev web-ignition copy-file-util
+//    2) package.json scripts -->
+//       "copy-file node_modules/web-ignition/dist/utility-box.less --folder src/css/static"
+//    3) Include in CSS LESS files --> @import "static/utility-box";
+
+// Dark Mode Colors
 @colorSmoke:    #444444;
 @colorGraphite: #303030;
 @colorCharcoal: #222222;
@@ -32,10 +37,37 @@
    font-weight: 700;
    }
 
+.TextDarkShadow() {
+   text-shadow: 0px 0px 0.8em @colorCharcoal;
+   }
+
 .Bullseye() {
    display: flex;
    justify-content: center;
    align-items: center;
+   }
+
+.CheckerboardBackground() {
+   // <figure class=checkerboard-background>
+   //    <img src=logo.svg alt=logo>
+   //    <figcaption>Logo</figcaption>
+   // </figure>
+   &:hover {
+      img {
+         background: black;
+         outline-width: 1px;  //extra space for a clean image crop
+         }
+      }
+   img {
+      background: conic-gradient(
+         lightgray 90deg,
+         darkgray 90deg 180deg,
+         lightgray 180deg 270deg,
+         darkgray 270deg
+         );
+      background-size: 15px 15px;
+      outline: 3px solid black;
+      }
    }
 
 .DarkMode(@lessRules) {  //apply style if user has requested dark color themes
