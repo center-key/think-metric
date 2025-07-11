@@ -35,7 +35,7 @@
          "rimraf build docs"
       ],
       "generated": [
-         "//copy-file node_modules/web-ignition/dist/utility-box.less --folder src/website/css/static",
+         "copy-file node_modules/web-ignition/dist/utility-box.less --folder src/website/css/static --platform-eol",
          "replacer src/templates/table-of-products.html --content={{lt}}time{{space}}datetime{{equals}}{{file.timestamp}}{{gt}}{{file.modified}}{{lt}}/time{{gt}} src/templates/generated --concat=products-timestamp.html",
          "replacer src/website/article --ext=.html --content={{lt}}li{{gt}}{{lt}}a{{space}}href{{equals}}{[webRoot]}/article/{{file.folder}}{{gt}}{{articleTitle}}{{lt}}/a{{gt}}{{lt}}/li{{gt}} src/templates/generated --find=[webRoot] --replacement={webRoot} --concat=articles.html"
       ],
@@ -68,16 +68,16 @@
       "@fortawesome/fontawesome-free": "~6.7",
       "browser-sync": "~3.0",
       "chokidar-cli": "~3.0",
-      "copy-file-util": "~1.2",
+      "copy-file-util": "~1.3",
       "copy-folder-util": "~1.1",
       "dna-engine": "~3.2",
       "jshint": "~2.13",
       "less": "~4.3",
-      "replacer-util": "~1.3",
+      "replacer-util": "~1.4",
       "rev-web-assets": "~1.4",
       "rimraf": "~6.0",
       "run-scripts-util": "~1.3",
-      "w3c-html-validator": "~1.8",
-      "web-ignition": "~2.3"
+      "w3c-html-validator": "~1.9",
+      "web-ignition": "~2.4"
    }
 }
