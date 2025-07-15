@@ -134,10 +134,20 @@ const app = {
          },
       },
 
+   products: {
+      configureLinks() {
+         // Set ecommerce links to prefer Amazon as the seller over 3rd parties.
+         const productLinks =       'a[href*="www.amazon.com"]';
+         const setShipperToAmazon = (link) => link.href = link.href + '?smid=ATVPDKIKX0DER';
+         globalThis.document.querySelectorAll(productLinks).forEach(setShipperToAmazon);
+         },
+      },
+
    start() {
-      console.log('Think Metric');
-      console.log('🇺🇸 Americans for Metrication 🇺🇸');
+      console.info('Think Metric');
+      console.info('🇺🇸 Americans for Metrication 🇺🇸');
       app.article.init();
+      app.products.configureLinks();
       },
 
    };
