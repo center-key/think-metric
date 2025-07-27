@@ -123,9 +123,9 @@ const app = {
          container.classList.add('show');
          const iconBar = globalThis.document.querySelector('section >footer');
          iconBar.setAttribute('title', 'Press ENTER to view the next article.');
-         const jumpToNextArticle = () => nav.next.classList.contains('show') && nav.next.click();
-         dna.dom.onEnterKey(jumpToNextArticle);
-         dna.dom.onKeyUp((elem, event) => event.key === '1' && articles[0].click());
+         if (nav.next.classList.contains('show'))
+            dna.dom.onEnterKey(() => nav.next.click());                       //jump to next article
+         dna.dom.on('keyup', () => articles[0].click(), { keyFilter: '1' });  //jump to first article
          },
       init() {
          const hasArticleTitle = /\/article\/./;

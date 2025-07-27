@@ -65,7 +65,7 @@
       "interactive": "npm run pretest && run-scripts interactive --parallel"
    },
    "dependencies": {
-      "@fortawesome/fontawesome-free": "~6.7",
+      "@fortawesome/fontawesome-free": "~7.0",
       "browser-sync": "~3.0",
       "chokidar-cli": "~3.0",
       "copy-file-util": "~1.3",
