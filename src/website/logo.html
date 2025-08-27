@@ -1,9 +1,9 @@
 <!doctype html>
+<html lang=en>
 <!-- - - - - - - - -->
 <!-- Think Metric  -->
 <!-- Logo          -->
 <!-- - - - - - - - -->
-<html lang=en>
 <head>
    <meta charset=utf-8>
    <meta name=viewport content="width=device-width, initial-scale=1">
@@ -16,13 +16,14 @@
    <link rel=stylesheet href=https://cdn.jsdelivr.net/npm/web-ignition@{{package.dependencies.web-ignition|version}}/dist/reset.min.css>
    <style>
       figure.logo {
+         --graph-paper:
+            linear-gradient(to right,  white 2px, transparent 1px),
+            linear-gradient(to bottom, white 2px, transparent 1px);
          position: relative;
          width: 170px;
          height: 170px;
          background-size: 17px 17px;
-         background-image:
-            linear-gradient(to right,  white 2px, transparent 1px),
-            linear-gradient(to bottom, white 2px, transparent 1px);
+         background-image: var(--graph-paper);
          border-right: 2px solid white;
          border-bottom: 2px solid white;
          background-color: dimgray;
