@@ -86,11 +86,20 @@
          <figcaption>Big, bold, high-contrast scale</figcaption>
       </figure>
       <p>
-         If you are measuring in millimeters on a regular metric tape measure, treat the numeric
-         markers as the leading digits and the selected tick mark as the last digit.&nbsp;
-         For example, a reading of "7" extended to the 3rd tick mark means a measurement
-         of 73 mm.&nbsp;
+         If you are working on a project that is all millimeters, treat the numeric labels as the
+         leading digits and the selected tick mark as the last digit.&nbsp;
+         For example, a reading of <b>"7"</b> extended to the <b>3rd tick mark</b> means a
+         measurement of <b>73 mm</b>.&nbsp;
          Rather than summing up two numbers, you're just gluing them together.&nbsp;
+      </p>
+      <table data-code-column=2 data-number-column=3>
+         <thead><tr><th>Unit</th><th>Concatenation Example</th><th>Result</th></tr></thead>
+         <tbody>
+            <tr><td>mm</td><td>"7" + "3" + "mm" = "73mm"</td>       <td>73 mm</td></tr>
+            <tr><td>cm</td><td>"7" + "." + "3" + "cm" = "7.3cm"</td><td>7.3 cm</td></tr>
+         </tbody>
+      </table>
+      <p>
          This concatenation technique is cognitively faster because it involves no math.&nbsp;
       </p>
    </section>
@@ -106,6 +115,7 @@
          Specialized millimeter only tape measures are based on a fundamentally flawed design
          because the last digit of every numeric marker is always useless.&nbsp;
          The throwaway digit crowds the scale leading to reduced readability.&nbsp;
+         Tiny digits are annoying and inefficient.&nbsp;
       </p>
       <footer>🎖️ 🎖️ 🎖️</footer>
    </section>
