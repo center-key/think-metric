@@ -3,7 +3,7 @@
 {% assign heroCaption =  'Convert ingredients to grams' %}
 {% render 'src/templates/doc-begin.html', articleTitle: articleTitle, heroImage: heroImage, heroCaption: heroCaption %}
 
-<main>
+<main data-page=calculator>
 
    <section class=grams-calculator data-on-load=app.calculator.init>
       <h2>{{articleTitle}}</h2>

@@ -104,7 +104,7 @@ const app = {
          //       <i data-icon=circle-right>
          //       <ul>
          //          <li><a>
-         // <main>
+         // <main data-page=article-folder-name>
          //    <section>
          //       <footer>
          const container = globalThis.document.getElementById('article-nav');
