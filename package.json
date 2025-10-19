@@ -60,9 +60,10 @@
       ]
    },
    "scripts": {
-      "pretest": "run-scripts clean lint generated build publish",
+      "create-website": "run-scripts clean lint generated build publish",
+      "pretest": "npm run create-website",
       "test": "html-validator docs '--ignore=Section lacks heading.'",
-      "interactive": "npm run pretest && run-scripts interactive --parallel",
+      "interactive": "npm run create-website && run-scripts interactive --parallel",
       "i": "npm run interactive"
    },
    "dependencies": {
