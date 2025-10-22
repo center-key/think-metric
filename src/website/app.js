@@ -106,6 +106,7 @@ const app = {
          //          <li><a>
          // <main data-page=article-folder-name>
          //    <section>
+         //       <nav><a class=external-link title=Comments>
          //       <footer>
          const container = globalThis.document.getElementById('article-nav');
          const nav =       { prev: container.children[0], next: container.children[1] };
@@ -121,11 +122,14 @@ const app = {
          configure(nav.prev, index - 1, 'View');
          configure(nav.next, index + 1, 'Press ENTER to view');
          container.classList.add('show');
-         const iconBar = globalThis.document.querySelector('section >footer');
-         iconBar.setAttribute('title', 'Press ENTER to view the next article.');
          if (nav.next.classList.contains('show'))
             dna.dom.onEnterKey(() => nav.next.click());                       //jump to next article
          dna.dom.on('keyup', () => articles[0].click(), { keyFilter: '1' });  //jump to first article
+         const commentsElem = globalThis.document.querySelector('main >section >nav >i[data-icon]');
+         commentsElem?.classList.add('external-site');
+         commentsElem?.setAttribute('title', 'Comments');
+         const iconBar = globalThis.document.querySelector('section >footer');
+         iconBar.setAttribute('title', 'Press ENTER to view the next article.');
          },
       init() {
          const hasArticleTitle = /\/article\/./;

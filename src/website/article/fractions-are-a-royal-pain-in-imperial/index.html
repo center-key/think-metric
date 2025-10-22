@@ -1,6 +1,7 @@
 {% assign articleTitle = 'Fractions are a Royal Pain in Imperial' %}
 {% assign heroImage =    'fractions-1890.jpg' %}
 {% assign heroCaption =  'Educational school chart from 1890 by R.O. Evans & G.A. Bass' %}
+{% assign reddit =       'https://www.reddit.com/r/ThinkMetric/comments/1dzhyjz/am_i_the_jerk' %}
 {% render 'src/templates/doc-begin.html', articleTitle: articleTitle, heroImage: heroImage, heroCaption: heroCaption %}
 
 <main data-page=fractions-are-a-royal-pain-in-imperial>
@@ -169,6 +170,11 @@
       <p>
          Time is money, and imperial is on the wrong side of the equation.&nbsp;
       </p>
+      <figure data-picture-size=4>
+         <img src=vintage-cleveland-decimal-equivalence.jpg alt=equivalence
+            data-author=cleveland data-license=fair-use>
+         <figcaption>Chart of pain and inefficiency</figcaption>
+      </figure>
    </section>
 
    <section>
@@ -200,10 +206,15 @@
    </section>
 
    <section>
-      <h2><img src={{webRoot}}/assets/google-maps-icon.png alt=maps data-license=fair-use>Google Maps</h2>
+      <h2>
+         <img src={{webRoot}}/assets/google-maps-icon.png alt=maps data-license=fair-use>Google Maps
+         <img src={{webRoot}}/assets/google-maps-icon.png alt=maps data-license=fair-use>
+         Google Maps
+      </h2>
       <figure class=dark-mode-border>
-         <img src={{webRoot}}/assets/shared/5,280.png alt=5,280 data-license=fair-use>
+         <img src={{webRoot}}/assets/shared/youtube-5,280.png alt=5,280 data-license=fair-use>
       </figure>
+      <nav><i data-href={{reddit}} data-icon=comments></i></nav>
       <footer>🥧 🥧 🥧</footer>
    </section>
 
