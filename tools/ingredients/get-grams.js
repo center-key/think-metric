@@ -14,7 +14,7 @@ const csvFilename = 'input_food.csv';
 const getGrams = () => {
    // Returns:
    //    [{ description: 'Alfredo Sauce', form: null, gramsPerCup: 195 }, ...]
-   const csvPath =    path.join(import.meta.dirname, csvFilename);
+   const csvPath =    path.join(import.meta.dirname, csvFilename);  //jshint ignore:line
    const toRecord =   (line) => line.slice(1, -1).split('","');
    const allRecords = fs.readFileSync(csvPath, 'utf-8').split('\n').map(toRecord);
    const header =     allRecords[0];
