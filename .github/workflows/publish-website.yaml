@@ -22,7 +22,7 @@ jobs:
           ref: main       #fetch the full git history of the "main"
           fetch-depth: 0  #branch for git-restore-mtime-action below
       - uses: chetan/git-restore-mtime-action@v2  #see: https://github.com/chetan/git-restore-mtime-action/releases
-      - uses: actions/setup-node@v4               #see: https://github.com/actions/setup-node/releases
+      - uses: actions/setup-node@v6               #see: https://github.com/actions/setup-node/releases
       - run: npm install
       - run: npm test
       - uses: actions/configure-pages@v5          #see: https://github.com/actions/configure-pages/releases
