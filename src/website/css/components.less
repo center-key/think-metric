@@ -53,6 +53,18 @@ main >section {
       padding: 5px 15px;
       }
 
+   blockquote.equation-block {
+      @hangingIndent: 60px;
+      code {
+         display: inline-block;
+         line-height: 1.8em;
+         text-align: left;
+         text-indent: -@hangingIndent;
+         border: 1px solid white;
+         padding: 15px 40px 15px (40px + @hangingIndent);
+         }
+      }
+
    b.reddit-flair {
       display: inline-block;
       font-size: 0.9em;
