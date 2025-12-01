@@ -69,8 +69,7 @@
    "scripts": {
       "pretest": "run-scripts clean generated lint build publish",
       "test": "mocha spec",
-      "validate-html": "html-validator --default-rules docs",
-      "v": "npm run validate-html",
+      "validate-html": "npm test && html-validator --default-rules docs",
       "interactive": "npm test && run-scripts interactive --parallel",
       "i": "npm run interactive"
    },
