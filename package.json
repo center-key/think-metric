@@ -82,7 +82,7 @@
       "copy-folder-util": "~1.2",
       "dna-engine": "~3.3",
       "jshint": "~2.13",
-      "less": "~4.4",
+      "less": "~4.5",
       "mocha": "~11.7",
       "replacer-util": "~1.5",
       "rev-web-assets": "~1.5",
