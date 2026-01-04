@@ -1,0 +1,63 @@
+{% assign articleTitle = '4K Peaks' %}
+{% assign heroImage =    'highest-peaks-by-us-state.jpg' %}
+{% assign heroCaption =  'Highest Peaks by U.S. State' %}
+{% render 'src/templates/doc-begin.html', articleTitle: articleTitle, heroImage: heroImage, heroCaption: heroCaption %}
+
+<main data-page=article-folder-name>
+
+   <section>
+      <h2>{{articleTitle}}</h2>
+      <cite>Updated <time datetime={{file.timestamp}}>{{file.modified}}</time></cite>
+      <p>
+         More text goes here...&nbsp;
+      </p>
+      <figure class=dark-mode-border>
+         <img src={{heroImage}} alt=tetons>
+         <figcaption>{{heroCaption}}</figcaption>
+      </figure>
+      <p>
+         More text goes here...&nbsp;
+      </p>
+   </section>
+
+   <section id=counterculture-day data-on-load=app.countercultureDay>
+      <h2>The Grand Teton is High</h2>
+      <figure class=simple-rounded>
+         <img src=grand-teton-4200m.jpg alt=tetons>
+      </figure>
+   </section>
+
+   <section id=something>
+      <h2>Something</h2>
+      <p>
+         More text goes here...&nbsp;
+      </p>
+   </section>
+
+   <section id=tetons>
+      <h2>The Teton Range in Wyoming</h2>
+      <div class=external-link>
+         <figure class=montage-loop data-interval=3000 data-fade=1500
+            data-on-load=libX.animate.montageLoop>
+            <span data-img-src=gallery/grand-teton-4200m-barn.jpg   data-credit=pdphotos-16    data-license=Pixabay  data-href=https://pixabay.com/photos/barn-3759      title="Photo by PDPhotos"></span>
+            <span data-img-src=gallery/grand-teton-4200m-fall.jpg   data-credit=12019          data-license=Pixabay  data-href=https://pixabay.com/photos/grand-1728535  title="Photo by 12019"></span>
+            <span data-img-src=gallery/grand-teton-4200m-horses.jpg data-credit=hollymandarich data-license=Unsplash data-href=https://unsplash.com/photos/kCpCd6oQTCw   title="Photo by Holly Mandarich"></span>
+            <span data-img-src=gallery/grand-teton-4200m-icy.jpg    data-credit=Gruendercoach  data-license=Pixabay  data-href=https://pixabay.com/photos/frosty-6923891 title="Photo by Gruendercoach"></span>
+            <span data-img-src=gallery/grand-teton-4200m-river.jpg  data-credit=mohann-8137807 data-license=Pixabay  data-href=https://pixabay.com/photos/grand-5359449  title="Photo by MOHANN"></span>
+            <span data-img-src=gallery/grand-teton-4200m-valley.jpg data-credit=isaacmartin    data-license=Unsplash data-href=https://unsplash.com/photos/Apkr4nfK1mU   title="Photo by Isaac Martin"></span>
+            <span data-img-src=gallery/grand-teton-4200m-winter.jpg data-credit=nirhimi        data-license=Unsplash data-href=https://unsplash.com/photos/etg9gR58o2k   title="Photo by NIR HIMI"></span>
+         </figure>
+         <div>The Grand Teton rises to an elevation of <b>4,200 meters</b></div>
+   </section>
+
+   <section id=conclusion>
+      <h2>Conclusion</h2>
+      <p>
+         Summary goes here...&nbsp;
+      </p>
+      <footer>⛰️ ⛰️ ⛰️</footer>
+   </section>
+
+</main>
+
+{% render 'src/templates/doc-end.html' %}

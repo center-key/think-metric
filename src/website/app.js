@@ -147,6 +147,15 @@ const app = {
          },
       },
 
+   countercultureDay(section) {
+      const celebration =   { month: 3, day: 19 };  //April 20th
+      const now =           new Date();
+      const rightMonth =    now.getMonth() === celebration.month;
+      const letsCelebrate = rightMonth && Math.abs(celebration.day - now.getDate()) < 5;
+      if (!letsCelebrate && globalThis.location.hostname !== 'localhost')
+         section.remove();
+      },
+
    start() {
       console.info('Think Metric');
       console.info('🇺🇸 Americans for Metrication 🇺🇸');
