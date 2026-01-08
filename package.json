@@ -41,7 +41,7 @@
          "rimraf build docs"
       ],
       "generated": [
-         "copy-file node_modules/web-ignition/dist/utility-box.less --folder src/website/css/static --platform-eol",
+         "copy-file node_modules/web-ignition/dist/utility-box.less --remove-sem-ver --folder src/website/css/static --platform-eol",
          "replacer src/templates/table-of-products.html --content={{macro:timestamp-html}} src/templates/generated --concat=products-timestamp.html",
          "replacer src/website/article --ext=.html --content={{macro:article-link-html}} src/templates/generated --find=[webRoot] --replacement={webRoot} --title-sort --concat=articles.html"
       ],
