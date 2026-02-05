@@ -30,7 +30,7 @@
          "dna": false
       }
    },
-   "replacerConfig": {
+   "cliConfig": {
       "macros": {
          "article-link-html": "<li><a href={[webRoot]}/article/{{file.folder}}>{{articleTitle}}</a></li>",
          "timestamp-html": "<time datetime={{file.timestamp}}>{{file.modified}}</time>"
@@ -69,9 +69,10 @@
    "scripts": {
       "pretest": "run-scripts clean generated lint build publish",
       "test": "mocha spec",
-      "validate-html": "npm test && html-validator --default-rules docs",
-      "interactive": "npm test && run-scripts interactive --parallel",
-      "i": "npm run interactive"
+      "validate-html": "html-validator --default-rules docs",
+      "v": "npm test && npm run validate-html",
+      "interactive": "run-scripts interactive --parallel",
+      "i": "npm test && npm run interactive"
    },
    "dependencies": {
       "@fortawesome/fontawesome-free": "~7.1",
@@ -84,7 +85,7 @@
       "jshint": "~2.13",
       "less": "~4.5",
       "mocha": "~11.7",
-      "replacer-util": "~1.5",
+      "replacer-util": "~1.6",
       "rev-web-assets": "~1.5",
       "rimraf": "~6.1",
       "run-scripts-util": "~1.3",
