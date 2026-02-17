@@ -75,7 +75,7 @@
       "i": "npm test && npm run interactive"
    },
    "dependencies": {
-      "@fortawesome/fontawesome-free": "~7.1",
+      "@fortawesome/fontawesome-free": "~7.2",
       "assert-deep-strict-equal": "~1.2",
       "browser-sync": "~3.0",
       "chokidar-cli": "~3.0",
