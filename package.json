@@ -1,7 +1,7 @@
 {
    "name": "think-metric",
    "version": "1.0.0",
-   "description": "🇺🇸 Americans for Metrication",
+   "description": "🇺🇸 Americans for Metrication 🇺🇸",
    "license": "CC0-1.0",
    "type": "module",
    "repository": {
@@ -33,6 +33,7 @@
    "cliConfig": {
       "macros": {
          "article-link-html": "<li><a href={[webRoot]}/article/{{file.folder}}>{{articleTitle}}</a></li>",
+         "cc0-download-html": "<li><a href=../cc0/{{file.base}}>{{file.base}}</a> &nbsp; ({{file.modified}})</li>",
          "timestamp-html": "<time datetime={{file.timestamp}}>{{file.modified}}</time>"
       }
    },
@@ -42,8 +43,9 @@
       ],
       "generated": [
          "copy-file node_modules/web-ignition/dist/utility-box.less --remove-sem-ver --folder src/website/css/static --platform-eol",
-         "replacer src/templates/table-of-products.html --content={{macro:timestamp-html}} src/templates/generated --concat=products-timestamp.html",
-         "replacer src/website/article --ext=.html --content={{macro:article-link-html}} src/templates/generated --find=[webRoot] --replacement={webRoot} --title-sort --concat=articles.html"
+         "replacer src/templates/table-of-products.html --content={{macro:timestamp-html}}    src/templates/generated --concat=products-timestamp.html",
+         "replacer src/website/article --ext=.html --content={{macro:article-link-html}}      src/templates/generated --find=[webRoot] --replacement={webRoot} --title-sort --concat=articles.html",
+         "replacer src/website/cc0 --ext=.jpg,.png --content={{macro:cc0-download-html}}      src/templates/generated --concat=cc0-downloads.html"
       ],
       "lint": [
          "jshint tools src"
@@ -56,7 +58,7 @@
          "copy-file   build/article-list/index.html build/article --folder"
       ],
       "publish": [
-         "rev-web-assets build                           docs --meta-content-base=https://think-metric.org",
+         "rev-web-assets build --skip=/cc0/              docs --meta-content-base=https://think-metric.org",
          "replacer --virtual-input . --rename=robots.txt docs --content=#{{space}}Allow{{space}}bots",
          "replacer --virtual-input . --rename=CNAME      docs --content=think-metric.org",
          "copy-file src/website/assets/bookmark-icon.png docs/graphics --folder"
@@ -83,7 +85,7 @@
       "copy-folder-util": "~1.2",
       "dna-dom": "~3.3",
       "jshint": "~2.13",
-      "less": "~4.5",
+      "less": "~4.6",
       "mocha": "~11.7",
       "replacer-util": "~1.6",
       "rev-web-assets": "~1.5",

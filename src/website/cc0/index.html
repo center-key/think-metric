@@ -1,0 +1,17 @@
+{% assign articleTitle = 'CC0 Downloads' %}
+{% render 'src/templates/doc-begin.html', articleTitle: articleTitle %}
+
+<main data-page=cc0-downloads>
+
+   <section>
+      <h2>{{articleTitle}}</h2>
+      <div>
+         <menu class=extern-site>
+            {% render 'src/templates/generated/cc0-downloads.html' %}
+         </menu>
+      </div>
+   </section>
+
+</main>
+
+{% render 'src/templates/doc-end.html' %}
