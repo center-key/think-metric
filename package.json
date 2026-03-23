@@ -42,10 +42,10 @@
          "rimraf build docs"
       ],
       "generated": [
-         "copy-file node_modules/web-ignition/dist/utility-box.less --remove-sem-ver --folder src/website/css/static --platform-eol",
-         "replacer src/templates/table-of-products.html --content={{macro:timestamp-html}}    src/templates/generated --concat=products-timestamp.html",
-         "replacer src/website/article --ext=.html --content={{macro:article-link-html}}      src/templates/generated --find=[webRoot] --replacement={webRoot} --title-sort --concat=articles.html",
-         "replacer src/website/cc0 --ext=.jpg,.png --content={{macro:cc0-download-html}}      src/templates/generated --concat=cc0-downloads.html"
+         "copy-file node_modules/web-ignition/dist/utility-box.less --folder src/website/css/static --remove-sem-ver --platform-eol",
+         "replacer src/templates/table-of-products.html                      src/templates/generated --content={{macro:timestamp-html}} --concat=products-timestamp.html",
+         "replacer src/website/article --ext=.html                           src/templates/generated --content={{macro:article-link-html}} --find=[webRoot] --replacement={webRoot} --title-sort --concat=articles.html",
+         "replacer src/website/cc0 --ext=.jpg,.png --non-recursive           src/templates/generated --content={{macro:cc0-download-html}} --concat=cc0-downloads.html"
       ],
       "lint": [
          "jshint tools src"
