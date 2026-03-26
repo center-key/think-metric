@@ -147,18 +147,31 @@ const app = {
          },
       },
 
-   countercultureDay(section) {
-      const celebration =   { month: 3, day: 19 };  //April 20th
-      const now =           new Date();
-      const rightMonth =    now.getMonth() === celebration.month;
-      const letsCelebrate = rightMonth && Math.abs(celebration.day - now.getDate()) < 5;
+   celebrateDay(elem) {
+      // Hide element if the current date is not near the specified day of the year.
+      // Example:
+      //    <section data-day=july-4 data-days=10 data-on-load=app.celebrateDay>
+      const holiday =       elem.dataset.day;           //example: 'july-4'
+      const numDays =       Number(elem.dataset.days);  //length of celebration
+      const currentYear =   new Date().getFullYear();
+      const aYear =         new Date().setFullYear(currentYear + 1) - Date.now();
+      const rawDelta =      Date.now() - new Date(holiday).setFullYear(currentYear);
+      const delta =         Math.abs(((rawDelta + aYear * 3 / 2) % aYear) - aYear / 2);
+      const letsCelebrate = 365 * delta / aYear < numDays / 2;
       if (!letsCelebrate && globalThis.location.hostname !== 'localhost')
-         section.remove();
+         elem.remove();
+      },
+
+   addSectionLinks() {
+      const headings = globalThis.document.querySelectorAll('section[id] >h2:first-of-type');
+      headings.forEach(elem => elem.dataset.href = '#' + elem.parentElement.id);
+      headings.forEach(elem => elem.title = window.location.href.split('#')[0] + elem.dataset.href);
       },
 
    start() {
       console.info('Think Metric');
       console.info('🇺🇸 Americans for Metrication 🇺🇸');
+      app.addSectionLinks();
       app.article.init();
       app.products.configureLinks();
       },

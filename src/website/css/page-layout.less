@@ -111,3 +111,24 @@ body {
    >footer {
       }
    }
+
+// Section Links:
+//    <section id=zoo><h2>The Zoo</h2><p>...</p></section>
+main {
+   >section[id] {
+      >h2:first-of-type {
+         position: relative;
+         &:hover::before {
+            opacity: 1;
+            }
+         &::before {
+            position: absolute;
+            transform: translateX(-1.0em);
+            content: @symbolSectionSign;
+            text-shadow: 0px 0px 0.5em deepskyblue;
+            opacity: 0;
+            transition: opacity 500ms;
+            }
+         }
+      }
+   }
