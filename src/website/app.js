@@ -158,11 +158,12 @@ const app = {
       const rawDelta =      Date.now() - new Date(holiday).setFullYear(currentYear);
       const delta =         Math.abs(((rawDelta + aYear * 3 / 2) % aYear) - aYear / 2);
       const letsCelebrate = 365 * delta / aYear < numDays / 2;
-      if (!letsCelebrate && globalThis.location.hostname !== 'localhost')
+      if (!letsCelebrate && globalThis.location.hash !== '#counterculture')
          elem.remove();
       },
 
    addSectionLinks() {
+      // On hover make the first header in a section a link to the section.
       const headings = globalThis.document.querySelectorAll('section[id] >h2:first-of-type');
       headings.forEach(elem => elem.dataset.href = '#' + elem.parentElement.id);
       headings.forEach(elem => elem.title = window.location.href.split('#')[0] + elem.dataset.href);

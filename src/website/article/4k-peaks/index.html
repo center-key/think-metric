@@ -1,0 +1,138 @@
+{% assign articleTitle = '4K Peaks' %}
+{% assign heroImage =    'peaks-by-us-state.jpg' %}
+{% assign heroCaption =  'Highest U.S. Mountain Peaks by State' %}
+{% render 'src/templates/doc-begin.html', articleTitle: articleTitle, heroImage: heroImage, heroCaption: heroCaption %}
+
+<main data-page=article-folder-name>
+
+   <section>
+      <h2>{{articleTitle}}</h2>
+      <cite>Updated <time datetime={{file.timestamp}}>{{file.modified}}</time></cite>
+      <p>
+        Just like it's important for metrication advocates to know their own height in cm and
+        weight in kg, it's important to develop a good sense of the elevation in meters of some of
+        the well-known mountain peaks in your country.&nbsp;
+      </p>
+   </section>
+
+   <section id=counterculture data-holiday=april-20 data-days=10 data-on-load=app.celebrateDay>
+      <h2>The Grand Teton is High</h2>
+      <figure class=simple-rounded>
+         <img src=grand-teton-4200m.jpg alt=tetons>
+      </figure>
+      <div>
+         Wyoming's Teton Range rises up from the western edge of the Jackson Hole valley floor
+         (seen in the foreground).&nbsp;
+         The valley floor sits at about <b>2,100 m</b>, so if you flipped the Teton Range upside
+         down the tip of the Grand Teton would be right about at sea level.&nbsp;
+      </div>
+   </section>
+
+   <section id=states>
+      <h2>{{heroCaption}}</h2>
+      <figure class=dark-mode-border>
+         <img src={{heroImage}} alt=tetons>
+      </figure>
+      <p>
+         Mountain peaks rising to at least <b>4,000 m</b> above sea-level are colloquially referred
+         to as "four-thousanders".&nbsp;
+         The highest peak in the U.S. is Denali (Mount McKinley) in Alaska, and at <b>6,190 m</b> it
+         qualifies as a "six-thousander" in the realm of extreme high-altitude mountaineering.&nbsp;
+      </p>
+      <p>
+         There are nine U.S. states with at least one "four-thousander".&nbsp;
+      </p>
+      <div>
+         <h2>U.S. States Home to 4K Peaks</h2>
+         <table data-code-column=1,4 data-number-column=4 class=external-site>
+            <tr><th></th><th>State</th>      <th>Highest Peak</th>                                                                    <th>Elevation</th></tr>
+            <tr><td>1</td><td>Alaska</td>    <td><a href=https://en.wikipedia.org/wiki/Denali>Denali (Mount McKinley)</a></td>        <td>6,190 m</td></tr>
+            <tr><td>2</td><td>California</td><td><a href=https://en.wikipedia.org/wiki/Mount_Whitney>Mount Whitney</a></td>           <td>4,421 m</td></tr>
+            <tr><td>3</td><td>Colorado</td>  <td><a href=https://en.wikipedia.org/wiki/Mount_Elbert>Mount Elbert</a></td>             <td>4,401 m</td></tr>
+            <tr><td>4</td><td>Washington</td><td><a href=https://en.wikipedia.org/wiki/Mount_Rainier>Mount Rainier</a></td>           <td>4,394 m</td></tr>
+            <tr><td>5</td><td>Wyoming</td>   <td><a href=https://en.wikipedia.org/wiki/Gannett_Peak>Gannett Peak</a></td>             <td>4,209 m</td></tr>
+            <tr><td>6</td><td>Hawaii</td>    <td><a href=https://en.wikipedia.org/wiki/Mauna_Kea>Mauna Kea</a></td>                   <td>4,207 m</td></tr>
+            <tr><td>7</td><td>Utah</td>      <td><a href=https://en.wikipedia.org/wiki/Kings_Peak_(Utah)>Kings Peak</a></td>          <td>4,123 m</td></tr>
+            <tr><td>8</td><td>New Mexico</td><td><a href=https://en.wikipedia.org/wiki/Wheeler_Peak_(New_Mexico)>Wheeler Peak</a></td><td>4,013 m</td></tr>
+            <tr><td>9</td><td>Nevada*</td>   <td><a href=https://en.wikipedia.org/wiki/Boundary_Peak_(Nevada)>Boundary Peak</a></td>  <td>4,007 m</td></tr>
+         </table>
+         <p>
+            *<small>Boundary Peak at <b>4,007 m</b> is the highest "natural point" in Nevada, but
+            it is generally considered a "sub-peak" of California's Montgomery Peak at
+            <b>4,097 m</b> just barely over 1 km away.</small>
+         </p>
+      </div>
+   </section>
+
+   <section id=everest>
+      <h2>Mt. Everest</h2>
+      <div>
+         The world's highest peak is Mt. Everest at <b>8,849 m</b> in the Himalayas on the
+         Nepal-China border.&nbsp;
+      </div>
+      <figure>
+         <img src=everest-by-fabien1309-cc0.jpg alt=everest>
+      </figure>
+      <div>
+         For comparison, commercial passenger airplanes typically cruise at an altitude of
+         <b>9,000 m</b> to <b>13,000 m</b>.&nbsp;
+      </div>
+   </section>
+
+   <section id=colorado>
+      <figure data-picture-size=2>
+         <img src=flag-colorado.svg alt=colorado data-license=public-domain>
+      </figure>
+      <h2>Colorado's Four-Thousanders</h2>
+      <p>
+         Just over half of the 4K peaks in the U.S. are located in Colorado.&nbsp;
+         The state has
+         <a href=https://en.wikipedia.org/wiki/List_of_mountain_peaks_of_Colorado#Highest_major_summits
+            class=external-site>55 peaks over <b>4,000 m</b></a>
+         with at least <b>500 m</b> of topographic prominence.&nbsp;
+      </p>
+      <figure>
+         <img src=mt-elbert-usgs-ralph-shroba-2011.jpg alt=elbert data-credit=usgs.gov
+            data-license=public-domain>
+         <figcaption>Mt. Elbert at 4,401 m is the highest peak in Colorado</figcaption>
+      </figure>
+      <h3>Four-Thousander vs. Fourteener</h3>
+      <p>
+         There are ambitious outdoor and fitness enthusiasts in Colorado who set a goal to summit
+         all the high peaks in the state.&nbsp;
+         The cutoff to make the list is arbitrary depending on units used to measure
+         elevation.&nbsp;
+         Traditionally <b>14,000 ft</b> has been the threshold with such peaks called
+         "fourteeners".&nbsp;
+      </p>
+      <p>
+         <b>4,000 m</b> is a lower elevation threshold, but typically a higher topographic
+         prominence is used to qualify as a "four-thousander" peak.&nbsp;
+         Consequently, there are roughly the same number of "fourteeners" and "four-thousanders"
+         in Colorado, but the "four-thousanders" are more geographically spread out.&nbsp;
+      </p>
+   </section>
+
+   <section id=tetons>
+      <h2>The Teton Range in Wyoming</h2>
+      <div class=external-link>
+         <figure class=montage-loop
+            data-interval=3000 data-fade=1500 data-on-load=libX.animate.montageLoop>
+            <span data-img-src=gallery/grand-teton-4200m-barn.jpg   data-credit=pdphotos-16    data-license=Pixabay  data-href=https://pixabay.com/photos/barn-3759      title="Photo by PDPhotos"></span>
+            <span data-img-src=gallery/grand-teton-4200m-fall.jpg   data-credit=12019          data-license=Pixabay  data-href=https://pixabay.com/photos/grand-1728535  title="Photo by 12019"></span>
+            <span data-img-src=gallery/grand-teton-4200m-horses.jpg data-credit=hollymandarich data-license=Unsplash data-href=https://unsplash.com/photos/kCpCd6oQTCw   title="Photo by Holly Mandarich"></span>
+            <span data-img-src=gallery/grand-teton-4200m-icy.jpg    data-credit=Gruendercoach  data-license=Pixabay  data-href=https://pixabay.com/photos/frosty-6923891 title="Photo by Gruendercoach"></span>
+            <span data-img-src=gallery/grand-teton-4200m-river.jpg  data-credit=mohann-8137807 data-license=Pixabay  data-href=https://pixabay.com/photos/grand-5359449  title="Photo by MOHANN"></span>
+            <span data-img-src=gallery/grand-teton-4200m-valley.jpg data-credit=isaacmartin    data-license=Unsplash data-href=https://unsplash.com/photos/Apkr4nfK1mU   title="Photo by Isaac Martin"></span>
+            <span data-img-src=gallery/grand-teton-4200m-winter.jpg data-credit=nirhimi        data-license=Unsplash data-href=https://unsplash.com/photos/etg9gR58o2k   title="Photo by NIR HIMI"></span>
+         </figure>
+      </div>
+      <div>
+         The magnificent Grand Teton rises to an elevation of <b>4,200 m</b>.&nbsp;
+      </div>
+      <footer>⛰️ ⛰️ ⛰️</footer>
+   </section>
+
+</main>
+
+{% render 'src/templates/doc-end.html' %}
