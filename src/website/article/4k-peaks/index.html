@@ -1,6 +1,7 @@
 {% assign articleTitle = '4K Peaks' %}
 {% assign heroImage =    'peaks-by-us-state.jpg' %}
 {% assign heroCaption =  'Highest U.S. Mountain Peaks by State' %}
+{% assign reddit =       'https://www.reddit.com/r/ThinkMetric/comments/1s9c0ik/4k_peaks/' %}
 {% render 'src/templates/doc-begin.html', articleTitle: articleTitle, heroImage: heroImage, heroCaption: heroCaption %}
 
 <main data-page=article-folder-name>
@@ -9,9 +10,9 @@
       <h2>{{articleTitle}}</h2>
       <cite>Updated <time datetime={{file.timestamp}}>{{file.modified}}</time></cite>
       <p>
-        Just like it's important for metrication advocates to know their own height in cm and
-        weight in kg, it's important to develop a good sense of the elevation in meters of some of
-        the well-known mountain peaks in your country.&nbsp;
+        Just like it's important for metrication advocates to know their own height in <b>cm</b>
+        and weight in <b>kg</b>, it's important to develop a decent sense of the elevation in
+        <b>meters</b> of the well-known mountain peaks in your country and region.&nbsp;
       </p>
    </section>
 
@@ -98,18 +99,19 @@
       </figure>
       <h3>Four-Thousander vs. Fourteener</h3>
       <p>
-         There are ambitious outdoor and fitness enthusiasts in Colorado who set a goal to summit
-         all the high peaks in the state.&nbsp;
+         Many ambitious outdoor and fitness enthusiasts in Colorado set a goal to summit all the
+         highest peaks in the state.&nbsp;
          The cutoff to make the list is arbitrary depending on units used to measure
          elevation.&nbsp;
-         Traditionally <b>14,000 ft</b> has been the threshold with such peaks called
+         <b>14,000 ft</b> has traditionally been the threshold with such peaks being called
          "fourteeners".&nbsp;
       </p>
       <p>
-         <b>4,000 m</b> is a lower elevation threshold, but typically a higher topographic
-         prominence is used to qualify as a "four-thousander" peak.&nbsp;
-         Consequently, there are roughly the same number of "fourteeners" and "four-thousanders"
-         in Colorado, but the "four-thousanders" are more geographically spread out.&nbsp;
+         The corresponding metric threshold of <b>4,000 m</b> is a lower elevation, but a larger
+         topographic prominence is typically used to qualify as a "four-thousander" peak.&nbsp;
+         Consequently, there are roughly the same number of "four-thousanders" and "fourteeners"
+         in Colorado, but the "four-thousanders" are more prominent and geographically spread
+         out.&nbsp;
       </p>
    </section>
 
@@ -130,6 +132,7 @@
       <div>
          The magnificent Grand Teton rises to an elevation of <b>4,200 m</b>.&nbsp;
       </div>
+      <nav><i data-href={{reddit}} data-icon=comments></i></nav>
       <footer>⛰️ ⛰️ ⛰️</footer>
    </section>
 
