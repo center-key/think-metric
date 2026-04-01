@@ -7,8 +7,8 @@
 //    $ cd think-metric
 //    $ node tools/ingredients/get-grams.js
 
-import fs   from 'fs';
-import path from 'path';
+import fs   from 'node:fs';
+import path from 'node:path';
 const csvFilename = 'input_food.csv';
 
 const getGrams = () => {

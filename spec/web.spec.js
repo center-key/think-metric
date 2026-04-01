@@ -3,9 +3,9 @@
 
 // Imports
 import { assertDeepStrictEqual } from 'assert-deep-strict-equal';
-import { EOL } from 'node:os';
 import { revWebAssets } from 'rev-web-assets';
-import fs from 'fs';
+import fs from 'node:fs';
+import os from 'node:os';
 
 ////////////////////////////////////////////////////////////////////////////////
 describe('The "docs" folder', () => {
@@ -25,13 +25,13 @@ describe('The "docs" folder', () => {
 
    it('contains the correct "CNAME" file', () => {
       const actual =   fs.readFileSync('docs/CNAME', 'utf-8');
-      const expected = 'think-metric.org' + EOL;
+      const expected = 'think-metric.org' + os.EOL;
       assertDeepStrictEqual(actual, expected);
       });
 
    it('contains the correct "robots.txt" file', () => {
       const actual =   fs.readFileSync('docs/robots.txt', 'utf-8');
-      const expected = '# Allow bots' + EOL;
+      const expected = '# Allow bots' + os.EOL;
       assertDeepStrictEqual(actual, expected);
       });
 
