@@ -151,13 +151,13 @@ const app = {
       // Hide element if the current date is not near the specified day of the year.
       // Example:
       //    <section data-day=july-4 data-days=10 data-on-load=app.celebrateDay>
-      const holiday =       elem.dataset.day;           //example: 'july-4'
+      const holiday =       elem.dataset.holiday;       //example: 'july-4'
       const numDays =       Number(elem.dataset.days);  //length of celebration
       const currentYear =   new Date().getFullYear();
-      const aYear =         new Date().setFullYear(currentYear + 1) - Date.now();
+      const oneYear =       new Date().setFullYear(currentYear + 1) - Date.now();
       const rawDelta =      Date.now() - new Date(holiday).setFullYear(currentYear);
-      const delta =         Math.abs(((rawDelta + aYear * 3 / 2) % aYear) - aYear / 2);
-      const letsCelebrate = 365 * delta / aYear < numDays / 2;
+      const delta =         Math.abs(((rawDelta + oneYear * 3 / 2) % oneYear) - oneYear / 2);
+      const letsCelebrate = 365 * delta / oneYear < numDays / 2;
       if (!letsCelebrate && globalThis.location.hash !== '#counterculture')
          elem.remove();
       },

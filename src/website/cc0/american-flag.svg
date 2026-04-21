@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- - - - - - - - - - -->
+<!-- American Flag     -->
+<!-- CC0 1.0 Universal -->
+<!-- - - - - - - - - - -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1235px" height="650px" viewBox="0 0 1235 650">
+
+   <defs>
+      <!-- height = 13 stripes × 50px      =        650px (hoist)     -->
+      <!-- width  = 650px × 10:19          =       1235px (fly)       -->
+      <!-- stars =  650px × 0.76, 50px × 7 = 494px, 350px (The Union) -->
+      <pattern id="usa-stripes" width="100%" height="100" patternUnits="userSpaceOnUse">
+         <rect x="0" y="0"  width="100%" height="50" fill="#B31942"/>  <!-- Old Glory red -->
+         <rect x="0" y="50" width="100%" height="50" fill="white"/>
+      </pattern>
+      <pattern id="usa-stars" width="82" height="70" patternUnits="userSpaceOnUse">
+         <polygon points="50 0 81 95 0 37 100 37 19 95" fill="white" transform="scale(0.38)"/>
+      </pattern>
+   </defs>
+
+   <rect width="100%" height="100%" fill="url(#usa-stripes)"/>
+   <rect width="494"  height="350"  fill="#0A3161"/>  <!-- Old Glory blue -->
+   <rect transform="translate(22,15)" width="454" height="320" fill="url(#usa-stars)"/>
+   <rect transform="translate(63,50)" width="375" height="250" fill="url(#usa-stars)"/>
+
+</svg>
