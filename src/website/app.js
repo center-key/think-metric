@@ -150,7 +150,7 @@ const app = {
    celebrateDay(elem) {
       // Hide element if the current date is not near the specified day of the year.
       // Example:
-      //    <section data-day=july-4 data-days=10 data-on-load=app.celebrateDay>
+      //    <section data-holiday=july-4 data-days=10 data-on-load=app.celebrateDay>
       const holiday =       elem.dataset.holiday;       //example: 'july-4'
       const numDays =       Number(elem.dataset.days);  //length of celebration
       const currentYear =   new Date().getFullYear();

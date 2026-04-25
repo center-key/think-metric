@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- - - - - - - - - - -->
 <!-- American Flag     -->
+<!-- Version 1.0.0     -->
 <!-- CC0 1.0 Universal -->
 <!-- - - - - - - - - - -->
+<!-- https://gist.github.com/pilafmon/4b19b5bcbe51e47fdd5fb5de157057d6 -->
 <svg xmlns="http://www.w3.org/2000/svg" width="1235px" height="650px" viewBox="0 0 1235 650">
 
    <defs>
-      <!-- height = 13 stripes × 50px      =        650px (hoist)     -->
-      <!-- width  = 650px × 10:19          =       1235px (fly)       -->
-      <!-- stars =  650px × 0.76, 50px × 7 = 494px, 350px (The Union) -->
+      <!-- Fly (width)       = 650px × 10:19          =       1235px -->
+      <!-- Hoist (height)    = 13 stripes × 50px      =        650px -->
+      <!-- The Union (stars) = 650px × 0.76, 50px × 7 = 494px, 350px -->
       <pattern id="usa-stripes" width="100%" height="100" patternUnits="userSpaceOnUse">
          <rect x="0" y="0"  width="100%" height="50" fill="#B31942"/>  <!-- Old Glory red -->
          <rect x="0" y="50" width="100%" height="50" fill="white"/>
