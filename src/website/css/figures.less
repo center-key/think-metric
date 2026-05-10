@@ -17,6 +17,7 @@ figure {
 
 section {
    figure {
+      position: relative;
       &.dark-mode-border img { .DarkMode({
          border: 1px solid gainsboro;
          }); }
@@ -74,6 +75,10 @@ section {
             background-color: black;
             border: 10px solid black;
             }
+         }
+      >span {
+         position: absolute;
+         font-size: 2.5rem;
          }
       }
    figure.picture-board {

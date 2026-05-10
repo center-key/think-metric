@@ -1,20 +1,19 @@
 <!-- src/templates/table-of-poetry.html -->
 <table class=big-table data-code-column=1 data-hide-column=2>
-   <caption>mil | cem | kay | mig | gram | kilo | ton | leat | stere | meg</caption>
+   <caption>mil | cem | kay | mig | hekto | kilo | ton | stere | meg</caption>
    <thead>
       <tr><th>Symbol</th><th>Unit</th><th>Word</th><th>Examples</th></tr>
    </thead>
    <tbody>
-      <tr><td>mm</td> <td>millimeter</td>       <td><b>mil</b></td>                  <td>"I was a mil away from death."</td></tr>
-      <tr><td>cm</td> <td>centimeter</td>       <td><b>cem</b></td>                  <td>"We're making progress cem by cem."<br>"The President mustn't budge a cem."</td></tr>
-      <tr><td>km</td> <td>kilometer</td>        <td><b>kay</b> or <b>klick</b></td>  <td>"Give someone a cem and they'll take a kay."<br>"A journey of a thousand kays begins with a single step."<br>"Good grief, you missed by a country kay!"<br>"Go the extra kay."<br>"Only meters away but kays apart."</td></tr>
-      <tr><td>mg</td> <td>milligram</td>        <td><b>mig</b></td>                  <td>"A raindrop weighs just 4 migs."</td></tr>
-      <tr><td>g</td>  <td>gram</td>             <td><b>gram</b></td>                 <td>"A gram of prevention is worth a kilo of cure."</td></tr>
-      <tr><td>kg</td> <td>kilogram</td>         <td><b>kilo</b> or <b>key</b></td>   <td>"In the soft drink market, Coke is the 500 kilo gorilla."<br>"A gram of help is better than a kilo of preaching."</td></tr>
-      <tr><td>Mg</td> <td>megagram</td>         <td><b>ton</b></td>                  <td>"The truth is gonna land on you like a ton of bricks."</td></tr>
-      <tr><td>ml</td> <td>milliliter</td>       <td><b>mil</b> or <b>cc</b></td>     <td>"20 raindrops make a mil."<br>"A mil is the volume of one cubic cem (1 cm<sup>3</sup>)."<br>"A cc is the volume of one cubic cem (1 cm<sup>3</sup>)."</td></tr>
-      <tr><td>L</td>  <td>liter</td>            <td><b>leat</b></td>                 <td>"A cube 10 cems on edge is one leat."<br>"A mil of honey will catch more flies than a leat of vinegar."<br>"I love milk - I drink leats of the stuff."</td></tr>
-      <tr><td>st</td> <td>cubic&nbsp;meter</td> <td><b>stere</b> or <b>kuub</b></td> <td>"A cubic meter (m<sup>3</sup>) is called a <span data-href=https://en.wikipedia.org/wiki/Stere class=external-site>stere</span>."<br>"Given the price of a kuub of firewood, I chop my own."</td></tr>
-      <tr><td>ML</td> <td>megaliter</td>        <td><b>meg</b></td>                  <td>"A cube 10 meters on edge is one meg."<br>"An Olympic-size swimming pool is about 2.5 megs."</td></tr>
+      <tr id=mil>   <td>mm</td> <td>millimeter</td>             <td><b>mil</b></td>                  <td>"I was a <b>mil</b> away from death."</td> </tr>
+      <tr id=cem>   <td>cm</td> <td>centimeter</td>             <td><b>cem</b></td>                  <td>"We're making progress <b>cem</b> by <b>cem</b>."<br>"The President mustn't budge a <b>cem</b>."</td> </tr>
+      <tr id=kay>   <td>km</td> <td>kilometer</td>              <td><b>kay</b> or <b>klick</b></td>  <td>"Give someone a <b>cem</b> and they'll take a <b>kay</b>."<br>"A journey of a thousand <b>kays</b> begins with a single step."<br>"Good grief, you missed by a country <b>kay</b>!"<br>"Go the extra <b>kay</b>."<br>"Only <b>meters</b> away but <b>kays</b> apart."</td> </tr>
+      <tr id=mig>   <td>mg</td> <td>milligram</td>              <td><b>mig</b></td>                  <td>"A raindrop weighs just 4 <b>migs</b>."</td> </tr>
+      <tr id=hekto> <td>hg</td> <td>hectogram (100&nbsp;g)</td> <td><b>hekto</b></td>                <td>"This 2 <b>hekto</b> package of cheddar cheese contains 10 slices." (20 <b>g</b> per slice)</td> </tr>
+      <tr id=kilo>  <td>kg</td> <td>kilogram</td>               <td><b>kilo</b> or <b>key</b></td>   <td>"In the soft drink market, Coke is the 500 <b>kilo</b> gorilla."<br>"A <b>gram</b> of help is better than a <b>kilo</b> of preaching."<br>"A <b>gram</b> of prevention is worth a <b>kilo</b> of cure."</td> </tr>
+      <tr id=ton>   <td>Mg</td> <td>megagram</td>               <td><b>ton</b></td>                  <td>"The truth is gonna land on you like a <b>ton</b> of bricks."</td> </tr>
+      <tr id=mil2>  <td>ml</td> <td>milliliter</td>             <td><b>mil</b> or <b>cc</b></td>     <td>"20 raindrops make a <b>mil</b>."<br>"A <b>mil</b> is the volume of one cubic <b>cem</b> (1 <b>cm</b><sup>3</sup>)."<br>"A <b>cc</b> is the volume of one cubic <b>cem</b> (1 <b>cm</b><sup>3</sup>)."</td> </tr>
+      <tr id=stere> <td>st</td> <td>cubic&nbsp;meter</td>       <td><b>stere</b> or <b>kuub</b></td> <td>"A cubic <b>meter</b> (<b>m</b><sup>3</sup>) is called a <span data-href=https://en.wikipedia.org/wiki/Stere class=external-site><b>stere</b></span>." (1,000 <b>L</b>)<br>"Given the price of a <b>kuub</b> of firewood, I chop my own."</td> </tr>
+      <tr id=meg>   <td>ML</td> <td>megaliter</td>              <td><b>meg</b></td>                  <td>"A cube 10 <b>meters</b> on edge is one <b>meg</b>."<br>"An Olympic-size swimming pool is about 2.5 <b>megs</b>."</td> </tr>
    </tbody>
 </table>
