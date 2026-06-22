@@ -69,10 +69,12 @@
       ]
    },
    "scripts": {
+      "regen": "run-scripts generated --verbose",
       "pretest": "run-scripts clean generated lint build publish",
       "test": "mocha spec",
-      "validate-html": "html-validator --default-rules docs",
+      "validate-html": "html-validator docs --exclude=docs/article --default-rules",
       "v": "npm test && npm run validate-html",
+      "va": "html-validator docs/article --default-rules",
       "interactive": "run-scripts interactive --parallel",
       "i": "npm test && npm run interactive"
    },
