@@ -85,12 +85,12 @@
       "copy-folder-util": "~1.2",
       "dna-dom": "~3.3",
       "jshint": "~2.13",
-      "less": "~4.8",
+      "less": "~4.9",
       "mocha": "~11.8",
       "replacer-util": "~1.6",
       "rev-web-assets": "~1.6",
       "rimraf": "~6.1",
-      "run-scripts-util": "~1.3",
+      "run-scripts-util": "~1.4",
       "w3c-html-validator": "~2.2",
       "web-ignition": "~2.5"
    }
