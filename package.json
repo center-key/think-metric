@@ -74,7 +74,7 @@
       "test": "mocha spec",
       "validate-html": "npm test && html-validator docs --exclude=docs/article --default-rules",
       "validate-articles": "npm test && html-validator docs/article --default-rules",
-      "i": "npm test && run-scripts interactive --parallel"
+      "start": "npm test && run-scripts interactive --parallel"
    },
    "dependencies": {
       "@fortawesome/fontawesome-free": "~7.3",
@@ -86,7 +86,7 @@
       "dna-dom": "~3.3",
       "jshint": "~2.13",
       "less": "~4.9",
-      "mocha": "~11.8",
+      "mocha": "~12.0",
       "replacer-util": "~1.6",
       "rev-web-assets": "~1.6",
       "rimraf": "~6.1",
